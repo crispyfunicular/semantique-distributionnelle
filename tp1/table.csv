@@ -1,0 +1,11 @@
+mot 1;mot 2;simlex;path;LCH;WUP
+get; put; 1.98; 0.33; 2.16; 0.33
+forget; know; 0.92; 0.33; 2.16; 0.50
+multiply; divide; 1.75; 0.33; 2.16; 0.75
+modest; flexible; 0.98; 0.33; -0.41; 0.50
+container; mouse; 0.3; 0.20; 2.03; 0.75
+inform; notify; 9.25; 0.50; 2.56; 0.89
+vanish; disappear; 9.8; 1.00; 3.26; 1.00
+quick; rapid; 9.7; 0.33; -0.41; 0.50
+cow; cattle; 9.52; 0.50; 2.94; 0.97
+student; pupil; 9.35; 1.00; 3.64; 1.00

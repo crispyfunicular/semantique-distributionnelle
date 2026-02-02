@@ -107,7 +107,7 @@ def main():
     with open(output_file, "w", encoding="utf-8") as f:
         # Le programme renvoie deux tableaux : l'un dans un fichier .csv (avec f.write (sep=";")), l'autre directement dans le terminal (avec print (sep="\t"))
         f.write("mot 1;mot 2;simlex;path;LCH;WUP\n")
-        print("mot 1", "mot 2", "simlex", "path", "LCH", "WUP", sep="\t")
+        print("mot 1", "mot 2", "SimLex", "path", "LCH", "WUP", sep="\t")
         for pair in words:
             f.write(f"{pair.word1}; {pair.word2}; {pair.simlex}; {pair.path_score:.2f}; {pair.lch_score:.2f}; {pair.wup_score:.2f}\n")
             print(pair.word1, pair.word2, pair.simlex, f"{pair.path_score:.2f}", f"{pair.lch_score:.2f}", f"{pair.wup_score:.2f}", sep="\t")

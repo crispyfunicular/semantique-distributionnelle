@@ -37,7 +37,7 @@ https://www.linguist.univ-paris-diderot.fr/~amsili/Ens/LZSET06/
         self.wup_score = self.word1_synset.wup_similarity(self.word2_synset)
     ```
 
-- Les dix paires de termes sur lesquelles effectuer nos mesures ont été sélectionnées aléatoirement à l'aide de la bibliothèque `random`, celle-ci ayant été « figée » dans le main par la fonction `seed` afin de faciliter notre étude.
+- Les dix paires de termes sur lesquelles effectuer nos mesures ont été sélectionnées aléatoirement à l'aide de la bibliothèque `random`, celle-ci ayant été « figée » dans le `main()` par la fonction `seed` afin de faciliter notre étude.
     ```python
     def get_random_words(input_file) -> list[WordPair]:
         # Liste "greater than 9"

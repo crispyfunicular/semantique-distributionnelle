@@ -2,7 +2,7 @@
 **Morgane Bona-Pellissier**, Master 1 pluriTAL  
 morgane@bona-pellissier.net  
 
-L'ensemble de ce projet est disponible sur le repository suivant : `https://github.com/crispyfunicular/semantique-distributionnelle/tp1`
+L'ensemble de ce projet est disponible sur le dépôt suivant : `https://github.com/crispyfunicular/semantique-distributionnelle/tp1`
 
 ## Consignes
 https://www.linguist.univ-paris-diderot.fr/~amsili/Ens/LZSET06/
@@ -141,18 +141,14 @@ En conséquence, si le score WUP reste techniquement calculable pour les adjecti
 ```tsv
 mot 1       mot 2       SimLex  path    LCH     WUP
 multiply    divide      1.75    0.33    2.16    0.75
+container   mouse       0.3     0.20    2.03    0.75
 ```
 Nous constatons avec étonnement que la paire **"multiply"-"divide"** affiche une similarité lexicale (SimLex) basse (1.75) mais qu’elle obtient néanmoins un score WUP élevé (0.75). Cette différence peut s’expliquer par le fait que WordNet mesure la similarité taxonomique (les deux mots se réfèrent tous deux à des opérations) plutôt que la similarité sémantique (ils sont opposés). Dans la structure en arbre propre à WordNet, cela se traduit par le fait que deux antonymes partagent un hyperonyme direct, leur « père ». Il s'agit donc de deux co-hyponymes d’« opération ». La distance qui les sépare est par conséquent minimale, ce qui explique qu’ils partagent une similarité *taxonomique* forte, telle que reflétée par le score WUP, là où le jugement humain du SimLex retient une similarité *sémantique* faible en raison de la relation d’opposition entre les deux antonymes.  
 
-Une « anomalie » similaire ressort de l’examen des scores obtenus par la paire **"container"-"mouse"**. En effet, bien qu’elle présente un score SimLex faible (0.3), elle obtient néanmoins un score WUP étonnament élevé (0.75). Ce phénomène s’explique par la structure de WordNet où, comme le souligne Chaumartin (2011), « [L]e réseau des noms est bien plus profond que celui des autres parties du discours ». Puisque pour le score WUP, l’arbre est très profond, le point de jonction (l’ancêtre commun le plus spécifique) entre les deux concepts peut se situer à un niveau qui semble « proche » de la racine de façon relative même s’il possède une profondeur absolue importante et peut sembler sémantiquement bien trop générique pour un humain.  
-
-```tsv
-mot 1       mot 2       SimLex  path    LCH     WUP
-container   mouse       0.3     0.20    2.03    0.75
-```
+Une « anomalie » similaire ressort de l’examen des scores obtenus par la paire **"container"-"mouse"**. En effet, bien qu’elle présente un score SimLex faible (0.3), elle obtient néanmoins un score WUP étonnament élevé (0.75). Ce phénomène s’explique par la structure de WordNet où, comme le souligne Chaumartin (2011), « [l]e réseau des noms est bien plus profond que celui des autres parties du discours ». Puisque pour le score WUP, l’arbre est très profond, le point de jonction (l’ancêtre commun le plus spécifique) entre les deux concepts peut se situer à un niveau qui semble « proche » de la racine de façon relative même s’il possède une profondeur absolue importante et peut sembler sémantiquement bien trop générique pour un humain.  
 
 ## Conclusion
-Ce TP met en évidence les divergences qui peuvent exister entre la perception humaine (SimLex) de la similarité lexicale entre deux mots et les scores obtenus par calcul mathématique de la distance taxonomique entre ces mêmes mots (path, LCH et WUP). En effet, dans le premier cas, la similarité est évaluée sur la base des traits sémantiques partagés, tandis que, dans le second cas, la similarité est évaluée sur la base de la similarité est évaluée sur la base de la proximité au sein d’une ontologie structurée.  
+Ce TP met en évidence les divergences qui peuvent exister entre la perception humaine de la similarité lexicale (SimLex) entre deux mots et les scores obtenus par calcul mathématique de la distance taxonomique entre ces mêmes mots (path, LCH et WUP). En effet, dans le premier cas, la similarité est évaluée sur la base des traits sémantiques partagés, tandis que, dans le second cas, la similarité est évaluée sur la base de la similarité est évaluée sur la base de la proximité au sein d’une ontologie structurée.  
 
 En outre, nos résultats montrent que l’efficacité des scores est étroitement liée à la catégorie morphosyntaxique des termes et à la profondeur de l’arborescence associée. En effet, pour les noms et les verbes, et sous réserve de rechercher en amont l’association de sens (synset) la plus pertinente pour deux mots donnés (recherche de proximité maximale), il est possible d’obtenir des synonymies quasi parfaites.
 

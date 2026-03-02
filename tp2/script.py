@@ -1,6 +1,6 @@
 import spacy
-import nltk
 from nltk.corpus import stopwords
+import math
 
 # ==========================================
 # ÉTAPE 1 : PRÉPARATION DU CORPUS
@@ -86,6 +86,26 @@ def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
     return matrice
 
 
+# ==========================================
+# ÉTAPE 3
+# ==========================================
+
+def similarite_cosinus(vecteur_a, vecteur_b) -> float:
+    """Calcule le cosinus de l'angle entre deux vecteurs."""
+    # Produit scalaire
+    produit_scalaire = sum(vecteur_a[mot] * vecteur_b.get(mot, 0) for mot in vecteur_a)
+    
+    # Normes (longueurs des vecteurs)
+    norme_a = math.sqrt(sum(valeur**2 for valeur in vecteur_a.values()))
+    norme_b = math.sqrt(sum(valeur**2 for valeur in vecteur_b.values()))
+    
+    # Sécurité contre la division par zéro
+    if norme_a == 0 or norme_b == 0:
+        return 0.0
+        
+    return produit_scalaire / (norme_a * norme_b)
+
+
 def main():
     # Officiel - avec stopwords
     corpus_officiel = preparer_corpus("corpus/CDPH_officiel.txt")
@@ -115,6 +135,7 @@ def main():
     mat_off_w2 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=2)
     mat_off_w15 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=15)
 
+    mots_cibles = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "liberté", "dignité", "accessibilité", "autonomie"]
 
 if __name__ == "__main__":
     main()

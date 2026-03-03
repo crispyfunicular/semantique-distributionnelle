@@ -3,7 +3,7 @@ from nltk.corpus import stopwords
 import math
 
 # ==========================================
-# ÉTAPE 1 : PRÉPARATION DU CORPUS
+# PRÉPARATION DU CORPUS
 # ==========================================
 
 # Chargement du modèle linguistique français
@@ -51,7 +51,7 @@ def preparer_corpus(file:str, stopwords:bool=False) -> list:
 
 
 # ==========================================
-# ÉTAPE 2 : MATRICE DE CO-OCCURRENCES
+# MATRICE DE CO-OCCURRENCES
 # ==========================================
 
 def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
@@ -87,7 +87,7 @@ def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
 
 
 # ==========================================
-# ÉTAPE 3
+# SIMILARITÉ COSINUS
 # ==========================================
 
 def similarite_cosinus(vecteur_a, vecteur_b) -> float:
@@ -107,35 +107,63 @@ def similarite_cosinus(vecteur_a, vecteur_b) -> float:
 
 
 def main():
-    # Officiel - avec stopwords
+    # CORPUS CDPH_OFFICIEL
+    ## Avec stopwords
     corpus_officiel = preparer_corpus("corpus/CDPH_officiel.txt")
-
-    # Officiel - sans stopwords
+    ## Sans stopwords
     corpus_officiel_stopwords = preparer_corpus("corpus/CDPH_officiel.txt", True)
 
-    # FALC - avec stopwords
-    corpus_falc = preparer_corpus("corpus/CDPH_falc.txt")
-
-    # FALC - sans stopwords
-    corpus_falc_stopwords = preparer_corpus("corpus/CDPH_falc.txt", True)
-
-    # Matrices pour FALC - avec stopwords - fenêtre 2 et 15
-    mat_falc_w2 = construire_matrice(corpus_falc, taille_fenetre=2)
-    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=15)
-
-    # Matrices pour FALC - sans stopwords - fenêtre 2 et 15
-    mat_falc_w2 = construire_matrice(corpus_falc_stopwords, taille_fenetre=2)
-    mat_falc_w15 = construire_matrice(corpus_falc_stopwords, taille_fenetre=15)
-
-    # Matrices pour officiel - avec stopwords - fenêtre 2 et 15
+    # MATRICES CDPH_OFFICIEL
+    ## Avec stopwords - fenêtre 2
     mat_off_w2 = construire_matrice(corpus_officiel, taille_fenetre=2)
+
+    ## Avec stopwords - fenêtre 15
     mat_off_w15 = construire_matrice(corpus_officiel, taille_fenetre=15)
 
-    # Matrices pour officiel - sans stopwords - fenêtre 2 et 15
+    ## Avec stopwords - fenêtre 50
+    mat_off_w15 = construire_matrice(corpus_officiel, taille_fenetre=50)
+
+    ## Sans stopwords - fenêtre 2
     mat_off_w2 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=2)
+
+    ## Sans stopwords - fenêtre 15
     mat_off_w15 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=15)
 
-    mots_cibles = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "liberté", "dignité", "accessibilité", "autonomie"]
+    ## sans stopwords - fenêtre 50
+    mat_off_w15 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=50)
+
+
+    # CORPUS CDPH_FALC
+    ## Avec stopwords
+    corpus_falc = preparer_corpus("corpus/CDPH_falc.txt")
+    ## Sans stopwords
+    corpus_falc_stopwords = preparer_corpus("corpus/CDPH_falc.txt", True)
+
+    # MATRICES CDPH_FALC
+    ## Avec stopwords - fenêtre 2
+    mat_falc_w2 = construire_matrice(corpus_falc, taille_fenetre=2)
+
+    ## Avec stopwords - fenêtre 15
+    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=15)
+
+    ## Avec stopwords - fenêtre 50
+    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=50)
+
+    ## Avec stopwords - fenêtre 50
+    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=50)
+
+    ## Sans stopwords - fenêtre 2
+    mat_falc_w2 = construire_matrice(corpus_falc_stopwords, taille_fenetre=2)
+
+    ## Sans stopwords - fenêtre 15
+    mat_falc_w15 = construire_matrice(corpus_falc_stopwords, taille_fenetre=15)
+
+    ## Sans stopwords - fenêtre 50
+    mat_falc_w15 = construire_matrice(corpus_falc_stopwords, taille_fenetre=50)
+
+
+    mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "liberté", "dignité", "accessibilité", "autonomie"]
+
 
 if __name__ == "__main__":
     main()

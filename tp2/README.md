@@ -19,9 +19,25 @@ Pour ce travail, nous avons choisi d'étudier, outre l'influence de la taille du
 Notre choix de corpus s'est donc porté sur la *Convention relative aux droits des personnes handicapées* (CDPH), à la fois dans sa version française officielle que dans sa version « officiellement reconnue » en français FALC.
 
 ### Hypothèse
-Nous partons de l'hypothèse que, si les deux textes partagent un référentiel sémantique strictement identique, ils mobilisent pourtant des stratégies syntaxiques et lexicales opposées. En effet, le texte officiel devrait se caractériser par une forte densité conceptuelle et des phrases complexes, tandis que la version FALC devrait s'appuyer sur une syntaxe courte et un vocabulaire concret et désambiguïsé. Il nous a donc semblé pertinent de comparer les résultats obtenus pour chacun de ces textes.
+Nous partons de l'hypothèse que, si les deux textes partagent un référentiel sémantique strictement identique, ils mobilisent pourtant des stratégies syntaxiques et lexicales opposées. En effet, le texte officiel devrait se caractériser par une forte densité conceptuelle et des phrases complexes, tandis que la version FALC devrait s'appuyer sur une syntaxe courte et un vocabulaire concret et désambiguïsé.
 
-> La complexité ou spécificité de certaines informations nécessiterait que des experts du domaine (p. ex. : juristes,  médecins, etc.) soient associés au travail de rédaction / transcription en FALC pour permettre une clarification de l’information sans pour autant en perdre ou en diminuer le sens. (Diacquenod et Santi, 2018, p. 33)
+Parmi les Règles européennes pour une information facile à lire et à comprendre, les suivantes nous intéressent particulièrement pour ce travail :
+```text
+6. Utilisez des mots faciles à comprendre  
+c’est-à-dire des mots que les gens connaissent bien.
+7. N’utilisez pas de mots difficiles.
+14. Faites toujours des phrases courtes.
+17. Utilisez des phrases actives plutôt que des phrases passives
+quand vous le pouvez
+```
+
+Il existe également un certain nombre de recommandations, parfois en contradiction les unes avec les autres, parmi lesquelles figurent :
+- la limitation, ou non, du nombre de mots dans une phrase,
+- la simplification, ou non, du jargon spécifique ou, à l'inverse, le maintien de mots complexes nécessaires  
+(Canut, Delahaie et Husianycia, 2020, Diacquenod et Santi, 2018, p. 33).
+
+Il nous a par conséquent semblé pertinent de comparer les résultats obtenus pour chacun de ces textes.
+
 
 ### Segmentation et tokenisation
 Nous avons défini une fonction `preparer_corpus()` prenant en argument un texte et, de façon optionnelle, un booléen `stopwords` fixé par défaut à `False` pour le filtrage des stopwords.
@@ -45,6 +61,8 @@ if stopwords and lemme in stopwords_nltk:
     continue
 ```
 
+### Filtrage des mots vides (stopwords)
+Afin de privilégier l'émergence de relations sémantiques pertinentes et de réduire le bruit statistique, l'analyse finale présentée dans ce rapport se concentre exclusivement sur les matrices construites après le filtrage des mots vides (stopwords)
 
 ## Calcul des matrices
 
@@ -109,13 +127,20 @@ mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discriminat
 
 
 ## Discussion des résultats
+```
+```
+
 
 
 
 
 ## Bibliographie
+> Canut, E., Delahaie, J. et Husianycia, M. (2020). "Vous avez dit FALC ? Pour une adaptation linguistique des textes destinés aux migrants nouvellement arrivés". Langage et société, 171(3), 171-201. https://doi.org/10.3917/ls.171.0171.
+
 > Diacquenod, C. et F. Santi (2018). "La mise en oeuvre du langage facile à lire et à comprendre (FALC) : enjeux, défis et perspectives", Revue suisse de pédagogie spécialisée, 2/2018
 
 > Fondation Internationale de la Recherche Appliquée sur le Handicap (FIRAH). Version facile à lire de la Convention relative aux droits des personnes handicapées. https://www.firah.org/la-convention-relative-aux-droits-des-personnes-handicapees.html
 
 > Haut-Commissariat des Nations Unies aux droits de l'homme (2006). Convention relative aux droits des personnes handicapées https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities
+
+> Inclusion Europe (2009). "Règles européennes pour une information facile à lire et à comprendre"

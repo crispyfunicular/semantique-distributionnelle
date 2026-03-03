@@ -1,12 +1,17 @@
 import spacy
+import nltk
 from nltk.corpus import stopwords
 import math
+import pandas as pd
 
 # ==========================================
 # PRÉPARATION DU CORPUS
 # ==========================================
 
-# Chargement du modèle linguistique français
+# Chargement du dictionnaire NLTK
+nltk.download('stopwords')
+
+# Chargement du modèle linguistique français (léger ou "small" / "sm")
 nlp = spacy.load("fr_core_news_sm")
 
 stopwords_nltk = set(stopwords.words('french'))
@@ -90,79 +95,133 @@ def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
 # SIMILARITÉ COSINUS
 # ==========================================
 
-def similarite_cosinus(vecteur_a, vecteur_b) -> float:
-    """Calcule le cosinus de l'angle entre deux vecteurs."""
-    # Produit scalaire
+def similarite_cosinus(vecteur_a: dict, vecteur_b: dict) -> float:
+    """Calcule le cosinus de l'angle entre deux vecteurs pour calculer leur similarité cosinus.
+    Exemple de vecteur : {"homme": 5, "loi": 3}
+    """
+    # Produit scalaire :
+    ## for mot in vecteur_a : on parcourt tous les mots voisins du mot A
+    ## vecteur_a[mot] * vecteur_b.get(mot, 0) : on multiplie la fréquence du mot dans le vecteur A par sa fréquence dans le vecteur B
+    ## vecteur_b.get(mot, 0) : si le mot voisin existe pour A mais pas pour B, on multiplie par 0 et le résultat sera donc 0.
     produit_scalaire = sum(vecteur_a[mot] * vecteur_b.get(mot, 0) for mot in vecteur_a)
     
     # Normes (longueurs des vecteurs)
+    ## Application du théorème de Pythagore :
+    ### 1. on élève toutes les fréquences au carré (**2)
+    ### 2. on additionne tous les carrés (sum())
+    ### 3. on calcule la racine carrée de cette somme (math.sqrt())
     norme_a = math.sqrt(sum(valeur**2 for valeur in vecteur_a.values()))
     norme_b = math.sqrt(sum(valeur**2 for valeur in vecteur_b.values()))
     
-    # Sécurité contre la division par zéro
+    # Si un mot n'a aucun voisin --> empêcher la division par zéro
     if norme_a == 0 or norme_b == 0:
         return 0.0
         
     return produit_scalaire / (norme_a * norme_b)
 
 
+def top_10_voisins(mot_cible: str, matrice: dict) -> list:
+    """Trouve les 10 mots avec la plus forte similarité cosinus."""
+    if mot_cible not in matrice:
+        return []
+    
+    # Ex : {"loi": 0.85, "humain": 0.92}
+    scores = {}
+
+    # Extraction du dictionnaire de fréquences (le vecteur) correspondant au mot cible
+    vecteur_cible = matrice[mot_cible]
+    
+    # mot_vocabulaire -> clé (le mot testé par la boucle)
+    # vecteur_voisin -> valeur (les fréquences)
+    for mot_vocabulaire, vecteur_voisin in matrice.items():
+        # Ne pas comparer un mot à lui-même
+        if mot_vocabulaire != mot_cible:
+            # Mesure de la similarité cosinus entre le mot cible (vecteur-cible) et le mot testé par la boucle (vecteur_voisin)
+            score = similarite_cosinus(vecteur_cible, vecteur_voisin)
+            
+            # Le score est > 0 si les deux mots ont au moins un contexte en commun
+            if score > 0:
+                scores[mot_vocabulaire] = score
+                
+    # On effectue un tri décroissant des scores
+    # On ne conserve que les 10 premier résultats
+    return sorted(scores.items(), key=lambda x: x[1], reverse=True)[:10]
+
+
 def main():
-    # CORPUS CDPH_OFFICIEL
-    ## Avec stopwords
-    corpus_officiel = preparer_corpus("corpus/CDPH_officiel.txt")
-    ## Sans stopwords
-    corpus_officiel_stopwords = preparer_corpus("corpus/CDPH_officiel.txt", True)
+    fichier_sortie = "resultats_analyse.md"
+
+    # CDPH_OFFICIEL
+    # Corpus sans stopwords
+    corpus_officiel = preparer_corpus("corpus/CDPH_officiel.txt", True)
 
     # MATRICES CDPH_OFFICIEL
-    ## Avec stopwords - fenêtre 2
-    mat_off_w2 = construire_matrice(corpus_officiel, taille_fenetre=2)
+    ## Fenêtre 2 (f2)
+    mat_off_f2 = construire_matrice(corpus_officiel, taille_fenetre=2)
 
-    ## Avec stopwords - fenêtre 15
-    mat_off_w15 = construire_matrice(corpus_officiel, taille_fenetre=15)
+    ## Fenêtre 15 (f15)
+    mat_off_f15 = construire_matrice(corpus_officiel, taille_fenetre=15)
 
-    ## Avec stopwords - fenêtre 50
-    mat_off_w15 = construire_matrice(corpus_officiel, taille_fenetre=50)
-
-    ## Sans stopwords - fenêtre 2
-    mat_off_w2 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=2)
-
-    ## Sans stopwords - fenêtre 15
-    mat_off_w15 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=15)
-
-    ## sans stopwords - fenêtre 50
-    mat_off_w15 = construire_matrice(corpus_officiel_stopwords, taille_fenetre=50)
+    ## Fenêtre 50 (f50)
+    mat_off_f50 = construire_matrice(corpus_officiel, taille_fenetre=50)
 
 
-    # CORPUS CDPH_FALC
-    ## Avec stopwords
-    corpus_falc = preparer_corpus("corpus/CDPH_falc.txt")
-    ## Sans stopwords
-    corpus_falc_stopwords = preparer_corpus("corpus/CDPH_falc.txt", True)
+    # CDPH_FALC
+    # Corpus sans stopwords
+    corpus_falc = preparer_corpus("corpus/CDPH_falc.txt", True)
 
     # MATRICES CDPH_FALC
-    ## Avec stopwords - fenêtre 2
-    mat_falc_w2 = construire_matrice(corpus_falc, taille_fenetre=2)
+    ## Fenêtre 2 (f2)
+    mat_falc_f2 = construire_matrice(corpus_falc, taille_fenetre=2)
 
-    ## Avec stopwords - fenêtre 15
-    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=15)
+    ## Fenêtre 15 (f15)
+    mat_falc_f15 = construire_matrice(corpus_falc, taille_fenetre=15)
 
-    ## Avec stopwords - fenêtre 50
-    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=50)
-
-    ## Avec stopwords - fenêtre 50
-    mat_falc_w15 = construire_matrice(corpus_falc, taille_fenetre=50)
-
-    ## Sans stopwords - fenêtre 2
-    mat_falc_w2 = construire_matrice(corpus_falc_stopwords, taille_fenetre=2)
-
-    ## Sans stopwords - fenêtre 15
-    mat_falc_w15 = construire_matrice(corpus_falc_stopwords, taille_fenetre=15)
-
-    ## Sans stopwords - fenêtre 50
-    mat_falc_w15 = construire_matrice(corpus_falc_stopwords, taille_fenetre=50)
+    ## Fenêtre 50 (f50)
+    mat_falc_f50 = construire_matrice(corpus_falc, taille_fenetre=50)
 
 
-    mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "liberté", "dignité", "accessibilité", "autonomie"]
+    mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "accessibilité", "liberté", "dignité", "autonomie", "argent", "chose"]
+
+
+    # Affichage des résultats
+    with open(fichier_sortie, "w", encoding="utf-8") as f:
+        
+        # Titre principal du document
+        f.write("Résultat de l'analyse sémantique\n\n")
+
+        for mot in mots_cible:
+            f.write(f"Mot cible : « {mot.upper()} »\n\n")
+            
+            # Préparation du tableau vide
+            col_fenetre = ["f2", "f15", "f50"]
+            col_officiel = ["Absente", "Absente", "Absente"]
+            col_falc = ["Absente", "Absente", "Absente"]
+
+            # Corpus officiel
+            if mot in mat_off_f50:
+                col_officiel[0] = ", ".join([v[0] for v in top_10_voisins(mot, mat_off_f2)[:5]])
+                col_officiel[1] = ", ".join([v[0] for v in top_10_voisins(mot, mat_off_f15)[:5]])
+                col_officiel[2] = ", ".join([v[0] for v in top_10_voisins(mot, mat_off_f50)[:5]])
+
+            # Corpus FALC
+            if mot in mat_falc_f50:
+                col_falc[0] = ", ".join([v[0] for v in top_10_voisins(mot, mat_falc_f2)[:5]])
+                col_falc[1] = ", ".join([v[0] for v in top_10_voisins(mot, mat_falc_f15)[:5]])
+                col_falc[2] = ", ".join([v[0] for v in top_10_voisins(mot, mat_falc_f50)[:5]])
+
+            # Création du tableau Pandas
+            tableau = pd.DataFrame({
+                "Fenêtre": col_fenetre,
+                "Corpus officiel": col_officiel,
+                "Corpus FALC": col_falc
+            })
+            
+            # Ecriture dans le fichier
+            f.write(tableau.to_markdown(index=False))
+            
+            # Ajout de sauts de ligne pour aérer le document
+            f.write("\n\n\n\n")
 
 
 if __name__ == "__main__":

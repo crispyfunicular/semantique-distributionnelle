@@ -36,8 +36,17 @@ def preparer_corpus(file:str, stopwords:bool=False) -> list:
         for token in phrase:
             # Filtrage de la ponctuation (token.is_punct) et des espaces vides (token.is_space)
             if not token.is_punct and not token.is_space:
+
+                # Filtrage des chiffres (ex : numéros de paragraphe)
+                if token.is_digit:
+
+                    continue
                 # Lemmatisation (.lemma) et passage en minuscules (.lower())
                 lemme = token.lemma_.lower()
+                
+                # Filtrage des lettres seules (ex : numéro d'alinéas)
+                if len(lemme) <= 1:
+                    continue
 
                 # Filtrage fin avec NLTK
                 # Si stopwords=True, on vérifie si le lemme est dans la liste NLTK (double condition)
@@ -191,12 +200,12 @@ def main():
         f.write("Résultat de l'analyse sémantique\n\n")
 
         for mot in mots_cible:
-            f.write(f"Mot cible : « {mot.upper()} »\n\n")
+            f.write(f"Mot cible : « **{mot.upper()}** »\n\n")
             
             # Préparation du tableau vide
             col_fenetre = ["f2", "f15", "f50"]
-            col_officiel = ["Absente", "Absente", "Absente"]
-            col_falc = ["Absente", "Absente", "Absente"]
+            col_officiel = ["Absent", "Absent", "Absent"]
+            col_falc = ["Absent", "Absent", "Absent"]
 
             # Corpus officiel
             if mot in mat_off_f50:

@@ -101,6 +101,50 @@ def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
 
 
 # ==========================================
+# PPMI + LISSAGE DE LAPLACE
+# ==========================================
+
+def appliquer_ppmi(matrice: dict, lissage: float = 0.0) -> dict:
+    """Transforme une matrice de co-occurrences en matrice PPMI avec lissage de Laplace.
+    
+    lissage : valeur k pour le lissage de Laplace (0.0 = pas de lissage, 1.0 = lissage standard)
+    
+    Formule PMI(w1, w2) = log2( C(w1,w2) * N / (f(w1) * f(w2)) )
+    Formule PPMI = max(0, PMI)  →  on ne garde que les valeurs positives
+    
+    Avec lissage de Laplace (k) :
+    - C_lisse(w1, w2)  = C(w1, w2) + k
+    - f_lisse(w1)      = f(w1) + k * (V - 1)   (V-1 voisins possibles)
+    - N_lisse          = N + k * V * (V - 1)    (toutes les paires dirigées)
+    """
+    V = len(matrice)
+    k = lissage
+
+    # Comptes marginaux : f(w) = somme de toutes ses co-occurrences
+    marginaux = {mot: sum(contextes.values()) for mot, contextes in matrice.items()}
+
+    # Total (chaque paire dirigée est comptée : w1→w2 et w2→w1)
+    N = sum(marginaux.values())
+
+    # Corrections pour le lissage
+    N_lisse = N + k * V * (V - 1)
+
+    ppmi = {}
+    for w1 in matrice:
+        ppmi[w1] = {}
+        f_w1 = marginaux[w1] + k * (V - 1)
+        for w2, count in matrice[w1].items():
+            f_w2 = marginaux[w2] + k * (V - 1)
+            c_lisse = count + k
+            if f_w1 > 0 and f_w2 > 0 and N_lisse > 0:
+                pmi = math.log2((c_lisse * N_lisse) / (f_w1 * f_w2))
+                if pmi > 0:  # PPMI : on ignore les valeurs négatives
+                    ppmi[w1][w2] = pmi
+
+    return ppmi
+
+
+# ==========================================
 # SIMILARITÉ COSINUS
 # ==========================================
 
@@ -160,34 +204,46 @@ def top_10_voisins(mot_cible: str, matrice: dict) -> list:
 def main():
     fichier_sortie = "resultats_analyse.md"
 
-    # CDPH_OFFICIEL
+    # OFFICIEL
     # Corpus sans stopwords
-    corpus_officiel = preparer_corpus("corpus/CDPH_officiel.txt", True)
+    corpus_off = preparer_corpus("corpus/officiel.txt", True)
 
-    # MATRICES CDPH_OFFICIEL
-    ## Fenêtre 2 (f2)
-    mat_off_f2 = construire_matrice(corpus_officiel, taille_fenetre=2)
+    # Matrices
+    ## Fenêtre 3 (f3)
+    mat_off_f3 = construire_matrice(corpus_off, taille_fenetre=3)
 
-    ## Fenêtre 15 (f15)
-    mat_off_f15 = construire_matrice(corpus_officiel, taille_fenetre=15)
+    ## Fenêtre 10 (f10)
+    mat_off_f10 = construire_matrice(corpus_off, taille_fenetre=10)
 
-    ## Fenêtre 50 (f50)
-    mat_off_f50 = construire_matrice(corpus_officiel, taille_fenetre=50)
+    ## Fenêtre 25 (f25)
+    mat_off_f25 = construire_matrice(corpus_off, taille_fenetre=25)
 
 
-    # CDPH_FALC
+    # FALC
     # Corpus sans stopwords
-    corpus_falc = preparer_corpus("corpus/CDPH_falc.txt", True)
+    corpus_falc = preparer_corpus("corpus/FALC.txt", True)
 
-    # MATRICES CDPH_FALC
-    ## Fenêtre 2 (f2)
-    mat_falc_f2 = construire_matrice(corpus_falc, taille_fenetre=2)
+    # Matrices
+    ## Fenêtre 3 (f3)
+    mat_falc_f3 = construire_matrice(corpus_falc, taille_fenetre=3)
 
-    ## Fenêtre 15 (f15)
-    mat_falc_f15 = construire_matrice(corpus_falc, taille_fenetre=15)
+    ## Fenêtre 10 (f10)
+    mat_falc_f10 = construire_matrice(corpus_falc, taille_fenetre=10)
 
-    ## Fenêtre 50 (f50)
-    mat_falc_f50 = construire_matrice(corpus_falc, taille_fenetre=50)
+    ## Fenêtre 25 (f25)
+    mat_falc_f25 = construire_matrice(corpus_falc, taille_fenetre=25)
+
+
+    # PPMI avec lissage de Laplace (k=1)
+    ## Officiel
+    ppmi_off_f3  = appliquer_ppmi(mat_off_f3,  lissage=1.0)
+    ppmi_off_f10 = appliquer_ppmi(mat_off_f10, lissage=1.0)
+    ppmi_off_f25 = appliquer_ppmi(mat_off_f25, lissage=1.0)
+
+    ## FALC
+    ppmi_falc_f3  = appliquer_ppmi(mat_falc_f3,  lissage=1.0)
+    ppmi_falc_f10 = appliquer_ppmi(mat_falc_f10, lissage=1.0)
+    ppmi_falc_f25 = appliquer_ppmi(mat_falc_f25, lissage=1.0)
 
 
     mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "accessibilité", "liberté", "dignité", "autonomie", "argent", "chose"]
@@ -196,28 +252,28 @@ def main():
     # Affichage des résultats
     with open(fichier_sortie, "w", encoding="utf-8") as f:
         
-        # Titre principal du document
+        # Titre du document
         f.write("Résultat de l'analyse sémantique\n\n")
 
         for mot in mots_cible:
             f.write(f"Mot cible : « **{mot.upper()}** »\n\n")
-            
+
             # Préparation du tableau vide
-            col_fenetre = ["f2", "f15", "f50"]
+            col_fenetre = ["f3", "f10", "f25"]
             col_officiel = ["Absent", "Absent", "Absent"]
             col_falc = ["Absent", "Absent", "Absent"]
 
             # Corpus officiel
-            if mot in mat_off_f50:
-                col_officiel[0] = ", ".join([v[0] for v in top_10_voisins(mot, mat_off_f2)[:5]])
-                col_officiel[1] = ", ".join([v[0] for v in top_10_voisins(mot, mat_off_f15)[:5]])
-                col_officiel[2] = ", ".join([v[0] for v in top_10_voisins(mot, mat_off_f50)[:5]])
+            if mot in mat_off_f25:
+                col_officiel[0] = ", ".join([v[0] for v in top_10_voisins(mot, ppmi_off_f3)[:5]])
+                col_officiel[1] = ", ".join([v[0] for v in top_10_voisins(mot, ppmi_off_f10)[:5]])
+                col_officiel[2] = ", ".join([v[0] for v in top_10_voisins(mot, ppmi_off_f25)[:5]])
 
             # Corpus FALC
-            if mot in mat_falc_f50:
-                col_falc[0] = ", ".join([v[0] for v in top_10_voisins(mot, mat_falc_f2)[:5]])
-                col_falc[1] = ", ".join([v[0] for v in top_10_voisins(mot, mat_falc_f15)[:5]])
-                col_falc[2] = ", ".join([v[0] for v in top_10_voisins(mot, mat_falc_f50)[:5]])
+            if mot in mat_falc_f25:
+                col_falc[0] = ", ".join([v[0] for v in top_10_voisins(mot, ppmi_falc_f3)[:5]])
+                col_falc[1] = ", ".join([v[0] for v in top_10_voisins(mot, ppmi_falc_f10)[:5]])
+                col_falc[2] = ", ".join([v[0] for v in top_10_voisins(mot, ppmi_falc_f25)[:5]])
 
             # Création du tableau Pandas
             tableau = pd.DataFrame({

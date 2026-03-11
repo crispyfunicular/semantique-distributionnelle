@@ -1,0 +1,676 @@
+Enseignement supérieur et recherche
+Étudiants en situation de handicap
+Droits des étudiants en situation de handicap ou avec un trouble de santé invalidant
+dans le cadre de leur parcours de formation dans l’enseignement supérieur
+NOR : ESRS2418046C
+Circulaire du 10-7-2024
+MESR – DGESIP A2-3 / MTSS / MEFSIN / MASA
+Texte adressé aux recteurs et rectrices de région académique ; aux recteurs et rectrices d'académie ; aux recteurs et rectrices délégués à
+l’enseignement supérieur, à la recherche et à l’innovation ; aux déléguées régionales et délégués régionaux académiques à la jeunesse, à l’engagement et au sport ; aux présidentes et présidents, directeurs et directrices des établissements d’enseignement supérieur ; à la présidente du Cnous ; aux directeurs généraux et directrices générales des Crous
+Cette circulaire fait référence aux codes de l’éducation, de la recherche, de la santé publique, de la sécurité Sociale, de
+l’action sociale et des familles, des relations entre le public et l’administration, de la construction et de l’habitat, de la justice administrative, pénal, de la propriété intellectuelle, du service national, des transports et du travail, et à la
+convention relative aux des droits des personnes handicapées (CIDPH). Elle complète notamment la circulaire relative aux
+adaptations et aménagements des épreuves d'examen et de concours pour les candidats en situation de handicap ou avec
+un trouble de santé invalidant du 6 février 2023 et la circulaire relative à l’organisation de la procédure et adaptations et
+aménagements des épreuves d'examen et concours pour les candidats en situation de handicap du 8 décembre 2020 et de
+celle du 14 mars 2022 qui actualise et remplace les annexes.
+Il convient de préciser que le droit commun se réfère à l'ensemble des règles générales et s'applique à tous les étudiants
+sans distinction. Le droit spécifique fait référence aux règles particulières qui s'appliquent à des personnes en situation de handicap ou à besoins particuliers conformément à l’article L. 123-4-2 du Code de l'éducation. La réglementation
+concernant les droits spécifiques des étudiants en situation de handicap est établie pour garantir un accès équitable à
+l'éducation et pour assurer des conditions favorables à leur apprentissage et à leur épanouissement. La réglementation
+concernant les droits des étudiants en situation de handicap est établie pour garantir un accès équitable à l'éducation et
+pour assurer des conditions favorables à leur apprentissage et à leur épanouissement. Elle repose particulièrement sur la
+convention relative aux droits des personnes handicapées (CIDPH) ratifiée par la France en 2009 et publiée en annexe du
+décret n° 2010-356.
+L'article 24 de cette convention dispose que la France reconnaît, « le droit des personnes en situation de handicap à
+l'éducation ». En vue d'assurer l'exercice de ce droit « sans discrimination et sur la base de l'égalité des chances, les États
+Parties font en sorte que le système éducatif pourvoie à l'insertion scolaire à tous les niveaux et offre, tout au long de la vie,
+des possibilités d'éducation. »
+Par ailleurs, il précise que la France veille « à ce que les personnes handicapées puissent avoir accès, sans discrimination et
+sur la base de l'égalité avec les autres, à l'enseignement tertiaire général, à la formation professionnelle, à l'enseignement
+pour adultes et à la formation continue. À cette fin, ils (les États parties) veillent à ce que des aménagements raisonnables
+soient apportés en faveur des personnes handicapées. »
+L'article 2 de la convention dispose qu'on entend « par “discrimination fondée sur le handicap” toute distinction, exclusion
+ou restriction fondée sur le handicap qui a pour objet ou pour effet de compromettre ou réduire à néant la reconnaissance,
+la jouissance ou l'exercice, sur la base de l'égalité avec les autres, de tous les droits de l'homme et de toutes les libertés
+fondamentales dans les domaines politique, économique, social, culturel, civil ou autres. La discrimination fondée sur le
+handicap comprend toutes les formes de discrimination, y compris le refus d'aménagement raisonnable. »
+Ainsi, un étudiant en situation de handicap a le droit d'avoir accès à un environnement d’études accessible conformément
+à l’article 9 de la convention précitée. Il a droit à un système éducatif inclusif qui lui permet « de développer sa
+personnalité, d'élever son niveau de formation initiale et continue, de s'insérer dans la vie sociale et professionnelle,
+d'exercer sa citoyenneté » tel que précisé dans l’article L. 111-1 du Code de l’éducation. Il est traité sur un pied d'égalité
+avec les autres étudiants, et ne peut subir de discrimination fondée sur son handicap. Reconnaissant son autonomie et sa
+capacité à contribuer de manière significative à la vie en société, il a le droit de participer activement aux processus de
+prise de décision le concernant et concernant son environnement de formation. Il a le droit de bénéficier d'un
+accompagnement et d'un soutien appropriés et de bénéficier d’aménagements raisonnables. Il a le droit d'avoir accès à des
+ressources adaptées à ses besoins spécifiques, telles que des équipements spécialisés, des technologies d'assistance et un
+soutien pédagogique personnalisé.
+L’article L. 123-4-2 du Code de l'éducation reconnait la responsabilité des établissements d’enseignement supérieur qui
+«inscrivent les étudiants en situation de handicap ou présentant un trouble de santé invalidant, dans le cadre des
+dispositions réglementant leur accès au même titre que les autres étudiants, et assurent leur formation en mettant en
+oeuvre les aménagements nécessaires à leur situation dans l'organisation, le déroulement et l'accompagnement de leurs
+études ». La présente circulaire a pour objet de préciser les droits des étudiants en situation de handicap ou avec un trouble de santé invalidant dans le cadre de leur parcours de formation dans l'enseignement supérieur.
+
+1. Les établissements concernés
+Conformément à l'article L. 123-4-2 du Code de l'éducation, tous les établissements d’enseignement supérieur publics et
+privés relevant du ministère de l’Agriculture et de la Souveraineté alimentaire, du ministère du Travail, de la Santé et des
+Solidarités, du ministère de l'Économie, des Finances et de la Souveraineté industrielle et numérique, et du ministère de
+l'Enseignement supérieur et de la Recherche, sont ainsi tenus d'inscrire et de former les étudiants en situation de handicap
+en mettant en place les aménagements nécessaires.
+L'article L. 712-3 du Code de l’éducation précise qu’il appartient au conseil d'administration des universités, d'adopter le
+schéma directeur du handicap, proposé par le conseil académique. Ce schéma directeur constitue une feuille de route
+stratégique pour l'établissement. Il vise à répondre aux enjeux d’un enseignement supérieur inclusif.
+L'article L. 712-6-1 du Code de l'éducation précise également que la Commission de la formation et de la vie universitaire
+(CFVU) du conseil académique adopte les mesures nécessaires à l'accueil et à la réussite des étudiants présentant un
+handicap ou un trouble de santé invalidant.
+La politique de l’établissement en faveur de l’accessibilité et de l'inclusion des étudiants en situation de handicap peut
+également être formalisée dans le cadre du Schéma directeur de la vie étudiante (SDVE), du Schéma directeur du
+numérique ou du Schéma directeur développement durable responsabilité sociétale et environnementale (SD DD & RSE).
+Les dispositions énoncées ci-dessus s'appliquent aux universités et peuvent également s’appliquer aux établissements de
+tous les ministères signataires de la présente circulaire.
+Un établissement accessible doit offrir à l'ensemble des étudiants la possibilité d'y accéder avec la plus grande autonomie
+possible, de circuler, de suivre les cours, d'utiliser les équipements (bibliothèque, site internet, etc.), de communiquer,
+quelles que soient les spécificités de chaque personne.
+L’accessibilité de l’enseignement supérieur pour tous doit être pensée dans toutes ses dimensions (bâti, numérique,
+pédagogique, signalétique, téléphonique, etc.) pour tous les étudiants quelles que soient leurs spécificités et quel que soit
+leur niveau et lieu d’études (y compris des sites isolés et éloignés du site principal) et leurs besoins.
+Les étudiants en situation de handicap ont la possibilité d’accéder à l'information et aux services d'accompagnement sans
+avoir à se rendre nécessairement au service handicap du site principal.
+Les établissements doivent également s'assurer de la conformité de leur communication numérique auprès de leurs usagers.
+Les aménagements physiques et les installations doivent être planifiés et exécutés de manière à faciliter l'entrée et la
+circulation des personnes en situation de handicap, en tenant compte des spécificités liées à leurs besoins.
+Ils doivent également veiller à l’accessibilité aux ressources pédagogiques, documentaires, sportives et culturelles en
+application des exigences prévues par la directive 2019/882 du 17 avril 2019 relative aux exigences en matière d’accessibilité
+applicables aux produits et services, et dans le respect de l’exception au droit d’auteur pour les personnes en situation de
+handicap prévue par le 7° de l’article L. 122-5 du Code de la propriété intellectuelle.
+2. Les étudiants concernés
+L’article L. 811-1 du Code de l’éducation indique que « les usagers du service public de l'enseignement supérieur sont les
+bénéficiaires des services d'enseignement, de recherche et de diffusion des connaissances et, notamment, les étudiants
+inscrits en vue de la préparation d'un diplôme ou d'un concours, les personnes bénéficiant de la formation continue et les
+auditeurs ».
+Un étudiant est défini, conformément à l’article L. 123-4 du Code de l’éducation comme une personne inscrite dans un
+établissement d'enseignement supérieur pour suivre une formation initiale, qu'il s'agisse d'une formation théorique ou
+pratique. Il peut également être engagé dans un processus d'apprentissage pour acquérir des compétences professionnelles
+spécifiques tout en poursuivant des études.
+Un étudiant est en situation de handicap conformément à l'article L. 114 du Code de l'action sociale et des familles : «
+Constitue un handicap toute limitation d'activité ou restriction de participation à la vie en société subie dans son
+environnement par une personne en raison d'une altération substantielle, durable ou définitive d'une ou plusieurs fonctions
+physiques, sensorielles, mentales, cognitives ou psychiques, d'un polyhandicap ou d'un trouble de la santé invalidant ».
+La Convention internationale relative aux droits des personnes handicapées définit une personne handicapée : « des
+personnes qui présentent des incapacités physiques, mentales, intellectuelles ou sensorielles durables dont l'interaction
+avec diverses barrières peut faire obstacle à leur pleine et effective participation à la société sur la base de l'égalité avec les
+autres ».
+Un étudiant en situation de handicap ne bénéficie pas systématiquement d'une reconnaissance de droits par la
+Commission des droits et de l’autonomie des personnes handicapées (CDAPH).
+Les dispositions de la présente circulaire concernent également les étudiants présentant une limitation temporaire
+d'activité pendant la durée de cette limitation temporaire d'activité.
+Les établissements peuvent étendre les dispositions de la présente circulaire aux stagiaires de la formation continue et aux
+auditeurs.
+3. L'accès à l'enseignement supérieur
+3.1 L'accès à l'offre de formation
+Toutes les personnes en situation de handicap doivent pouvoir bénéficier d'un accompagnement personnalisé leur
+permettant de choisir leur orientation académique en fonction de leurs aspirations et de leurs compétences, ainsi que de
+l'accès à tous les programmes et dispositifs disponibles pour l'ensemble des étudiants. Sur la base de l’égalité entre tous les
+étudiants et du principe de non-discrimination, aucune formation ne peut être interdite à une personne en raison de sa
+situation de handicap. Tout établissement s’engage à refuser tout acte discriminatoire afin de rendre accessible la
+formation à tous et conformément aux articles L. 225-1 à 225-4 du Code pénal.
+esr.gouv.fr BO n° 28 8
+3.2 Les dispositifs d'accompagnement à l'orientation et la réorientation
+L'orientation au lycée est inscrite notamment dans la loi n° 2018-166 du 8 mars 2018 relative à l'orientation et à la réussite
+des étudiants. La transition entre l'enseignement scolaire et supérieur est encadrée par divers dispositifs d'orientation
+visant à faciliter le parcours des étudiants. Parmi les dispositifs d’aide à la réussite (circulaire n° 2013-0012 du 18 juin 2013), le
+dispositif Cordées de la réussite établit des partenariats entre établissements du secondaire et d'enseignement supérieur
+pour lutter contre l'autocensure et susciter l'ambition scolaire. Il peut intégrer des dispositifs spécifiques pour les étudiants
+en situation de handicap.
+3.3 La mise à disposition des informations
+Des informations sur les parcours de formation vers et dans l'enseignement supérieur pour les élèves et étudiants en
+situation de handicap sont disponibles sur l’ensemble des sites internet nationaux et particulièrement sur le site
+d’information officiel Mon parcours handicap.
+Au sein des établissements publics, ainsi que dans les Centres d'information et d'orientation (CIO), les psychologues de
+l’Éducation nationale (PsyEN), de la spécialité « éducation, développement et conseil en orientation scolaire et
+professionnelle » facilitent l'accès à l'information et assurent un conseil en matière d'orientation des futurs bacheliers et de
+leur famille. La circulaire n° 2017-079 du 28-4-2017- NOR : MENE1712350C précise que ces personnels interviennent auprès
+des élèves en situation de handicap.
+Certaines régions académiques disposent d’un réseau de psychologues de l'éducation nationale dédié aux jeunes malades
+ou en situation de handicap, ainsi qu'à leurs familles. Les élèves sont conseillés et accompagnés pour élaborer le projet de
+formation et projet professionnel adapté à leurs besoins et appétences.
+Sauf disposition contraire, « les universités participent à la phase d'orientation qui précède l'émission de ses voeux. À ce
+titre, elles prennent part aux dispositifs diversifiés d'information, d'orientation et de réorientation tels que les semaines
+d'orientation organisées par les lycées ». Des événements ponctuels sont proposés lors de journées portes ouvertes ou de
+salons. Les services et référents handicap de l’établissement d’inscription envisagé sont en lien avec les rectorats (et
+notamment l’enseignant référent le cas échéant), les services et centres d’information et d’orientation des lycées et les
+partenaires associatifs.
+3.4 L'accès à la formation en fonction du cycle d'études
+Conformément à l'article L. 612-3 du Code de l'éducation, le premier cycle, est ouvert à tous les titulaires du baccalauréat
+et à ceux qui ont obtenu l'équivalence ou la dispense de ce grade en justifiant d'une qualification ou d'une expérience
+jugées suffisantes et permet l'inscription dans des formations via une plateforme nationale, Parcoursup.
+L'article D. 612-1-9-1 du Code de l’éducation précise que, sur cette plateforme, une fiche de liaison est mise à la disposition
+des candidats en situation de handicap ou présentant un trouble de santé invalidant pour faciliter leur accès et leurs
+conditions d’accueil dans les formations du premier cycle de l'enseignement supérieur. Cette fiche présente les
+aménagements et adaptations dont le futur bachelier a bénéficié dans son parcours antérieur afin d’organiser l’évaluation
+de ses besoins dans son futur établissement.
+Si le candidat le souhaite, elle est communiquée à l’établissement lorsque le futur étudiant accepte la proposition
+d’admission qui lui est faite.
+Concernant le second cycle, l'article D. 612-36-2 du Code de l’éducation précise que l’accès en master se fait également via
+une plateforme nationale, Mon Master. Les candidats peuvent signaler une situation de handicap et préciser leurs besoins
+afin de favoriser la continuité de leurs aménagements une fois admis dans la formation. La situation de handicap n’est pas
+connue des formations au moment de l’examen des candidatures et ne saurait être un critère d’admission. L’étudiant peut
+toutefois préciser qu’il a bénéficié d’aménagements d’études (par exemple un étalement de la formation) sans avoir à
+justifier de la durée de son cursus en premier cycle.
+Conformément à l'arrêté du 25 mai 2016 fixant le cadre national de la formation et les modalités conduisant à la délivrance
+du diplôme national de doctorat, les écoles doctorales mettent en place une politique d'admission transparente basée sur
+des critères explicites, fournissant aux étudiants des informations détaillées sur les conditions d'accès, les compétences
+requises, les opportunités de financement et les mesures spécifiques pour les personnes en situation de handicap, le cas
+échéant.
+Les formations d'ingénieur, conformément aux articles L. 642-1 et suivants du Code de l'éducation. intègrent également des
+critères spécifiques liés à l’accompagnement des étudiants en situation de handicap, conformément au référentiel
+d'accréditation de la Commission des titres d’ingénieurs (CTI).
+La réforme d'accès aux formations de santé, introduite par la loi du 24 juillet 2019 relative à l’organisation et à la
+transformation du système de santé, propose plusieurs parcours permettant d’accéder à la deuxième ou troisième année
+du premier cycle des formations de médecine, de pharmacie, d'odontologie et de maïeutique (MPOM). L'accès à ces
+formations se fait via Parcoursup, avec des critères d'admission visant à diversifier les profils.
+3.5 Le droit au réexamen d'une candidature
+3.5.1 Pour une formation de 1er cycle de Parcoursup
+Selon l'article D. 612-1-29 et 30 du Code de l’éducation, lorsque la demande de réexamen de la candidature est motivée par
+la situation de handicap ou l'état de santé du candidat, la commission régionale d'accès à l'enseignement supérieur (CAES)
+prend en considération divers éléments tels que les besoins d'accompagnement, de compensation, de soins et de transport
+du candidat, ainsi que la reconnaissance de sa situation de handicap, le cas échéant, et les mesures d'accessibilité mises en
+place par les établissements dispensant les formations souhaitées.
+Lorsque la demande est justifiée, l’autorité académique propose une inscription dans une ou plusieurs des formations
+demandées, ou dans une autre formation correspondant aux acquis de la formation antérieure du candidat, de ses
+compétences et de son projet et permettant de répondre à ses besoins spécifiques.
+Après accord du candidat dans les mêmes conditions que celles prévues à l'article D. 612-1-24, le recteur de région
+esr.gouv.fr BO n° 28 9
+académique prononce son inscription dans une formation du premier cycle. Le recteur de région académique procède à
+cette inscription en lien avec l'autorité dont relève l'établissement lorsque la formation retenue est dispensée par un
+établissement ne relevant pas des ministres chargés de l'éducation nationale, de l'enseignement supérieur ou de
+l'agriculture. Lorsque la formation retenue est dispensée par un établissement relevant du ministre chargé de l'agriculture,
+le directeur régional de l'alimentation, de l'agriculture et de la forêt procède à l'inscription du candidat.
+En vertu de l'article D. 612-1-8 du Code de l’éducation, dès l'inscription sur la plateforme et tout au long du déroulement de
+la procédure nationale, l'adresse de référence des candidats lycéens scolarisés dans des établissements français est celle du
+domicile de leurs représentants légaux. Un changement de domicile peut être pris en considération dans des circonstances
+spécifiques, notamment dans le cas de situations exceptionnelles liées à l'état de santé ou au handicap du candidat. Les
+demandes de changement de domicile doivent être soumises dans les délais fixés par le calendrier établi conformément à
+l'article D. 612-1-2 du même code.
+3.5.2 Pour une formation de 2d cycle dans Mon Master
+Selon l'article D. 612-36-3-1 du Code de l’éducation, au vu de circonstances exceptionnelles liées à son état de santé ou à
+son handicap, un étudiant qui n'a reçu aucune réponse positive à ses candidatures en première année d'une formation
+conduisant au diplôme national de master et qui n'est pas placé sur liste d'attente peut demander au recteur de région
+académique un réexamen de ses candidatures à l’entrée en master. Pour appuyer sa demande, il doit fournir des
+documents complémentaires, qui seront évalués confidentiellement par les services du recteur de région académique,
+notamment en lien avec le médecin conseiller technique du recteur. Si la demande est jugée fondée, le recteur propose au
+moins trois admissions dans des formations en cohérence avec le projet de l’étudiant, en tenant compte des besoins
+spécifiques de l'étudiant. À compter de la notification de ces propositions, l'étudiant dispose d'un délai de huit jours pour
+donner son accord à l'une de ces propositions. S'il en accepte une, le recteur prononce son inscription dans la formation
+souhaitée, en lien avec l'établissement concerné, sous réserve du respect des critères d'inscription établis. Le recteur de
+région académique peut aller jusqu’à prononcer l’inscription en master des étudiants concernés sans que l’accord préalable
+du chef d’établissement ne soit requis.
+4. L'inscription dans l'enseignement supérieur
+Les démarches liées aux inscriptions administratives et pédagogiques dans les établissements d’enseignement supérieur
+sont définies par le Code de l’éducation, notamment dans les articles D. 612-2 à D. 612-18. L'inscription pédagogique
+permet à l'étudiant, avec le soutien du responsable de la formation, de personnaliser son parcours d’études en fonction de
+ses objectifs académiques et professionnels en prenant en compte les aménagements nécessaires liés à sa situation.
+Il revient à l'autorité administrative compétente de fixer les échéances pour traiter les demandes d’inscription et
+d'aménagement d'études soumises par les étudiants. Ces demandes tiennent compte des caractéristiques de la formation
+et des besoins de l’étudiant, et peuvent s’appuyer si nécessaires sur les recommandations du médecin désigné par la
+CDAPH (en général le médecin du service de santé étudiante) et l'avis de l'équipe plurielle, lorsqu’il est nécessaire que celle-ci
+soit réunie. L'étudiant est informé de ces décisions.
+Ce calendrier des opérations d’inscription, comme indiqué par l’article D. 612-6, est établi annuellement par le chef de
+l’établissement.
+Les modalités organisationnelles, en particulier le calendrier, et les règles de protection du secret médical, doivent être
+clairement communiquées aux étudiants en début d’année universitaire et affichées sur les lieux d’enseignement.
+Le changement d'établissement en cours de cursus
+Les modalités de transfert et de changement d'établissement sont définies à l'article D. 612-8 du Code de l’éducation. Afin
+de garantir la continuité des aménagements et de sécuriser le parcours de l’étudiant en situation de handicap, les
+informations relatives aux aménagements définis dans l’établissement d’origine peuvent être transmises, avec l’accord de
+l’étudiant, à l’établissement d’accueil. La portabilité des aménagements peut être accordée par l’établissement d’accueil.
+5. L'accompagnement de l'étudiant en situation de handicap
+5.1 La procédure de demande d'aménagements
+L’étudiant qui souhaite bénéficier d’aménagements d’études ou d’examens, s’adresse au service/référent handicap de son
+établissement d’inscription.
+Il l’informe et l’accompagne dans la formulation de sa demande, de l’expression de ses besoins jusqu’aux réponses
+concernant les aménagements
+Un avis médical du médecin désigné par la CDAPH peut porter sur les aménagements d’examen ou aménagements
+d’études. Cet avis est obligatoire pour les aménagements d’examen mais n’est pas obligatoire pour les aménagements
+d’études.
+Concernant les aménagements d’études, le service ou référent handicap de l’établissement évalue les besoins de l’étudiant
+en situation de handicap avec lui et si nécessaire en lien avec le médecin désigné par la CDAPH ou demande à réunir une
+équipe plurielle. S’il est consulté, le médecin donne un avis. Il est soumis à l'autorité administrative compétente qui émet
+une décision d’aménagements et en informe l’étudiant.
+La procédure pour bénéficier d'aménagements d'examens implique une demande formulée par le candidat à un médecin
+désigné par la CDAPH, conformément à l'article D. 613-27 du Code de l'éducation et la circulaire relative aux adaptations et
+aménagements des épreuves d'examen et de concours pour les candidats en situation de handicap ou avec un trouble de
+santé invalidant du 6 février 2023.
+Le médecin désigné par la CDAPH émet un avis portant sur les besoins de l’étudiant, sous couvert du secret médical,
+conformément à l’article R. 4127-4 du Code de la santé publique qui prévoit que « le secret professionnel institué dans
+l'intérêt des patients s'impose à tout médecin dans les conditions établies par la loi. Le secret couvre tout ce qui est venu à
+la connaissance du médecin dans l'exercice de sa profession, c'est-à-dire non seulement ce qui lui a été confié, mais aussi ce
+qu'il a vu, entendu ou compris ». Le médecin désigné par la CDAPH, ou service de santé étudiante, travaille en étroite
+coopération avec le service ou référent handicap de l’établissement.
+Dans les établissements du second degré dispensant de formations post bac, les étudiants inscrits dans une formation
+relevant de l’enseignement supérieur peuvent bénéficier d’aménagements d’examens selon les dispositions propres à ces
+formations. Ils peuvent bénéficier d’aménagements d’études conformément au circuit précité sur décision du chef
+d’établissement ou disposer d’un projet personnel de scolarisation (PPS).
+5.2 L'organisation de la prise en compte des besoins de l'étudiant en situation de handicap
+Les établissements créent un service ou mettent à disposition des personnels en charge d’accompagner les étudiants en
+situation de handicap. Il peut s’agir par exemple d’un service commun spécifique, composé d’un référent handicap, de
+chargés d’accompagnements des étudiants et de personnel dans chaque composante, désignés pour faciliter le suivi des
+parcours.
+Si la situation de l’étudiant le nécessite, une équipe plurielle réunissant les professionnels de l'établissement (service
+handicap, service de santé étudiante, enseignant ou responsable de formation, service en charge de l'orientation, de
+l'insertion professionnelle, des sports, de la culture, etc.) et l'étudiant, peut être réunie pour s’accorder sur la mise en oeuvre
+des aménagements et adaptations pédagogiques nécessaires à sa poursuite d’études. Tout partenaire extérieur jugé
+nécessaire peut être sollicité : proche aidant, professionnel médical ou du médico-social accompagnant l’étudiant, MDPH,
+association, collectivités, centres régionaux des oeuvres universitaires et scolaires (Crous), etc. L'équipe plurielle se réunit à
+l'initiative du référent ou service handicap de l'établissement, de l'équipe pédagogique ou du médecin désigné par la
+CDAPH et veille à la mise en oeuvre par tous les acteurs concernés de la décision arrêtée par l'autorité administrative. Elle
+est placée sous la responsabilité du médecin désigné par la CDAPH et de la personne en charge de la mise en oeuvre de la
+politique du handicap de l'établissement.
+5.3 Les aménagements
+Les articles D. 611-1 à D. 614-1 du Code de l’éducation relatifs à l’organisation générale des enseignements définissent
+l’ensemble des modalités pédagogiques relatives aux aménagements d’études. Ces aménagements ne sont en aucun cas
+exclusifs les uns des autres et doivent être pensés en complémentarité.
+Un aménagement raisonnable, tel que défini par l’article 2 de la convention internationale relative aux droits des personnes
+handicapées (CIDPH) se réfère aux « modifications et ajustements nécessaires et appropriés n’imposant pas de charge
+disproportionnée ou indue apportés, en fonction des besoins dans une situation donnée, pour assurer aux personnes
+handicapées la jouissance ou l’exercice, sur la base de l’égalité avec les autres, de tous les droits de l’homme et de toutes les
+libertés fondamentales ». Dans le cadre du parcours de l’étudiant, les aménagements raisonnables sont les ajustements et
+les modifications nécessaires et appropriées, compatibles avec la situation de l’étudiant qui ne créent pas de charges
+disproportionnées pour l’usager et l’organisme concerné. Ils sont mis en oeuvre tout au long du parcours de formation des
+étudiants en situation de handicap.
+5.3.1 Les aménagements pédagogiques
+Sauf disposition contraire, l’article 12 de l’arrêté du 22 janvier 2014 fixant le cadre national des formations conduisant à la
+délivrance des diplômes nationaux de licence, de licence professionnelle et de master précise que les « modalités
+pédagogiques spéciales portent, en fonction des besoins, sur l'emploi du temps, les modalités de contrôle des
+connaissances et des compétences, la durée du cursus d'études ou peuvent prendre toute autre forme définie par les
+établissements qui peuvent, en particulier, avoir recours à l'enseignement à distance et aux technologies numériques. »
+Pour les étudiants de licence, ces aménagements sont intégrés au contrat pédagogique pour la réussite étudiante défini
+dans l’arrêté du 30 juillet 2018 relatif au diplôme national de licence qui précise la personnalisation des parcours de
+formation avec l’objectif de favoriser la réussite de tous les étudiants au début de leurs études supérieures.
+5.3.2 Les modalités de formation en présentiel ou à distance
+Les étudiants en situation de handicap peuvent avoir accès à une formation en présentiel, à distance ou un format hybride
+afin de répondre à leurs besoins particuliers, conformément aux articles D. 611-10 à D. 611-12 du Code de l’éducation qui
+précisent les différentes formes d’enseignement et indiquent les modalités de suivi personnalisé et les modalités de
+validation des enseignements.
+5.3.3 Les aménagements relatifs aux modalités de contrôle des connaissances ou de soutenance
+La circulaire relative aux adaptations et aménagements des épreuves d'examen et de concours pour les candidats en
+situation de handicap ou avec un trouble de santé invalidant du 6 février 2023 précise l’ensemble des mesures permettant
+aux candidats en situation de handicap de bénéficier des aménagements d’examen auxquels ils peuvent prétendre.
+5.3.4 Le principe de portabilité des aménagements d'examen et de concours
+Afin de faciliter la transition entre le secondaire et le supérieur, les dispositions relatives à la portabilité des aménagements
+du baccalauréat pour les concours sont précisées dans l’article D. 613-27-2 du Code de l’éducation.
+Le principe de portabilité des aménagements d’examen au sein d’une formation qui conduit à un diplôme ou un titre est
+garanti et encadré par l’article D. 613-27-1.
+5.3.5 L'aide humaine
+L’emploi étudiant
+L’article D. 811-1 du Code de l'éducation précise qu’un étudiant en situation de handicap peut bénéficier du fait de ses
+besoins particuliers « d’assistance et accompagnement » assuré dans le cadre des emplois étudiants conformément à
+l'article L. 811-2 du Code de l'éducation.
+Afin de faciliter le suivi des enseignements, une aide à la prise de notes peut être organisée et assurée par une tierce
+personne. La prise de notes est de préférence assurée par un autre étudiant de la formation dont les missions et la
+rémunération peuvent être définies dans le cadre d’un emploi étudiant.
+Un emploi étudiant peut également être dédié à toute autre activité de soutien à l’étudiant en situation de handicap.
+Les étudiants en charge du tutorat d'un étudiant en situation de handicap peuvent recevoir une formation dispensée par le
+service handicap leur permettant de répondre aux besoins individuels spécifiques des étudiants qu’ils accompagnent. Ce
+tutorat peut faire l’objet d’une évaluation commune de la composante et du service handicap.
+Le tutorat par un enseignant
+Par ailleurs, un tuteur peut être désigné parmi le corps des enseignants-chercheurs ou des enseignants du second degré
+affectés dans l'enseignement supérieur pour assurer du soutien disciplinaire conformément à l'article L. 952-3 du Code de
+l'éducation qui définit les missions de l'enseignant-chercheur et à la note de service du 30 juin 2021.
+L’aide aux déplacements et pour la vie de campus
+Afin de faciliter les déplacements de l’étudiant en situation de handicap au sein de l’établissement et de favoriser sa
+participation à la vie de campus, un accompagnement par une tierce personne, de préférence un autre étudiant de la
+formation ou de l’établissement, peut être organisée. Cette aide peut être assurée bénévolement ou être rémunérée dans
+le cadre d’un emploi étudiant. Les missions de l’étudiant accompagnant sont clairement définies par le service en charge de
+l’accompagnement des étudiants en situation de handicap. Ces missions peuvent en particulier concerner les déplacements
+sur le campus, l’accès aux activités physiques et sportives et activités culturelles. Elles ne peuvent en aucun cas concerner
+des aides aux gestes de la vie quotidienne (alimentation, soins) qui doivent être assurées par un professionnel du secteur
+médico-social ou proche aidant dont la nécessité est reconnue par la MDPH.
+L’accompagnement par des professionnels extérieurs à l’établissement
+Le recours à des personnes extérieures en complément des aides humaines précédemment mentionnées est possible.
+Toutefois et afin de garantir un accompagnement adapté, il est recommandé que ces intervenants soient choisis en tenant
+compte de leur expertise, de leur formation éventuelle dans le domaine du handicap, et de leur capacité à répondre aux
+besoins spécifiques de l'étudiant concerné.
+Pour les temps pédagogiques, les aides humaines précitées doivent être priorisées afin de favoriser une aide entre pairs et
+une inclusion des étudiants au sein de leur formation. Pour les temps de la vie quotidienne, l’accompagnement par un
+intervenant externe ou un accompagnant des élèves en situation de handicap (AESH) est possible. Des AESH peuvent être
+recrutés, conformément à l’article L. 917-1 du Code de l’éducation, lorsque la CDAPH a reconnu cette aide nécessaire. Des
+prestataires externes, intervenants d'association peuvent également intervenir pour assurer ces missions.
+Les étudiants peuvent bénéficier de l’intervention d’un service médico-social (Sessad – Service d’éducation spéciale et de
+soins à domicile ; SAVS – Service d’accompagnement à la vie sociale ; Samsah – Service d’accompagnement médico-social
+pour adultes handicapés) ou d’une prestation en milieu ordinaire d’un établissement médico-social) après notification de la
+CDAPH. Ces interventions visent à garantir la continuité du parcours de l'étudiant.
+Pour les étudiants dont l'aide aux gestes de la vie quotidienne est assurée par un proche aidant et reconnue dans le cadre
+de la prestation de compensation du handicap (PCH), l'accès à l'établissement est possible et doit être facilité, comme
+pour les autres professionnel.
+5.4 La décision de l'autorité administrative : le Plan d'accompagnement de l'étudiant en situation de handicap
+(PAEH)
+L'autorité administrative tient compte des avis médicaux et pédagogiques pour prendre des décisions concernant les
+aménagements nécessaires à la réussite des étudiants en situation de handicap. Le Plan d'accompagnement de l'étudiant
+en situation de handicap (PAEH) est un terme générique regroupant les divers dispositifs permettant de formaliser par écrit
+les aménagements décidés. Ce dispositif permet à l’étudiant en situation de handicap de bénéficier des aménagements
+nécessaires en fonction de ses besoins pour suivre ses études supérieures (matériel adapté, preneur de notes, temps
+supplémentaire, etc.). Il s’adresse aussi bien à ceux qui entrent à l'université avec un projet personnalisé de scolarisation
+(PPS) ou ayant bénéficié dans l’enseignement scolaire d’un autre plan ou projet qu'à ceux qui n'en ont pas. Il peut être
+révisé en fonction de l’évolution des besoins de l’étudiant. Il est transmis, avec l’accord de l’étudiant, à l’ensemble des
+services de l’établissement qui sont mobilisés pour sa mise en place (équipe administrative, équipe pédagogique, équipe
+enseignante, service universitaire des activités physiques et sportives [SUAPS], etc.). Le référent handicap/service handicap
+de l’établissement veille à son application pleine et entière par l’ensemble des acteurs mobilisés.
+Au sein des établissements du secondaire, les étudiants en situation de handicap inscrits dans une formation de
+l’enseignement supérieur et ne bénéficiant pas d’un projet personnalisé de scolarisation (PPS) peuvent bénéficier d’un PAEH
+afin de formaliser les aménagements de formations et d’études répondant à leurs besoins. Le PAEH permet la continuité du
+plan d’accompagnement personnalisé (PAP) ou du projet d’accueil individualisé (PAI) dont ils bénéficiaient dans le
+secondaire. Le PAEH prend la forme souhaitée par l’établissement du secondaire et est établi conformément au circuit
+défini dans la partie 5.1.
+6. La mobilité internationale
+Sauf disposition contraire, l’article 13 de l’arrêté du 22 janvier 2014 fixant le cadre national des formations conduisant à la
+délivrance des diplômes nationaux de licence, de licence professionnelle et de master énonce les principes concernant les
+périodes d'études à l'étranger, nécessitant une convention entre l'établissement d'origine, l'établissement d'accueil, et
+l'étudiant. Les séjours peuvent inclure des périodes de formations professionnelles et doivent être intégrées dans le
+parcours de formation, avec approbation préalable des responsables pédagogiques. Les crédits sont attribués
+conformément aux dispositions mentionnées dans la convention. Celle-ci précise également les adaptations et
+aménagements proposés.
+Dans le cadre du programme Erasmus+, les étudiants en situation de handicap peuvent recevoir des aides spécifiques à la
+mobilité, complétées par des soutiens des collectivités territoriales.
+Les étudiants bénéficiaires de l’allocation pour adulte handicapé, dont les principes sont présentés ci-après, peuvent
+continuer à percevoir leur allocation en vertu de l'article R. 821-1 du Code de la sécurité sociale qui prévoit des exceptions
+pour des séjours de courte durée ou des séjours plus longs justifiés pour des études, l'apprentissage d'une langue étrangère
+ou le perfectionnement professionnel.
+Toute mobilité européenne offre également une couverture sociale.
+Des postes diplomatiques disposent de référents facilitant la mobilité des étudiants, leur installation dans le pays d’accueil
+et leur offrant un accompagnement adapté à leurs besoins.
+Concernant la mobilité d’étudiants étrangers en France, les établissements labellisés « Bienvenue en France » répondent à
+des critères incluant la prise en compte des besoins particuliers des étudiants internationaux en situation de handicap.
+7. La vie étudiante
+Les établissements et les opérateurs nationaux veillent à améliorer la qualité de vie des étudiants en situation de handicap
+et à permettre leur participation pleine et entière aux évènements concernant l'ensemble de la vie étudiante.
+Afin de permettre l’accessibilité des évènements liés à la vie étudiante, les établissements doivent l’avoir anticipé dès leur
+conception veiller à ce que toutes les actions liées à la vie étudiante soient accessibles.
+7.1 La contribution à la vie étudiante et de campus
+La contribution à la vie étudiante et de campus (CVEC) est une taxe affectée prévue par la loi n° 2018-166 du 8 mars 2018
+relative à l'orientation et à la réussite des étudiants (ORE). Elle est destinée à financer des actions de vie étudiante telles que
+définies dans la circulaire relative à la programmation et au suivi des actions financées par la contribution vie étudiante et
+de campus.
+Les fonds recueillis sont destinés à l'ensemble des étudiants. Une partie de ce fond peut soutenir des initiatives en faveur
+des étudiants en situation de handicap et contribuer à améliorer l’accessibilité de la vie de campus et vie étudiante et à
+dynamiser leur participation à la vie universitaire.
+7.2 Le logement
+Conformément aux dispositions du Code de l'éducation, les étudiants ont la possibilité d'accéder à des logements
+universitaires gérés par différents organismes publics et privés tels que les Crous, les établissements d'enseignement
+supérieur, les organismes d'habitat social et des opérateurs privés. Les logements du Crous sont attribués en fonction de
+critères sociaux et de l'éloignement du lieu d'études du domicile familial.
+Conformément à l'article R. 822-31 du Code de l'éducation, les logements universitaires sont alloués en prenant en
+considération la situation personnelle et financière des étudiants, incluant la qualité de boursier, la composition de la
+famille, les revenus de l'étudiant, et l'éloignement du lieu d'études. Les Crous proposent des logements adaptés aux
+étudiants en situation de handicap dans leurs résidences universitaires. Ces logements sont spécialement conçus pour
+répondre aux besoins des étudiants en situation de handicap, en assurant l'accessibilité et en intégrant des équipements
+adaptés. Les étudiants doivent soumettre leur demande le plus tôt possible via le dossier social étudiant (DSE) sur le site
+Mes services étudiants et sur le site spécifique de réservation de logements adaptés. Si aucun logement adapté aux besoins
+de l’étudiant n’est attribué, les services sociaux du Crous peuvent accompagner l’étudiant dans sa recherche.
+7.3 La restauration
+Les Crous proposent diverses options de restauration universitaire, telles que des restaurants et des cafétérias, avec des
+dispositifs adaptés tels que des cartes coupe-files pour faciliter l'accès aux étudiants en situation de handicap. Il offre
+également des espaces de restauration libres, parfois équipés de micro-ondes en libre-service.
+Les étudiants en situation de handicap peuvent bénéficier d'aides au repas notamment via la prestation de compensation
+du handicap (PCH). Pour mobiliser ces aides, l'étudiant peut contacter la maison départementale des personnes
+handicapées (MDPH) de son lieu de domicile. À noter cependant que les réponses aux besoins de compensation par les
+MDPH ne se font qu’en complément des réponses de droit commun en matière d’accessibilité et qui s’appliquent à tout
+établissement recevant du public.
+7.4 La santé
+En complément de l’action consistant à favoriser la mise en place d’aménagements de formation ou d’examens adaptés à
+leurs besoins particuliers, définis au 5.1 de la présente circulaire, les services de santé étudiante (SSE) assurent des missions
+au bénéfice de l’ensemble des étudiants. L’article 8 de la loi du 2 janvier 2002 rénovant l’action sociale et médico-sociale,
+l’article 3 de la loi du 4 mars 2002 relative aux droits des malades et à la qualité du système de santé, et l’article L. 161-37 du
+Code de la sécurité sociale établissent un cadre général pour l’accès aux soins et aux services dédiés.
+L'article D. 714-20 du Code de l'éducation dispose en effet que chaque établissement organise, conformément aux
+dispositions de l'article L. 831-1 du même code, une protection médicale au bénéfice de ses étudiants. À cet effet, un
+service de santé étudiante est mis à la disposition des usagers. Il prend en charge tous les étudiants.
+Les articles D. 714-20 à D714-27 du Code de l'éducation définissent les missions et actes proposés par le SSE que le service
+soit ou non, centre de santé. Les services de santé étudiante sont chargés d’assurer la protection médicale des étudiants et
+exercent trois missions principales : ils mettent en oeuvre des actions de prévention et de promotion de la santé, favorisent
+l’accès aux soins de premier recours des étudiants et organisent une veille sanitaire. Le médecin du SSE peut être le
+médecin traitant de l'étudiant, permettant ainsi un accès plus aisé aux droits et aux soins. Il peut l’orienter vers une offre de
+soin adaptée ou des activités favorisant son bien-être et sa santé mentale et physique.
+7.5 La culture
+Conformément à l'article D. 714-94 du Code de l’éducation, le service universitaire en charge de l’action artistique et
+culturelle s'engage à promouvoir les actions culturelles auprès de tous les étudiants. En favorisant l'accès à une diversité
+d'expressions artistiques et culturelles, il encourage le développement de pratiques artistiques et culturelles encadrées,
+offrant ainsi aux étudiants des opportunités de s'impliquer activement dans des activités variées.
+Le partenariat entre ce service et le service handicap permet de faciliter cet accès aux étudiants en situation de handicap en
+prenant en compte leurs besoins spécifiques.
+7.6 Le sport
+Conformément à l'article L. 624-2 du Code de l’éducation, les établissements d'enseignement supérieur sont tenus
+d'adapter leurs programmes d'éducation physique et sportive pour garantir l’accessibilité de leur offre aux étudiants en
+situation de handicap. En complément d’une réflexion sur l’accessibilité des activités proposées, le service en charge des
+activités physiques et sportives peut avoir une offre spécifique adaptée et signalisée comme telle. Il peut solliciter des
+professionnels spécialistes du parasport ou se rapprocher d’associations spécialisées. Les enseignants et éducateurs sportifs
+sont formés pour leur faciliter l'accès à des activités physiques ordinaires ou adaptées, favorisant ainsi une pratique
+régulière et inclusive.
+L'article D714-42 du même code précise que le service universitaire ou interuniversitaire est chargé de promouvoir la
+pratique des activités physiques et sportives parmi les étudiants, en tenant compte des besoins des étudiants en situation
+de handicap. Les missions principales du service incluent l'organisation, le développement et l'encadrement des activités
+sportives pour les étudiants, ainsi que la promotion du sport comme vecteur de santé et de bien-être. De plus, le service
+facilite la coordination des dispositifs d'accueil et d'accompagnement des étudiants sportifs de bon ou de haut niveau, tout
+en favorisant leur réussite académique. La gestion des équipements sportifs de l'université est assurée par le service
+commun dédié, permettant ainsi un accès élargi à ces infrastructures pour les étudiants et le personnel universitaire.
+Le partenariat entre ce service et le service handicap permet de faciliter l’accès à l’activité physique et sportive aux
+pratiques culturelles, des étudiants en situation de handicap.
+Afin de favoriser l’inclusion des étudiants en situation de handicap ainsi que leur bonne santé physique et mentale, la
+pratique sportive est abordée par la mission handicap et le service de santé étudiante lors de l’évaluation des besoins
+spécifiques.
+7.7 La vie citoyenne
+Conformément aux dispositions de l'article D. 719-3 du Code de l’éducation, il incombe au président ou au directeur de
+l'établissement d'organiser les élections en prenant toutes les mesures nécessaires pour permettre l’accessibilité et la
+participation effective des étudiants en situation de handicap. Pour garantir une démarche inclusive, un comité électoral
+consultatif, comprenant des représentants des personnels et des usagers, est constitué avec la participation de chaque liste
+représentée au conseil d'administration de l'établissement, ainsi qu'un représentant désigné par le recteur de la région
+académique.
+De plus, l'accessibilité doit être assurée pour permettre aux personnes en situation de handicap de voter et de siéger dans
+les instances démocratiques, qu'elles soient candidates ou élues.
+7.8 Le transport
+Le transport relève des compétences du conseil départemental, sauf en Île-de-France. Conformément à l’article R. 3111-24
+du Code des transports, « les frais de déplacement exposés par les élèves handicapés qui fréquentent un établissement
+d'enseignement général, agricole ou professionnel, public ou privé placé sous contrat, en application des articles L. 442-5 et
+L. 442-12 du Code de l'éducation, ou reconnu aux termes du livre VIII du Code rural et de la pêche maritime, et qui ne
+peuvent utiliser les moyens de transport en commun en raison de la gravité de leur handicap, médicalement établie, sont
+pris en charge par le département du domicile des intéressés. »
+7.9 Les aides financières et prestations spécifiques pour les étudiants en situation de handicap
+En application des dispositions de l'article L. 821-1 du Code de l'éducation, l'État peut attribuer des aides financières aux
+étudiants inscrits en formation initiale. Ces aides sont destinées à favoriser l'accès à l'enseignement supérieur, à améliorer
+les conditions d'études et à contribuer à la réussite des étudiants. Les collectivités territoriales et toutes personnes morales
+de droit public ou privé peuvent instituer des aides spécifiques, notamment pour la mise en oeuvre de programmes de
+formation professionnelle.
+Conformément à l’article L. 822-1 du Code de l’éducation, le réseau des oeuvres attribue des aides et des bourses sur
+critères sociaux en vue d’aider les étudiants à poursuivre leurs études supérieures. Les critères d'attribution comprennent
+notamment le revenu et le patrimoine de l’étudiant ou de ses parents, le nombre d'enfants à charge et leur situation
+familiale. Les étudiants disposant d’une ouverture de droits notifiée par la Commission des droits et de l’autonomie des
+personnes handicapées (CDAPH) bénéficient de 4 points de charge supplémentaires. Trois droits annuels supplémentaires
+sont attribués aux étudiants en situation de handicap qui disposent d'une ouverture de droits notifiée par la Commission
+des droits et de l'autonomie des personnes handicapées.
+Chaque année, une circulaire fixe les modalités d’attribution des bourses d’enseignement supérieur sur critères sociaux, des
+aides au mérite et des aides à la mobilité internationale.
+7.10. L'allocation aux adultes handicapés (AAH)
+L’AAH prévue à l'article L. 821-1 du Code de la sécurité sociale est accordée par la commission des droits et de l'autonomie
+des personnes handicapées (CDAPH). Elle garantit un revenu minimum aux personnes en situation de handicap pour
+couvrir les frais du quotidien.
+L'AAH peut être versée par la Caisse d'allocations familiales (Caf) ou la Mutualité sociale agricole (MSA). La maison
+départementale des personnes handicapées (MDPH) évalue certains critères, notamment le taux d'incapacité, pour
+déterminer l'éligibilité à cette allocation.
+L'AAH peut être accordée si le taux d'incapacité est supérieur ou égal à 80 %, ou s'il se situe entre 50 % et moins de 80 %
+avec une reconnaissance d'une restriction durable pour l'accès à l'emploi en raison du handicap.
+D'autres conditions telles que la résidence, l'âge et les ressources sont également prises en compte.
+L'AAH est cumulable avec les bourses sur critères sociaux.
+7.11. La prestation de compensation du handicap (PCH)
+Conformément aux articles L. 245-1 à L245-14 du Code de l’action sociale et des familles, la PCH est une prestation qui peut
+être versée en nature ou en espèces et qui tient compte des besoins de compensation de la personne et de son projet de
+vie. Elle est attribuée par la commission des droits et de l’autonomie des personnes handicapées (CDAPH). Elle est versée
+par le département.
+La PCH est destinée à financer les dépenses relevant de la vie quotidienne liées à, un besoin d’aide humaine, un besoin
+d’aides techniques, un besoin d’aménagement du logement ou du véhicule, ou des surcoûts liés aux transports, des charges
+spécifiques ou exceptionnelles liées au handicap, un besoin d’aide animalière.
+Les établissements doivent s’assurer que les professionnels qui interviennent auprès de l’étudiant pour des actes de la vie
+quotidienne aient accès sans difficulté au campus et soient si nécessaire en lien avec la structure handicap de
+l’établissement.
+8. L'insertion professionnelle
+8.1 Les dispositifs d'insertion professionnelle
+Les modalités relatives aux périodes de formation en milieu professionnel et aux stages sont précisées aux articles L. 124-1 à
+L. 124-20 du Code de l’éducation ainsi que dans la circulaire relative aux adaptations et aménagements des épreuves
+d'examen et de concours pour les candidats en situation de handicap ou avec un trouble de santé invalidant du 6 février
+2023.
+8.1.1 Les périodes de formation en milieu professionnel
+L’article L. 124-3-1 du Code de l’éducation dispose que « des périodes d'observation en milieu professionnel dans une
+entreprise, une administration ou une association, d'une durée maximale d'une semaine, peuvent être proposées, en dehors
+des semaines réservées aux cours et au contrôle de connaissances, aux étudiants de l'enseignement supérieur, en vue de
+l'élaboration de leur projet d'orientation professionnelle. Dans l'exercice de leurs compétences, les chambres consulaires
+apportent leur appui à l'organisation de ces périodes. »
+8.1.2 Les stages
+Les stages font l'objet d'une convention entre le stagiaire, l'organisme d'accueil et l'établissement d'enseignement.
+Les aménagements nécessaires doivent être prévus et peuvent faire l’objet d’une annexe à la convention de stage de
+l’étudiant. L’établissement accompagne l’étudiant dans sa recherche de stage.
+L'employeur peut s'acquitter de son obligation d'emploi : « en accueillant en stage les bénéficiaires mentionnés à l'article L.
+5212-13, quelle qu'en soit la durée, ainsi que les jeunes de plus de seize ans bénéficiaires de droits à la prestation de
+compensation du handicap, de l'allocation compensatrice pour tierce personne ou de l'allocation d'éducation de l'enfant
+handicapé qui disposent d'une convention de stage » (article L. 5212-7 du Code du travail)
+Par ailleurs, l’article L. 124-1 du Code de l’éducation indique que « l'enseignant référent prévu à l'article L. 124-2 du présent
+Code est tenu de s'assurer auprès du tuteur mentionné à l'article L. 124-9, à plusieurs reprises durant le stage ou la période
+de formation en milieu professionnel, de son bon déroulement et de proposer à l'organisme d'accueil, le cas échéant, une
+redéfinition d'une ou des missions pouvant être accomplies. »
+8.1.3 L'alternance
+Conformément à l’article L. 6231-2 du Code du travail, les centres de formations d’apprentis (CFA) disposent de référents
+handicap pour accompagner les apprentis. Le référent a pour mission de s’assurer que les apprentis en situation de handicap
+ne rencontrent pas de difficultés lors de leur formation, de leur intégration chez l’employeur ou lors de leurs
+déplacements.
+Selon les dispositions énoncées aux articles R. 6222-50 et R. 6222-51 du Code du travail, les CFA sont tenus de veiller à la
+mise en place des aménagements matériels et pédagogiques pour les étudiants en situation de handicap. Ces
+aménagements peuvent prendre la forme de formations à distance adaptées. Ils sont inscrits dans la convention de
+formation conformément à l'article L. 6353-1.
+Conformément à l’article 91 du Code général de la fonction publique et au décret n° 2020-530 du 5 mai 2020 fixant pour
+une période limitée les modalités de titularisation dans un corps ou cadre d'emplois de la fonction publique des
+bénéficiaires de l'obligation d'emploi des travailleurs handicapés à l'issue d'un contrat d'apprentissage, les étudiants en
+situation de handicap ayant effectué leur apprentissage dans la fonction publique peuvent, à titre expérimental être
+titularisés dans le corps ou cadre d'emplois correspondant à l'emploi qu'ils occupaient, sous réserve de vérification de leur
+aptitude professionnelle par une commission de titularisation. D’une durée initiale de cinq années à compter de la
+publication de la loi n° 2019-828 de transformation de la fonction publique du 6 aout 2019, la mise en oeuvre de ce
+dispositif dérogatoire a été prolongée d’une année, jusqu’au 6 août 2025 [1].
+Conformément à l’article L. 6222-2 du Code du travail les âges plafond pour signer un contrat d'apprentissage ne
+s'appliquent pas aux personnes bénéficiant d'une reconnaissance de la qualité de travailleur handicapé (RQTH).
+Il est également possible de déroger à la durée maximale du contrat d'apprentissage conformément à l'article R. 6222-46 du
+Code du travail, la durée maximale du contrat d’apprentissage peut être portée à quatre ans, contre trois ans dans le cas
+général. Le médecin du travail peut proposer un aménagement du temps de travail de l'apprenti reconnu travailleur
+handicapé (R. 6222-49-1). Certaines mesures relatives aux aménagements pédagogiques et à l’augmentation de la durée du
+contrat d’apprentissage sont également applicables aux apprentis auxquels la qualité de travailleur handicapé est reconnue
+au cours de leur apprentissage.
+8.1.4 Le contrat doctoral
+Conformément au décret n° 2009-464 du 23 avril 2009 relatif aux doctorants contractuels des établissements publics
+d'enseignement supérieur ou de recherche, les établissements sont autorisés, en vertu des dispositions de l'article L. 412-2
+esr.gouv.fr BO n° 28 15
+du Code de la recherche, à engager des étudiants inscrits en vue de la préparation d'un doctorat sur contrat dénommé
+« contrat doctoral ». Les doctorants contractuels sont recrutés par les établissements publics compétents sur un contrat
+d'une durée de trois ans pouvant être assorti d'une période d'essai de deux mois. Le contrat peut être prolongé dans
+certaines conditions notamment si le doctorant a bénéficié d'un congé de maladie d'une durée supérieure à quatre mois
+consécutifs ou d'un congé d'une durée au moins égale à deux mois faisant suite à un accident de travail. La durée de la
+préparation du doctorat est prolongée du temps égal au temps d'arrêt si l'intéressé en formule la demande.
+Les activités du doctorant contractuel peuvent inclure des missions d'enseignement, de diffusion de l'information
+scientifique et technique, ainsi que des missions d'expertise.
+Le ministère de l’Enseignement supérieur et de la Recherche (MESR) finance chaque année des contrats doctoraux réservés
+aux étudiants en situation de handicap. Toutes les candidatures transmises par les établissements sont instruites par un
+comité scientifique, composé de conseillers scientifiques de la Direction générale de l’enseignement supérieur et de
+l’insertion professionnelle (Dgesip). Pour chaque financement doctoral, l’établissement s’engage à recruter en contrat
+doctoral une ou un doctorant sur ressources propres. Chaque année, un contingent en mois de prolongation est défini par
+le ministère pour tenir compte de situations scientifiques ou personnelles spécifiques.
+D'autres initiatives telles que l'entrepreneuriat, les périodes de césure, le service civique et les emplois étudiants sont
+accessibles à tous les étudiants. Les établissements garantissent un égal accès des étudiants en situation de handicap à ces
+dispositifs afin de leur offrir les mêmes opportunités et droits que tous les étudiants.
+8.2 Les dispositifs et aides et spécifiques pour les travailleurs en situation de handicap également accessibles
+aux étudiants
+Ces aides visent à favoriser leur intégration et leur maintien dans l'emploi. Lors de périodes d'immersion en entreprise, les
+étudiants peuvent bénéficier des mêmes dispositions.
+8.2.1 La reconnaissance de la qualité de travailleur handicapé (RQTH)
+Définie par les articles L. 5213-1 à L. 5213-2-1 du Code du travail, elle permet un accès à différents dispositifs d'aides et de
+mesures spécifiques dans le cadre professionnel.
+La demande de RQTH s'effectue auprès de la maison départementale des personnes handicapées (MDPH) du lieu de
+résidence. Elle peut être déposée par la personne elle-même ou son représentant légal. Une procédure accélérée peut être
+initiée par le médecin du travail à l'aide de formulaires spécifiques. La RQTH est accordée par la Commission des droits et
+de l'autonomie des personnes handicapées (CDAPH) pour une période déterminée (un à dix ans). Elle est renouvelable, mais
+peut être attribuée à vie dans les cas où le handicap de la personne ne peut pas évoluer favorablement. Le courrier émis par
+la Commission des droits et de l'autonomie des personnes handicapées (CDAPH) précise la durée d'attribution de la RQTH
+ou indique l'absence de limitation de durée.
+Certains bénéficiaires, tels que les titulaires d'une pension d'invalidité ou de l'allocation aux adultes handicapés (AAH), sont
+dispensés de faire une demande spécifique. L'objectif de la RQTH est de faciliter l'inclusion professionnelle en offrant un
+cadre adapté aux personnes en situation de handicap. Elle ouvre la voie à divers avantages, notamment l'accès à des
+services d'orientation, des possibilités privilégiées dans le secteur public via des concours aménagés ou un recrutement
+spécifique, une obligation d'emploi pour les employeurs, une priorité d'accès à des mesures d'aides à l'emploi et à la
+formation, ainsi que des aménagements dans divers dispositifs tels que le contrat d'apprentissage ou le contrat unique
+d'insertion
+L’article 10 de la loi Pour le plein emploi du 18 décembre 2023 prévoit une équivalence RQTH pour les personnes âgées de
+15 à 20 ans, dès lors qu’ils bénéficient de l’attribution de :
+— de l’allocation d’éducation de l’enfant handicapé (AEEH) ;
+— de la prestation de compensation du handicap (PCH) ;
+— du bénéfice d’un projet personnalisé de scolarisation (PPS).
+8.2.2 L'obligation d'emploi des travailleurs handicapés (OETH)
+Définie par les articles L. 5212-1 et suivants du Code du travail, elle favorise l'insertion professionnelle des personnes en
+situation de handicap. Cette mesure impose aux employeurs publics et privés d'employer un certain pourcentage de
+travailleurs en situation de handicap, en fonction de leur effectif total. L'objectif est de favoriser l'inclusion professionnelle
+des personnes handicapées et de promouvoir l'égalité des chances dans le monde du travail. Les entreprises assujetties à
+l'OETH ont plusieurs moyens de répondre à cette obligation, notamment en embauchant des travailleurs handicapés, en
+concluant des accords de politique d’emploi et de maintien dans l’emploi de travailleurs handicapés, pour lesquels un
+agrément de l’administration a été accordé, ou en versant une contribution financière à un fonds dédié.
+La loi impose aux employeurs d’au moins 20 salariés l'emploi de travailleurs handicapés, dans une proportion de 6 % de
+leurs effectifs de salariés. Il existe plusieurs façons de s’acquitter de cette obligation, notamment en accueillant des
+personnes dans le cadre d’un stage une convention de stage doit être établie obligatoirement entre l’entreprise d’accueil et
+l’organisme de formation. Depuis l'entrée en vigueur de la loi de Transformation de la fonction publique du 6 août 2019 et
+pour une durée expérimentale de six ans, les étudiants en situation de handicap sous contrat d'apprentissage peuvent
+accéder à la titularisation dans le corps ou cadre d'emplois correspondant à leur poste occupé pendant leurs études.
+8.2.3 Des mesures d'accompagnement à l'activité professionnelle des travailleurs handicapés
+Des aides financières pour favoriser l'emploi des travailleurs handicapés, telles que contrats aidés, aides à l'apprentissage,
+primes à l'embauche, formations et reconversions professionnelles sont mises à la disposition des employeurs et des
+personnes en situation de handicap.
+L’intervention de services d’accompagnement médico-social pour le travail sur notification CDAPH avec le soutien de Cap
+emploi (pour le parcours professionnel, la recherche d'emploi et le maintien dans l'emploi) est possible. Il en est de même
+des établissements et service de réadaptation professionnelle (ESRP) qui accompagnent les personnes en situation de
+handicap dans leur projet d'insertion professionnelle (cf. annuaire sur le site de la Fédération des établissements de
+réadaptation professionnelle et de leurs organismes gestionnaires [Fagerh]).
+Les référents-handicap des employeurs privés et publics coordonnent des actions d’accompagnement des travailleurs en
+situation de handicap, de sensibilisation de l’ensemble des salariés, de mise en place d'aménagements pour favoriser
+l'intégration, assurent le maintien dans l'emploi et l'évolution professionnelle des travailleurs en situation de handicap.
+9. La procédure de recours
+En cas de contestation ou de recours, les étudiants peuvent se référer aux dispositions énoncées dans les articles L. 123-4-1
+et D. 613-26 à D. 613-30 du Code de l'éducation, qui définissent les règles relatives aux examens et aux mesures d'accueil
+des étudiants en situation de handicap. En cas de difficulté dans la mise en oeuvre des aménagements, l’étudiant en
+situation de handicap, en premier lieu, demande la réunion d’une équipe plurielle afin d’échanger sur ses besoins et la mise
+en oeuvre du PAEH le concernant.
+En cas de refus total ou partiel d'aménagements, le candidat ou son responsable légal s'il est mineur peut exercer un
+recours auprès de l'autorité administrative qui organise l'examen et les mesures d'accueil.
+Conformément à l'article L. 410-1 du Code des relations entre le public et l'administration et à l'article R. 421-1 du Code de
+justice administrative, deux types de recours administratifs sont possibles :
+— le recours gracieux : il est adressé à l'auteur de l'acte contesté ;
+— le recours hiérarchique : il est adressé à la hiérarchie de l'auteur de l'acte contesté.
+En vertu notamment des dispositions de l'article L. 712-2 du Code de l’éducation, le chef d’établissement exerce son
+autorité sur l'ensemble du personnel. Il préside le conseil d'administration, participant ainsi à l'élaboration et à l'exécution
+de toutes les décisions. Sa responsabilité s'étend à la représentation de l’établissement devant des tiers et en justice.
+Le chef d’établissement est également chargé de veiller à garantir l'accessibilité des enseignements et des bâtiments,
+notamment pour les étudiants en situation de handicap. Le chef d’établissement représente le dernier recours
+administratif.
+L’étudiant peut faire appel au médiateur académique pour une résolution amiable du conflit
+La saisine du médiateur n’interrompt pas les délais pour engager une éventuelle action devant le juge administratif.
+Un recours contentieux est possible et s'exerce devant le tribunal administratif territorialement compétent.
+Toute personne qui se sent lésée par les actions d'une administration de l’État, d'une collectivité locale, d'un établissement
+public, ou d'un organisme ayant une mission de service public (tels que les organismes sociaux ou les entreprises publiques)
+peut saisir le Défenseur des droits, institué par la loi organique n° 2011-333 du 29 mars 2011.
+Pour la ministre de l'Enseignement supérieur et de la Recherche, et par délégation,
+Le directeur général de l'enseignement supérieur et de l'insertion professionnelle par intérim,
+Benjamin Leperchey
+Pour la ministre du Travail, de la Santé et des Solidarités, et par délégation,
+La directrice générale de l'offre de soins,
+Marie Daudé
+Pour la ministre du Travail, de la Santé et des Solidarités, et par délégation,
+Le directeur général de la cohésion sociale,
+Jean-Benoît Dujol
+Pour le ministre de l'Économie, des Finances et de la Souveraineté industrielle et numérique, et par délégation,
+Le vice-président du conseil général de l'économie,
+Luc Rousseau
+Pour le ministre de l’Agriculture et de la Souveraineté alimentaire, et par délégation,
+Le directeur général de l'enseignement et de la recherche,
+Benoît Bonaimé
+[1] Durée de mise en oeuvre du dispositif prolongée d’une année par l’article 21 de la loi n° 2020-734 du 17 juin 2020 relative à diverses dispositions liées à la crise
+sanitaire, à autres mesures urgentes ainsi qu’au retrait du Royaume-Uni de l’Union européenne.

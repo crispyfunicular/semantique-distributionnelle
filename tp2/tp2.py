@@ -12,7 +12,8 @@ import pandas as pd
 nltk.download('stopwords')
 
 # Chargement du modèle linguistique français (léger ou "small" / "sm")
-nlp = spacy.load("fr_core_news_sm")
+#nlp = spacy.load("fr_core_news_sm")
+nlp = spacy.load("fr_core_news_lg")
 
 stopwords_nltk = set(stopwords.words('french'))
 

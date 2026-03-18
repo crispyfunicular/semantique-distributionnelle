@@ -33,65 +33,10 @@ Il nous a par conséquent semblé pertinent de comparer les comportements vector
 
 
 ## Structure de la pipeline
-### Segmentation et tokenisation
-Nous avons défini une fonction `preparer_corpus()` prenant en argument un texte et, de façon optionnelle, un booléen `stopwords` fixé par défaut à `False` pour le filtrage des stopwords.
-```python
-def preparer_corpus(file:str, stopwords:bool=False) -> list:
-    """Lit un fichier, le segmente en phrases, le tokenise et le lemmatise (avec spaCy)
-    Filtrage avec NLTK si stopwords=True"""
-```
-- La tokenisation et la lemmatisation ont été effectuées à l’aide de la librairie `spaCy` :
-```python
-stopwords_nltk = set(stopwords.words('french'))
-```
-```python
-if not token.is_punct and not token.is_space:
-    # Lemmatisation (.lemma) et passage en minuscules (.lower())
-    lemme = token.lemma_.lower()
-```
-- Le filtrage des stopwords (le cas échéant) a été effectué à l’aide de la librairie `NLTK`
-```python
-if stopwords and lemme in stopwords_nltk:
-    continue
-```
-
+> Voir `tp2.py`
+### Segmentation et tokenisation et filtrage des mots vides (*stopwords*)
 ### Filtrage des mots vides (stopwords)
-Afin de privilégier l’émergence de relations sémantiques pertinentes et de réduire le bruit statistique, l’analyse finale présentée dans ce rapport se concentre exclusivement sur les matrices construites après le filtrage des mots vides (*stopwords*)
-
-## Calcul des matrices de cooccurrences
-
-```python
-def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
-    """Calcule une demi-matrice carrée de co-occurrences avec fenêtre glissante."""
-    matrice = {}
-    
-    for phrase in corpus:
-        # longueur de la phrase
-        longueur = len(phrase)
-        for i in range(longueur):
-            mot_cible = phrase[i]
-            
-            # Création d'une entrée pour le mot cible si elle n'existe pas encore
-            if mot_cible not in matrice:
-                matrice[mot_cible] = {}
-            
-            # On conserve la valeur la plus petite (min) entre la taille de la fenêtre et la longueur de la phrase
-            limite = min(i + 1 + taille_fenetre, longueur)
-            
-            for j in range(i + 1, limite):
-                mot_voisin = phrase[j]
-                
-                # Création d'une entrée pour le mot voisin
-                if mot_voisin not in matrice:
-                    matrice[mot_voisin] = {}
-                
-                # Incrémentation (+ 1)
-                # Si la combinaison n'existe pas --> création et mise à 0 avec .get(..., 0)
-                matrice[mot_cible][mot_voisin] = matrice[mot_cible].get(mot_voisin, 0) + 1
-                matrice[mot_voisin][mot_cible] = matrice[mot_voisin].get(mot_cible, 0) + 1
-                
-    return matrice
-```
+Nous avons défini une fonction `preparer_corpus()` prenant en argument un texte et, de façon optionnelle, un booléen `stopwords` fixé par défaut à `False` pour le filtrage des stopwords. Afin de privilégier l’émergence de relations sémantiques pertinentes et de réduire le bruit statistique, l’analyse finale présentée dans ce rapport se concentre exclusivement sur les matrices construites après le filtrage des mots vides (*stopwords*)
 
 ### Choix des fenêtres
 Nous avons retenu trois tailles de fenêtres distinctes pour observer l’évolution des voisinages :
@@ -197,7 +142,16 @@ Dans le corpus FALC, la fenêtre `f3` s’avère extrêmement performante pour c
 
 En définitive, cette étude illustre mathématiquement le succès de la démarche de simplification du FALC. En ramenant l’information essentielle dans un périmètre syntaxique extrêmement restreint (capturable dès `f3`), le FALC supprime la charge cognitive nécessaire pour lier des concepts éloignés, une charge qui caractérise le corpus officiel et qui requiert, algorithmiquement comme humainement, une fenêtre de lecture beaucoup plus large (`f25`).
 
+<table>
+<tr>
+<td><img src="graph_autonomie_falc.png" width="700" /></td>
+<td><img src="graph_autonomie_officiel.png" width="700" /></td>
+</tr>
+</table>
+
 ## Bibliographie
+> Association métropolitaine et départementale des parents et amis de personnes handicapées mentales (Adapei 69) (2024). https://www.adapei69.fr/sites/default/files/2024-04/Charte%20Droits%20UE_%20FALC_Adapei%2069.pdf 
+
 > Eshkol-Taravella, I. et N. Grabar (2018). « La reformulation comme un moyen de clarification des noms abstraits ». Les catégories abstraites et la référence, 6, ÉPURE-Éditions et Presses universitaires de Reims. halshs-01968306
 
 > Fondation Internationale de la Recherche Appliquée sur le Handicap (FIRAH). « Version facile à lire de la Convention relative aux droits des personnes handicapées ». https://www.firah.org/la-convention-relative-aux-droits-des-personnes-handicapees.html
@@ -205,3 +159,7 @@ En définitive, cette étude illustre mathématiquement le succès de la démarc
 > Haut-Commissariat des Nations Unies aux droits de l’homme (2006). « Convention relative aux droits des personnes handicapées ». https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities
 
 > Inclusion Europe (2009). « Règles européennes pour une information facile à lire et à comprendre ». https://www.inclusion-europe.eu/easy-to-read-standards-guidelines/ 
+
+> Ministère de l’Enseignement supérieur et de la Recherche (2024). Circulaire du 10-7-2024 relative aux droits des étudiants en situation de handicap ou avec un trouble de santé invalidant. Bulletin officiel de l’Enseignement supérieur et de la Recherche. https://www.enseignementsup-recherche.gouv.fr/fr/bo/2024/Hebdo28/ESRS2418046C
+
+> Parlement européen. Charte des droits fondamentaux de l’Union européenne. https://www.europarl.europa.eu/charter/pdf/text_fr.pdf

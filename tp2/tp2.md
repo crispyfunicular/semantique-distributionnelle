@@ -16,7 +16,7 @@ L’ensemble des corpus « officiels », d’une part, et l’ensemble des cor
 S’il est vrai que ce corpus peut sembler peu étoffé, nous avons fait le choix, compte tenu de la difficulté à trouver des documents institutionnels « traduits » en FALC, de privilégier la qualité d’un corpus strictement parallèle à la quantité d’un corpus comparable plus vaste mais thématiquement hétérogène. 
 
 ### Hypothèse
-Nous partons de l’hypothèse que, si les deux textes partagent un référentiel sémantique strictement identique, ils mobilisent pourtant des stratégies syntaxiques et lexicales opposées. En effet, le texte officiel devrait se caractériser par une forte densité conceptuelle et des phrases complexes, tandis que la version FALC devrait s’appuyer sur une syntaxe courte et un vocabulaire concret et désambiguïsé.
+Nous partons de l’hypothèse que, si les deux corpus partagent un référentiel sémantique strictement identique, ils mobilisent pourtant des stratégies syntaxiques et lexicales opposées. En effet, le corpus officiel devrait se caractériser par une forte densité conceptuelle et des phrases complexes, tandis que la version FALC devrait s’appuyer sur une syntaxe courte et un vocabulaire concret et non ambigu.
 
 Parmi les « Règles européennes pour une information facile à lire et à comprendre » (Inclusion Europe, 2009), les recommandations suivantes nous intéressent particulièrement pour ce travail :
 ```text
@@ -29,7 +29,6 @@ Parmi les « Règles européennes pour une information facile à lire et à comp
 18. Placez toujours vos informations
     dans un ordre facile à comprendre et facile à suivre.
 ```
-Il nous a par conséquent semblé pertinent de comparer les comportements vectoriels obtenus pour chacun de ces textes selon la taille de la fenêtre d’observation.
 
 
 ## Structure de la pipeline
@@ -37,22 +36,43 @@ Il nous a par conséquent semblé pertinent de comparer les comportements vector
 ### Segmentation, tokenisation et filtrage des mots vides
 Nous avons défini une fonction `preparer_corpus()` prenant en argument un texte et, de façon optionnelle, un booléen `stopwords` fixé par défaut à `False` pour le filtrage des stopwords. Afin de privilégier l’émergence de relations sémantiques pertinentes et de réduire le bruit statistique, l’analyse finale présentée dans ce rapport se concentre exclusivement sur les matrices construites après le filtrage des mots vides (*stopwords*)
 
+```python
+def preparer_corpus(file:str, stopwords:bool=False) -> list:
+    """Lit un fichier, le segmente en phrases, le tokenise et le lemmatise (avec spaCy)
+    Filtrage avec NLTK si stopwords=True"""
+```
+La tokenisation et la lemmatisation ont été effectuées à l’aide de la librairie `spaCy` (modèle « large » `lg` pour éviter les erreurs de lemmatisation du type *« spécialemer ») :
+```python
+nlp = spacy.load("fr_core_news_lg")
+stopwords_nltk = set(stopwords.words('french'))
+```
+```python
+if not token.is_punct and not token.is_space:
+    # Lemmatisation (.lemma) et passage en minuscules (.lower())
+    lemme = token.lemma_.lower()
+```
+Le filtrage des stopwords (le cas échéant) a été effectué à l’aide de la librairie `NLTK`
+```python
+if stopwords and lemme in stopwords_nltk:
+    continue
+```
+
 ### Choix des fenêtres
 Nous avons retenu trois tailles de fenêtres distinctes pour observer l’évolution des voisinages :
 - Fenêtre étroite (`f3`) : pour capter la syntaxe immédiate (collocations, relations Sujet-Verbe-Objet).
 - Fenêtre moyenne (`f10`) : pour capter l’échelle d’une phrase simple ou d’une proposition.
 - Fenêtre large (`f25`) : pour capter l’échelle d’une phrase complexe ou d’un réseau thématique élargi.
 
-Cette augmentation progressive de la largeur de la fenêtre ainsi que les résultats obtenus pour `f25` devraient également permettre de faire apparaître un effet de plateau sur le corpus FALC : la syntaxe courte caractéristique de ces textes devrait, au-delà d’une certaine largeur de fenêtre, atteindre les limites du voisinage sémantique, les résultats cessant alors d’évoluer.
+Nous nous attendons à ce que cette augmentation progressive de la largeur de la fenêtre fasse apparaître un effet de plateau sur le corpus FALC. En raison de la syntaxe courte caractéristique de ces textes, les résultats devraient cesser d'évoluer au-delà d’une certaine largeur de fenêtre, probablement `f10`.
 
 ### Choix des mots cible
-Nous avons choisi des mots cibles de façon à couvrir l’ensemble des ***dimensions sémantiques du corpus :
+Nous avons choisi des mots cibles de façon à couvrir l’ensemble des domaines thématiques  du corpus :
 - acteurs clé : personne, enfant, femme, handicapé ;
-- enjeux et notions au cœur de la Convention : dignité, accessibilité, autonomie ;
+- enjeux et notions thématiques : dignité, accessibilité, autonomie ;
 - concepts juridiques : droit, discrimination, liberté.
-- Mots du quotidien (absents du texte officiel) : argent, chose.
+- Mots du quotidien : argent, chose.
 
-Nous partons de l’hypothèse que la catégorie des concepts juridiques devrait donner lieu à de fortes variations entre le corpus « officiel » et le corpus « FALC », car nous supposons que ce sont précisément ces notions juridiques abstraites qui sont vulgarisées pour le grand public dans les versions « faciles à lire et à comprendre ». Pour étudier depuis un autre angle le !!travail de vulgarisation dont font l'objet les textes en français facile, nous avons choisi deux termes présents dans le corpus FALC mais absents du corpus officiel, à savoir « argent » et « chose ».
+Nous partons de l’hypothèse que la catégorie des concepts juridiques devrait donner lieu à de fortes variations entre le corpus officiel et le corpus FALC, car nous supposons que ce sont précisément ces notions juridiques abstraites qui sont vulgarisées pour le grand public dans les versions « faciles à lire et à comprendre ». Afin de mettre spécifiquement l'accent sur la démarche de simplification dont font l'objet les textes en français facile, nous avons isolé deux termes présents dans le corpus FALC mais absents du corpus officiel, à savoir « argent » et « chose ».
 
 ```python
 mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discrimination", "liberté", "dignité", "accessibilité", "autonomie", "argent", "chose"]
@@ -65,30 +85,30 @@ mots_cible = ["droit", "personne", "handicapé", "enfant", "femme", "discriminat
 ### Mots absents de l’un des corpus : abstrait vs. concret
 #### Mots absents du corpus officiel : « argent » et « chose »
 
-Les mots « argent » et « chose », absents du corpus officiel, appartiennent au langage courant et désignent des réalités *concrètes* du quotidien, dépourvues de définition technique propre au langage de spécialité juridique. Leur présence exclusive dans le corpus FALC confirme la stratégie de simplification consistant à substituer aux concepts abstraits des termes immédiatement accessibles. D’ailleurs, en `f3`, « argent » est associé à « situation », « vie » et « handicap », tandis qu’en `f10`, il apparaît dans un réseau financier concret (« bourse », « bcs », « mérite », « somme »), ce qui témoigne d’un ancrage dans la réalité matérielle du lecteur.
+Les mots « argent » et « chose », absents du corpus officiel, appartiennent au langage courant et désignent des réalités *concrètes et pragmatiques* du quotidien, dépourvues de définition technique propre au langage de spécialité juridique. Leur présence exclusive dans le corpus FALC confirme la stratégie de simplification consistant à substituer aux concepts abstraits des termes accessibles et compréhensibles par toustes. D’ailleurs, en `f3`, « argent » est associé à « situation », « vie » et « handicap », tandis qu’en `f10`, il apparaît dans un réseau financier concret (« bourse », « bcs », « mérite », « somme »), ce qui témoigne d’un ancrage dans la réalité matérielle du lecteur.
 
 #### Mots du champ philosophique : « dignité » et « autonomie »
 
-À l’inverse, les mots « dignité » et « autonomie » !!révèlent un fort contraste de traitement entre les deux corpus. Dans le corpus officiel, « dignité » est associée en `f3` à un vocabulaire juridique technique (« inhérent », « intrinsèque »), tandis que dans le corpus FALC, elle est reformulée en termes concrets (« humain », « esclave »). De même, « autonomie » gravite autour de « commission », « indépendance » et « dignité » dans le corpus officiel, quand le FALC l’ancre dans le domaine médical, administratif, voire « guichetier », qui renvoient là encore à des réalités tangibles de la vie réelles dont le public visé aura probablement déjà fait l'expérience (« médecin », « cdaph », « contact »). Ces résultats viennent confirmer le fait que ce sont précisément les noms abstraits qui donnent lieu de manière quasi systématique à des reformulations pour faciliter la compréhension du lectorat (Eshkol-Taravella et Grabar, 2018).
+À l’inverse, la différence de traitement des mots « dignité » et « autonomie » entre les deux corpus est très contrastée. Dans le corpus officiel, « dignité » est associée en `f3` à un vocabulaire juridique technique (« inhérent », « intrinsèque »), tandis que, dans le corpus FALC, elle coïncide avec des termes concrets (« humain », « esclave »). De même, « autonomie » gravite autour de « commission », « indépendance » et « dignité » dans le corpus officiel, quand le FALC l’ancre dans les domaines médical et administratif (« médecin », « cdaph », « contact »), qui renvoient là encore à des réalités tangibles de la vie réelle dont le public visé aura probablement déjà fait l'expérience. Ces résultats viennent confirmer le fait que ce sont précisément les noms abstraits qui donnent lieu de manière quasi systématique à des reformulations pour faciliter la compréhension du lectorat (Eshkol-Taravella et Grabar, 2018).
 
 ### Incidence de la taille de la fenêtre
 #### Fenêtre étroite (`f3`)
 - **Collocations juridiques dans le corpus officiel**
 
-Avec une fenêtre étroite, la similarité cosinus est calculée sur les voisins immédiats (trois mots), ce qui permet de capturer les collocations et les expressions figées propres au français juridique. Ainsi, pour « discrimination », on retrouve « fonder » et « approprier » (pour l’expression « mesures appropriées fondées sur... »), tandis que « dignité » est associée à « inhérent » et « intrinsèque », autant de collocations caractéristiques des textes institutionnels. De la même manière, le mot "liberté" s'associe avec "fondamental", "droit" et "homme", qui font directement référence aux "droits fondamentaux de l'homme", garant des droits et *libertés* de tout individu. Ces résultats montrent donc que la fenêtre étroite est sensible aux conventions lexicales et syntaxiques propres aux langages de spécialité, notamment au jargon institutionnel.
+Avec une fenêtre étroite, la similarité cosinus est calculée sur les voisins immédiats (trois mots), ce qui permet de capturer les collocations et les expressions figées propres au français juridique. Ainsi, pour « discrimination », on retrouve « fonder » et « approprier » (pour l’expression « mesures appropriées fondées sur... »), tandis que « dignité » est associée à « inhérent » et « intrinsèque », autant de collocations caractéristiques des textes institutionnels. De la même manière, le mot « liberté » s'associe avec « fondamental », « droit » et « homme », qui font directement référence aux « droits fondamentaux de l'homme », garant des droits et *libertés* (précisément) de tout individu. Ces résultats montrent donc que la fenêtre étroite est sensible aux conventions lexicales et syntaxiques propres aux langages de spécialité, notamment au jargon institutionnel.
 
 - **Syntaxe directe du FALC : actions et réalités concrètes**
 
-Dans le corpus FALC, la même fenêtre `f3` permet de mettre en évidence la structure syntaxique simplifiée "sujet-verbe-objet" caractéristique des textes en français facile et, ainsi, de faire ressortir la priorité donnée par ces textes à l’action concrète. Par exemple, là où la « dignité » officielle s’entoure d'adjectifs conceptuels ("inhérent", "intrinsèque"), la fenêtre `f3` du FALC l’associe immédiatement à des verbes d’action et des réalités tangibles : « respecter », « humain », « esclave ». De même, le concept abstrait d’« autonomie » est directement traduit en démarches pratiques avec les voisins « contact », « diriger » et « médecin ». Ce résultat met en évidence le fait que, là où le texte officiel encadre le mot par des formules juridiques, le FALC l’associe à des actions concrètes et des réalités directement perceptibles.
+Dans le corpus FALC, la même fenêtre `f3` permet de mettre en évidence la structure syntaxique simplifiée « sujet-verbe-objet » (S-V-O) caractéristique des textes en français facile et, ainsi, de faire ressortir la priorité donnée par ces textes à l’action concrète. Par exemple, là où la « dignité » officielle s’entoure d'adjectifs conceptuels (« inhérent », « intrinsèque »), la fenêtre `f3` du FALC l’associe immédiatement à des verbes d’action et des réalités tangibles : « respecter », « humain », « esclave ». De même, le concept abstrait d’« autonomie » est directement traduit en démarches pratiques avec les voisins « contact », « diriger » et « médecin ». Ce résultat met en évidence le fait que, là où le texte officiel encadre le mot par des formules juridiques, le FALC l’associe à des actions concrètes et des réalités directement perceptibles.
 
 #### Fenêtre moyenne (`f10`)
 - **Émergence du cadre normatif dans le corpus officiel**
 
-La fenêtre de dix mots permet de dépasser les collocations immédiates et de capturer le cadre normatif dans lequel s’insèrent les concepts. Ainsi, « droit » gagne « reconnaître » et « liberté » et « enfant » à « égalité ». Pour « femme », on voit apparaître « violence », signe que la fenêtre est suffisamment large pour relier le sujet aux enjeux thématiques de l’article.
+La fenêtre de dix mots permet de dépasser les collocations immédiates et de capturer le cadre normatif dans lequel s’insèrent les concepts. Ainsi, « droit » gagne « reconnaître » et « liberté » et « enfant » à « égalité ». Pour le mot « handicapé », on voit apparaître une nomenclature précise de la population concernée : « enfant », « travailleur », « personne ».
 
 - **Ancrage du FALC dans la vie quotidienne**
 
-À la même échelle de dix mots, le corpus FALC fait apparaître un réseau sémantique ancré dans le quotidien. Le concept d’« autonomie » renvoie aux professions médicales et administratives "de terrain" et aux démarches liées : « médecin », « cdaph », « choisir », « rencontre ». Ainsi, la méthode de simplification ne modifie pas seulement la forme mais recentre également le champ sémantique sur les expériences concrètes de la vie réelle du lectorat.
+À la même échelle de dix mots, le corpus FALC fait apparaître un réseau sémantique ancré dans le quotidien. Le concept d’« autonomie » renvoie aux professions médicales et administratives « de terrain » et aux démarches liées : « médecin », « cdaph », « choisir », « rencontre ». Ainsi, la méthode de simplification ne modifie pas seulement la forme mais recentre également le champ sémantique sur les expériences concrètes de la vie réelle du lectorat.
 
 #### Fenêtre large (`f25`)
 
@@ -96,7 +116,7 @@ L’observation des variations entre les fenêtres moyenne (`f10`) et large (`f2
 
 - **Effet de plateau (FALC)**
 
-Pour de nombreux termes, la liste des co-occurrences reste strictement identique ou quasi identique entre `f10` et `f25`. C’est le cas pour « autonomie » (dont les cinq voisins "médecin", "cdaph", "choisir", "commission" et "rencontre" sont strictement identiques), pour « accessibilité », pour « argent » (où seul un léger réordonnement est observable) et pour « liberté » (mêmes termes avec une substitution marginale). Il semblerait donc que l’algorithme se heurte aux limites physiques de la phrase courte car le fait d'élargir la fenêtre sémantique de 10 à 25 mots n’apporte plus d’information nouvelle. Ce phénomène confirme l’hypothèse avancée plus haut : la fenêtre glissante de 25 mots dépasse les frontières de la phrase dans le corpus FALC, et le voisinage sémantique se trouve borné par la syntaxe.
+Pour de nombreux termes, la liste des co-occurrences reste strictement identique ou quasi identique entre `f10` et `f25`. C’est le cas pour « autonomie » (dont les cinq voisins « médecin », « cdaph », « choisir », « commission » et « rencontre » sont strictement identiques), pour « accessibilité », pour « argent » (où seul un léger réordonnement est observable) et pour « liberté » (mêmes termes avec une substitution marginale). Il semblerait donc que l’algorithme se heurte aux limites physiques de la phrase courte car le fait d'élargir la fenêtre sémantique de 10 à 25 mots n’apporte plus d’information nouvelle. Ce phénomène confirme l’hypothèse avancée plus haut : la fenêtre glissante de 25 mots dépasse les frontières de la phrase dans le corpus FALC, et le voisinage sémantique se trouve borné par la syntaxe.
 
 | Mot cible     | `f10` (FALC)                                     | `f25` (FALC)                                     | Δ        |
 |:--------------|:-------------------------------------------------|:-------------------------------------------------|:---------|
@@ -119,9 +139,9 @@ L’élargissement à `f25` fait glisser le champ lexical des *acteurs immédiat
 
 ## Conclusion
 
-L’analyse sémantique comparative entre les textes officiels et leur traduction en FALC démontre que l’architecture syntaxique dicte la pertinence du paramétrage algorithmique. En effet, l’efficacité des fenêtres glissantes s’est révélée diamétralement opposée selon le corpus étudié. D'un côté, la fenêtre étroite (f3) s’avère optimale pour le corpus FALC : elle capture immédiatement le cœur sémantique et l'action concrète grâce à la syntaxe courte, là où elle reste « piégée » dans les collocations figées du corpus officiel. À l’inverse, la fenêtre large (f25) est indispensable pour embrasser la macro-syntaxe et les enjeux sociétaux des textes officiels, tandis qu'elle se heurte à un strict « effet plafond » sur le FALC.
+L’analyse sémantique comparative entre les textes officiels et leur traduction en FALC a permis de montrer que, si l'ouverture progressive de la fenêtre a bien une incidence sur les résultats obtenus, celle-ci varie fortement selon le type de texte étudié. D'un côté, c'est la fenêtre étroite (`f3`) qui s’est avérée optimale pour le corpus FALC, dont elle a capturé l'essence grâce à la syntaxe courte « S-V-O » caractéristique de ces textes, là où elle reste « piégée » dans les collocations figées du corpus officiel. À l’inverse, une fenêtre bien plus large (`f25`) s'est révélée nécessaire pour embrasser la macro-syntaxe et les enjeux sociétaux des textes institutionnels officiels, tandis qu'elle s'est heurtée à un « effet plafond » sur le FALC. Qui plus est, cette étude illustre mathématiquement la démarche de simplification du FALC, qui ramène l’information essentielle dans un périmètre syntaxique restreint.
 
-En définitive, cette étude illustre mathématiquement le succès de la démarche de simplification du FALC : en ramenant l’information essentielle dans un périmètre syntaxique restreint, il supprime la charge cognitive (et algorithmique) nécessaire pour lier des concepts éloignés.
+Ces résultats corroborent tout à fait ceux de Hill et al. (2013), qui ont montré que « les fenêtre les plus petites fonctionn[ai]ent mieux pour mesurer la similarité concrète des noms, alors que les fenêtres plus larges fonctionn[ai]ent mieux pour les noms abstraits » (notre traduction).
 
 Cette étude présente néanmoins certaines limites qu'il convient de souligner. Les résultats discutés dans ce rapport reposent sur une sélection d'extraits choisis pour leur capacité à illustrer notre hypothèse initiale, ce qui introduit un biais de confirmation certain. D'autres termes étudiés n'ont pas révélé de variations aussi nettes ou exploitables face aux changements de fenêtres.
 
@@ -133,6 +153,8 @@ Cette étude présente néanmoins certaines limites qu'il convient de souligner.
 > Fondation Internationale de la Recherche Appliquée sur le Handicap (FIRAH). « Version facile à lire de la Convention relative aux droits des personnes handicapées ». https://www.firah.org/la-convention-relative-aux-droits-des-personnes-handicapees.html
 
 > Haut-Commissariat des Nations Unies aux droits de l’homme (2006). « Convention relative aux droits des personnes handicapées ». https://www.ohchr.org/fr/instruments-mechanisms/instruments/convention-rights-persons-disabilities
+
+> Hill, F., D. Kiela, et A. Korhonen (2013). Concreteness and Corpora: A Theoretical and Practical Analysis. *Proceedings of ACL 2013, Workshop onCognitive Modelling and Computational Linguistics*, Sofia, Bulgarie.
 
 > Inclusion Europe (2009). « Règles européennes pour une information facile à lire et à comprendre ». https://www.inclusion-europe.eu/easy-to-read-standards-guidelines/ 
 

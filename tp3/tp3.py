@@ -9,6 +9,7 @@ distributionnelles.
 
 import sys
 import os
+import re
 
 #from glove import Corpus, Glove
 from mittens import GloVe
@@ -18,12 +19,17 @@ from numpy.linalg import norm
 from tp2 import construire_matrice, filtrer_corpus
 
 
+# Regex pour ne garder que les tokens composés de lettres françaises (+ tiret/apostrophe)
+_TOKEN_VALIDE = re.compile(r"^[a-zàâäéèêëïîôùûüÿçœæ]+(['-][a-zàâäéèêëïîôùûüÿçœæ]+)*$")
+
+
 def charger_corpus(fichier: str) -> list:
-    """Charge un corpus déjà lemmatisé (une phrase par ligne, tokens séparés par des espaces)."""
+    """Charge un corpus déjà lemmatisé (une phrase par ligne, tokens séparés par des espaces).
+    Filtre les artefacts Gutenberg (mots avec ':', caractères non-français, etc.)."""
     corpus = []
     with open(fichier, "r", encoding="utf-8") as f:
         for ligne in f:
-            tokens = ligne.strip().split()
+            tokens = [t for t in ligne.strip().split() if _TOKEN_VALIDE.match(t)]
             if len(tokens) > 1:
                 corpus.append(tokens)
     print(f"Corpus chargé : {len(corpus)} phrases")
@@ -175,11 +181,39 @@ def main():
 
     # Liste de toutes les analogies à tester
     analogies_a_tester = [
+        # Contrôle
         ("roi", "homme", "femme"),
-        ("esprit", "homme", "femme"),
-        ("action", "homme", "femme"),
-        ("regarder", "homme", "femme"),
-        ("fort", "homme", "femme"),
+        ("roi", "femme", "homme"),
+        # Rôles sociaux
+        ("docteur", "homme", "femme"),
+        ("docteur", "femme", "homme"),
+        ("maître", "homme", "femme"),
+        ("maître", "femme", "homme"),
+        ("héros", "homme", "femme"),
+        ("héros", "femme", "homme"),
+        # Traits de caractère
+        ("courage", "homme", "femme"),
+        ("courage", "femme", "homme"),
+        ("beauté", "homme", "femme"),
+        ("beauté", "femme", "homme"),
+        ("doux", "homme", "femme"),
+        ("doux", "femme", "homme"),
+        # Intellect vs émotion
+        ("raison", "homme", "femme"),
+        ("raison", "femme", "homme"),
+        ("passion", "homme", "femme"),
+        ("passion", "femme", "homme"),
+        ("intelligence", "homme", "femme"),
+        ("intelligence", "femme", "homme"),
+        # Orientalisme et genre (Salammbô, Hérodias)
+        ("esclave", "homme", "femme"),
+        ("esclave", "femme", "homme"),
+        ("prêtre", "homme", "femme"),
+        ("prêtre", "femme", "homme"),
+        ("voile", "homme", "femme"),
+        ("voile", "femme", "homme"),
+        ("servir", "homme", "femme"),
+        ("servir", "femme", "homme"),
     ]
 
     # Écriture des résultats dans un fichier markdown

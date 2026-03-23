@@ -18,9 +18,9 @@ nlp = spacy.load("fr_core_news_lg")
 
 stopwords_nltk = set(stopwords.words('french'))
 
-def lemmatiser(file: str) -> list:
-    """Lit un fichier, le segmente en phrases, le tokenise et le lemmatise (avec spaCy).
-    Retourne une liste de phrases (listes de lemmes), sans filtrage."""
+def preparer_corpus(file:str, stopwords:bool=False) -> list:
+    """Lit un fichier, le segmente en phrases, le tokenise et le lemmatise (avec spaCy)
+    Filtrage avec NLTK si stopwords=True"""
     
     # Ouverture et lecture du fichier
     with open(file, "r", encoding="utf-8") as f:
@@ -32,7 +32,7 @@ def lemmatiser(file: str) -> list:
     
     # Segmentation en phrases (doc.sents)
     for phrase in doc.sents:
-        lemmes = []
+        phrase_filtree = []
         
         # Tokenisation
         for token in phrase:
@@ -50,49 +50,20 @@ def lemmatiser(file: str) -> list:
                 if len(lemme) <= 1:
                     continue
 
-                lemmes.append(lemme)
-        
-        # Filtrage des phrases de moins 2 mots
-        # (pour ne pas mettre en échec la fenêtre glissante)
-        if len(lemmes) > 1:
-            corpus.append(lemmes)
-            
-    return corpus
+                # Filtrage fin avec NLTK
+                # Si stopwords=True, on vérifie si le lemme est dans la liste NLTK (double condition)
+                # Dans ce cas, on ignore ce mot et on passe au suivant
+                if stopwords and lemme in stopwords_nltk:
+                    continue
 
-
-def filtrer_corpus(corpus: list, sw: bool = False) -> list:
-    """Filtre un corpus déjà lemmatisé (liste de listes de tokens).
-    Si sw=True, retire les stopwords NLTK.
-    Ne nécessite pas spaCy."""
-    corpus_filtre = []
-    for phrase in corpus:
-        phrase_filtree = []
-        for mot in phrase:
-            # Filtrage des lettres seules (ex : numéro d'alinéas)
-            if len(mot) <= 1:
-                continue
-
-            # Filtrage fin avec NLTK
-            # Si sw=True, on vérifie si le lemme est dans la liste NLTK (double condition)
-            # Dans ce cas, on ignore ce mot et on passe au suivant
-            if sw and mot in stopwords_nltk:
-                continue
-
-            phrase_filtree.append(mot)
+                phrase_filtree.append(lemme)
         
         # Filtrage des phrases de moins 2 mots
         # (pour ne pas mettre en échec la fenêtre glissante)
         if len(phrase_filtree) > 1:
-            corpus_filtre.append(phrase_filtree)
-    return corpus_filtre
-
-
-def preparer_corpus(file: str, stopwords: bool = False) -> list:
-    """Lit un fichier, le segmente en phrases, le tokenise et le lemmatise (avec spaCy).
-    Filtrage avec NLTK si stopwords=True.
-    (Wrapper qui appelle lemmatiser + filtrer)"""
-    corpus = lemmatiser(file)
-    return filtrer_corpus(corpus, sw=stopwords)
+            corpus.append(phrase_filtree)
+            
+    return corpus
 
 
 # ==========================================

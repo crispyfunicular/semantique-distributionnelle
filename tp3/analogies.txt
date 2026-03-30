@@ -1,0 +1,41 @@
+# Analogies pour le corpus Kipling (Anglais - Regard Colonial)
+# Format : mot_base mot_moins mot_plus
+# Équation résolue : ? = mot_base - mot_moins + mot_plus
+
+# Hiérarchie humaine / déshumanisation
+# "Quel est l'équivalent natif de l'homme anglais ?"
+man english native
+man white brown
+child native english
+child brown white
+master english native
+sahib english native
+servant native english
+
+# Raison / intelligence
+mind english native
+wisdom english native
+think english native
+understand white brown
+
+# Ordre / civilisation
+law english india
+law white brown
+order english native
+civilisation english india
+empire english india
+rule english native
+rule white brown
+civilised english native
+
+# Espaces / appartenance / sauvagerie
+home english native
+city english jungle
+street london india
+
+# Force / courage / nature
+brave english native
+soldier english native
+warrior native english
+animal jungle city
+beast jungle city

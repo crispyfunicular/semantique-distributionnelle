@@ -5,22 +5,103 @@ Ce script entraîne un modèle GloVe sur des corpus littéraires français
 (Colette et Proust) et utilise des analogies vectorielles (ex. roi - homme + femme)
 pour mettre en évidence les biais de genre encodés dans les représentations
 distributionnelles.
+
+Un filtre de fréquence minimale exclut les mots apparaissant moins de MIN_FREQ
+fois dans le corpus, afin de réduire le bruit et la taille du vocabulaire.
 """
 
 import sys
 import os
 import re
 
-#from glove import Corpus, Glove
 from mittens import GloVe
 import numpy as np
 from numpy.linalg import norm
 
-from tp2 import construire_matrice, filtrer_corpus
+import nltk
+from nltk.corpus import stopwords
+
+# Regex pour ne garder que les tokens composés de lettres (françaises ou anglaises) (+ tiret/apostrophes)
+_TOKEN_VALIDE = re.compile(r"^[a-zàâäéèêëïîôùûüÿçœæ]+(['’\-][a-zàâäéèêëïîôùûüÿçœæ]+)*$")
 
 
-# Regex pour ne garder que les tokens composés de lettres françaises (+ tiret/apostrophe)
-_TOKEN_VALIDE = re.compile(r"^[a-zàâäéèêëïîôùûüÿçœæ]+(['-][a-zàâäéèêëïîôùûüÿçœæ]+)*$")
+# ==========================================
+# UTILITAIRES DE CORPUS
+# ==========================================
+
+def filtrer_corpus(corpus: list, sw: bool = False, stopwords_set: set = None) -> list:
+    """Filtre un corpus déjà lemmatisé (liste de listes de tokens).
+    Si sw=True, retire les stopwords_set fournis."""
+    corpus_filtre = []
+    for phrase in corpus:
+        phrase_filtree = []
+        for mot in phrase:
+            if len(mot) <= 1:
+                continue
+            if sw and stopwords_set and mot in stopwords_set:
+                continue
+            phrase_filtree.append(mot)
+        if len(phrase_filtree) > 1:
+            corpus_filtre.append(phrase_filtree)
+    return corpus_filtre
+
+
+def filtrer_hapax(corpus: list, min_freq: int = 5) -> list:
+    """Exclut du corpus les mots dont la fréquence totale est inférieure à min_freq.
+
+    La fréquence d'un mot est le nombre de fois qu'il apparaît dans l'ensemble
+    des phrases (une occurrence par token, quel que soit le contexte).
+
+    Args:
+        corpus   : liste de listes de tokens (déjà filtrés des stopwords).
+        min_freq : seuil minimal d'occurrences (inclus). Défaut : 5.
+
+    Returns:
+        Le corpus avec les mots rares remplacés par leur absence,
+        et les phrases devenues trop courtes supprimées.
+    """
+    # Comptage des fréquences brutes
+    frequences: dict = {}
+    for phrase in corpus:
+        for mot in phrase:
+            frequences[mot] = frequences.get(mot, 0) + 1
+
+    n_avant = len(frequences)
+    mots_frequents = {mot for mot, freq in frequences.items() if freq >= min_freq}
+    n_apres = len(mots_frequents)
+
+    print(
+        f"Filtre fréquence (min={min_freq}) : "
+        f"{n_avant} → {n_apres} mots "
+        f"({n_avant - n_apres} exclus)"
+    )
+
+    # Reconstruction du corpus sans les mots rares
+    corpus_filtre = []
+    for phrase in corpus:
+        phrase_filtree = [mot for mot in phrase if mot in mots_frequents]
+        if len(phrase_filtree) > 1:
+            corpus_filtre.append(phrase_filtree)
+    return corpus_filtre
+
+
+def construire_matrice(corpus: list, taille_fenetre: int) -> dict:
+    """Calcule une demi-matrice carrée de co-occurrences avec fenêtre glissante."""
+    matrice = {}
+    for phrase in corpus:
+        longueur = len(phrase)
+        for i in range(longueur):
+            mot_cible = phrase[i]
+            if mot_cible not in matrice:
+                matrice[mot_cible] = {}
+            limite = min(i + 1 + taille_fenetre, longueur)
+            for j in range(i + 1, limite):
+                mot_voisin = phrase[j]
+                if mot_voisin not in matrice:
+                    matrice[mot_voisin] = {}
+                matrice[mot_cible][mot_voisin] = matrice[mot_cible].get(mot_voisin, 0) + 1
+                matrice[mot_voisin][mot_cible] = matrice[mot_voisin].get(mot_cible, 0) + 1
+    return matrice
 
 
 def charger_corpus(fichier: str) -> list:
@@ -86,6 +167,9 @@ def entrainer_glove(
 
     # Conversion en matrice numpy dense pour mittens
     matrice_cooc, mot2index, index2mot = dict_vers_numpy(matrice_dict)
+
+    # Fixation de la graine aléatoire pour garantir la reproductibilité
+    np.random.seed(42)
 
     # Entraînement de GloVe via mittens
     modele_glove = GloVe(n=dimensions, max_iter=100)
@@ -172,49 +256,36 @@ def main():
     fichier_resultats = f"resultats/{nom_corpus}_resultats.md"
     os.makedirs("resultats", exist_ok=True)
 
+    # Détection de la langue selon le corpus pour les stopwords
+    if "kipling" in nom_corpus.lower() or "english" in nom_corpus.lower():
+        langue = "english"
+    else:
+        langue = "french"
+        
+    stopwords_set = set(stopwords.words(langue))
+
     # Chargement du corpus (déjà lemmatisé) + filtrage stopwords
     corpus_brut = charger_corpus(corpus)
-    corpus_propre = filtrer_corpus(corpus_brut, sw=True)
+    corpus_propre = filtrer_corpus(corpus_brut, sw=True, stopwords_set=stopwords_set)
+
+    # Exclusion des mots rares (hapax et quasi-hapax)
+    MIN_FREQ = 5
+    corpus_propre = filtrer_hapax(corpus_propre, min_freq=MIN_FREQ)
 
     # Entraînement
     modele = entrainer_glove(corpus_propre, taille_fenetre=10, dimensions=100)
 
-    # Liste de toutes les analogies à tester
-    analogies_a_tester = [
-        # Contrôle
-        ("roi", "homme", "femme"),
-        ("roi", "femme", "homme"),
-        # Rôles sociaux
-        ("docteur", "homme", "femme"),
-        ("docteur", "femme", "homme"),
-        ("maître", "homme", "femme"),
-        ("maître", "femme", "homme"),
-        ("héros", "homme", "femme"),
-        ("héros", "femme", "homme"),
-        # Traits de caractère
-        ("courage", "homme", "femme"),
-        ("courage", "femme", "homme"),
-        ("beauté", "homme", "femme"),
-        ("beauté", "femme", "homme"),
-        ("doux", "homme", "femme"),
-        ("doux", "femme", "homme"),
-        # Intellect vs émotion
-        ("raison", "homme", "femme"),
-        ("raison", "femme", "homme"),
-        ("passion", "homme", "femme"),
-        ("passion", "femme", "homme"),
-        ("intelligence", "homme", "femme"),
-        ("intelligence", "femme", "homme"),
-        # Orientalisme et genre (Salammbô, Hérodias)
-        ("esclave", "homme", "femme"),
-        ("esclave", "femme", "homme"),
-        ("prêtre", "homme", "femme"),
-        ("prêtre", "femme", "homme"),
-        ("voile", "homme", "femme"),
-        ("voile", "femme", "homme"),
-        ("servir", "homme", "femme"),
-        ("servir", "femme", "homme"),
-    ]
+    # Chargement des analogies depuis le fichier externe
+    fichier_analogies = os.path.join(os.path.dirname(__file__) or ".", "analogies.txt")
+    analogies_a_tester = []
+    with open(fichier_analogies, "r", encoding="utf-8") as f:
+        for ligne in f:
+            ligne = ligne.strip()
+            if ligne and not ligne.startswith("#"):
+                mots = ligne.split()
+                if len(mots) == 3:
+                    analogies_a_tester.append(tuple(mots))
+    print(f"{len(analogies_a_tester)} analogies chargées depuis {fichier_analogies}")
 
     # Écriture des résultats dans un fichier markdown
     with open(fichier_resultats, "w", encoding="utf-8") as f:

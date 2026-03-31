@@ -1,6 +1,4 @@
 spacy>=3.7
 nltk
 numpy
-pandas
-scipy
 mittens

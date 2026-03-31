@@ -1,10 +1,15 @@
 """
 TP3 - Correction des biais
 
-Ce script entraîne un modèle GloVe sur des corpus littéraires français
-(Colette et Proust) et utilise des analogies vectorielles (ex. roi - homme + femme)
-pour mettre en évidence les biais de genre encodés dans les représentations
-distributionnelles.
+Ce script entraîne un modèle GloVe sur le corpus de Rudyard Kipling et utilise
+des analogies vectorielles (ex. soldier - english + native = ?) pour mettre en
+évidence les biais coloniaux encodés dans les représentations distributionnelles.
+
+Deux stratégies de débiaisage sont proposées et comparables côte à côte :
+  - CDA (--cda) : Counterfactual Data Augmentation — le corpus est doublé par
+    inversion des termes coloniaux polarisés, puis un second modèle est entraîné.
+  - Hard Debiasing (--debiais) : post-hoc — la direction du biais est identifiée
+    par PCA sur les paires définitionnelles, puis retirée de tous les vecteurs.
 
 Un filtre de fréquence minimale exclut les mots apparaissant moins de MIN_FREQ
 fois dans le corpus, afin de réduire le bruit et la taille du vocabulaire.
@@ -235,12 +240,12 @@ def resoudre_analogie(
 
 
 # ==========================================
-# Inversion du corpus (plus tard)
+# Inversion du corpus (CDA)
 # ==========================================
 
 
 def inverser_corpus(corpus_lemmatise: list, dico_cda: dict) -> list:
-    """Génère un nouveau corpus en inversant les mots genrés."""
+    """Génère un nouveau corpus en inversant les termes coloniaux polarisés."""
     corpus_inverse = []
     for phrase in corpus_lemmatise:
         phrase_inverse = [dico_cda.get(mot, mot) for mot in phrase]
@@ -248,12 +253,134 @@ def inverser_corpus(corpus_lemmatise: list, dico_cda: dict) -> list:
     return corpus_inverse
 
 
+# ==========================================
+# Hard Debiasing post-hoc
+# ==========================================
+
+# Paires définitionnelles : (terme dominant, terme dominé)
+# Elles servent à calculer l'axe colonial dans l'espace vectoriel.
+PAIRES_BIAIS = [
+    ("english", "native"),
+    ("white",   "brown"),
+    ("sahib",   "servant"),
+    ("england", "india"),
+]
+
+
+def calculer_direction_biais(modele, paires_biais: list) -> np.ndarray:
+    """Calcule le vecteur unitaire représentant l'axe du biais colonial.
+
+    Pour chaque paire (mot_dominant, mot_dominé), on calcule le vecteur
+    de différence. La première composante principale (PCA 1D par SVD)
+    de ces différences est retenue comme direction du biais.
+
+    Args:
+        modele      : ModeleGloVe (word_vectors, dictionary)
+        paires_biais: liste de tuples (mot_dominant, mot_dominé)
+
+    Returns:
+        Vecteur unitaire de forme (d,) représentant la direction coloniale.
+    """
+    dico = modele.dictionary
+    differences = []
+    for mot_a, mot_b in paires_biais:
+        if mot_a in dico and mot_b in dico:
+            diff = modele.word_vectors[dico[mot_a]] - modele.word_vectors[dico[mot_b]]
+            differences.append(diff)
+        else:
+            print(f"[Débiaisage] Paire ignorée (mot absent) : ({mot_a}, {mot_b})")
+
+    if not differences:
+        raise ValueError("Aucune paire de biais valide trouvée dans le vocabulaire.")
+
+    # PCA 1D via SVD : la première composante principale capture
+    # la direction qui explique le plus de variance entre les différences.
+    matrice = np.array(differences)  # forme (n_paires, d)
+    _, _, Vt = np.linalg.svd(matrice, full_matrices=False)
+    direction = Vt[0]  # première ligne = première composante principale
+    return direction / np.linalg.norm(direction)  # normalisation unitaire
+
+
+def neutraliser_vecteurs(modele, paires_biais: list):
+    """Retourne un nouveau ModeleGloVe dont les vecteurs sont débiaisés.
+
+    Pour chaque mot w hors des paires définitionnelles :
+        v_debias(w) = v(w) - (v(w) · bias_vec) * bias_vec
+
+    Autrement dit, on retire la composante alignée sur l'axe colonial,
+    rendant le mot insensible à cette direction.
+
+    Les mots des paires définitionnelles sont conservés intacts
+    (ils définissent l'axe et ne doivent pas être modifiés).
+
+    Args:
+        modele      : ModeleGloVe original (non modifié en place)
+        paires_biais: liste de tuples (mot_dominant, mot_dominé)
+
+    Returns:
+        Nouveau ModeleGloVe avec word_vectors débiaisés.
+    """
+    direction = calculer_direction_biais(modele, paires_biais)
+    print(f"Direction du biais calculée (PCA sur {len(paires_biais)} paires).")
+
+    # Mots à ne pas neutraliser (ils définissent l'axe)
+    mots_definitionnels = {mot for paire in paires_biais for mot in paire}
+
+    # Copie profonde des vecteurs
+    nouveaux_vecteurs = modele.word_vectors.copy()
+
+    for mot, idx in modele.dictionary.items():
+        if mot not in mots_definitionnels:
+            v = nouveaux_vecteurs[idx]
+            # Soustraction de la projection sur la direction du biais
+            nouveaux_vecteurs[idx] = v - np.dot(v, direction) * direction
+
+    n_neutralises = len(modele.dictionary) - len(mots_definitionnels)
+    print(f"Vecteurs neutralisés : {n_neutralises} mots sur {len(modele.dictionary)}")
+
+    # Fabrication d'un nouveau ModeleGloVe avec les vecteurs modifiés
+    class ModeleGloVe:
+        pass
+    modele_debiais = ModeleGloVe()
+    modele_debiais.word_vectors = nouveaux_vecteurs
+    modele_debiais.dictionary   = modele.dictionary
+    modele_debiais.index2mot    = modele.index2mot
+    return modele_debiais
+
+
 def main():
-    corpus = sys.argv[1] if len(sys.argv) > 1 else "corpus/sand.txt"
+    import argparse
+    parser = argparse.ArgumentParser(
+        description="Entraînement GloVe et analyse des biais coloniaux (corpus Kipling)."
+    )
+    parser.add_argument(
+        "corpus", type=str, nargs="?", default="corpus/sand.txt",
+        help="Chemin vers le corpus lemmatisé (ex: corpus/kipling_lemmes.txt)"
+    )
+    parser.add_argument(
+        "--cda", action="store_true",
+        help="Activer le Counterfactual Data Augmentation : entraîne un second "
+             "modèle sur le corpus doublé par inversion des termes coloniaux."
+    )
+    parser.add_argument(
+        "--debiais", action="store_true",
+        help="Activer le Hard Debiasing post-hoc : retire la direction du biais "
+             "colonial des vecteurs du modèle standard par projection orthogonale."
+    )
+    args = parser.parse_args()
+
+    corpus = args.corpus
 
     # Nom du corpus pour le fichier de résultats (ex: "proust")
     nom_corpus = os.path.splitext(os.path.basename(corpus))[0]
-    fichier_resultats = f"resultats/{nom_corpus}_resultats.md"
+    if args.cda and args.debiais:
+        fichier_resultats = f"resultats/{nom_corpus}_comparatif_triple.md"
+    elif args.cda:
+        fichier_resultats = f"resultats/{nom_corpus}_comparatif_cda.md"
+    elif args.debiais:
+        fichier_resultats = f"resultats/{nom_corpus}_comparatif_debiais.md"
+    else:
+        fichier_resultats = f"resultats/{nom_corpus}_resultats.md"
     os.makedirs("resultats", exist_ok=True)
 
     # Détection de la langue selon le corpus pour les stopwords
@@ -272,8 +399,36 @@ def main():
     MIN_FREQ = 5
     corpus_propre = filtrer_hapax(corpus_propre, min_freq=MIN_FREQ)
 
-    # Entraînement
-    modele = entrainer_glove(corpus_propre, taille_fenetre=10, dimensions=100)
+    # Entraînement Standard
+    print("\n--- Entraînement du modèle STANDARD ---")
+    modele_standard = entrainer_glove(corpus_propre, taille_fenetre=10, dimensions=100)
+    
+    # Entraînement CDA si activé
+    modele_cda = None
+    if args.cda:
+        print("\n--- Entraînement du modèle AUGMENTÉ (CDA) ---")
+        dico_cda = {
+            "english": "native",
+            "native": "english",
+            "white": "brown",
+            "brown": "white",
+            "england": "india",
+            "india": "england",
+            "city": "jungle",
+            "jungle": "city",
+            "sahib": "servant",
+            "servant": "sahib"
+        }
+        corpus_inverse = inverser_corpus(corpus_propre, dico_cda)
+        corpus_augmente = corpus_propre + corpus_inverse
+        print(f"Taille du corpus augmenté : {len(corpus_augmente)} phrases (original: {len(corpus_propre)})")
+        modele_cda = entrainer_glove(corpus_augmente, taille_fenetre=10, dimensions=100)
+
+    # Hard Debiasing post-hoc si activé
+    modele_debiais = None
+    if args.debiais:
+        print("\n--- Hard Debiasing post-hoc ---")
+        modele_debiais = neutraliser_vecteurs(modele_standard, PAIRES_BIAIS)
 
     # Chargement des analogies depuis le fichier externe
     fichier_analogies = os.path.join(os.path.dirname(__file__) or ".", "analogies.txt")
@@ -285,9 +440,16 @@ def main():
                 mots = ligne.split()
                 if len(mots) == 3:
                     analogies_a_tester.append(tuple(mots))
-    print(f"{len(analogies_a_tester)} analogies chargées depuis {fichier_analogies}")
+    print(f"\n{len(analogies_a_tester)} analogies chargées depuis {fichier_analogies}")
 
     # Écriture des résultats dans un fichier markdown
+    # On détermine quels modèles sont actifs pour adapter les colonnes
+    modeles_actifs = [("Standard", modele_standard)]
+    if args.cda:
+        modeles_actifs.append(("CDA", modele_cda))
+    if args.debiais:
+        modeles_actifs.append(("Débiaisé", modele_debiais))
+
     with open(fichier_resultats, "w", encoding="utf-8") as f:
         f.write(f"# Résultats GloVe — {nom_corpus}\n\n")
 
@@ -296,16 +458,43 @@ def main():
             print(f"\nAnalogie : {titre}")
             f.write(f"## {titre}\n\n")
 
-            try:
-                resultats = resoudre_analogie(modele, base, moins, plus)
+            # Récupération des résultats pour chaque modèle actif
+            resultats_par_modele = []
+            for nom_modele, modele in modeles_actifs:
+                try:
+                    res = resoudre_analogie(modele, base, moins, plus)
+                except KeyError as e:
+                    res = [(f"*{e}*", None)]
+                resultats_par_modele.append((nom_modele, res))
+
+            if len(modeles_actifs) == 1:
+                # Mode simple : une colonne
+                _, res = resultats_par_modele[0]
                 f.write("| Mot | Score |\n|---|---|\n")
-                for mot, score in resultats:
-                    print(f" -> {mot} (Score: {score:.3f})")
-                    f.write(f"| {mot} | {score:.3f} |\n")
+                for mot, score in res:
+                    if score is not None:
+                        print(f"  -> {mot} ({score:.3f})")
+                        f.write(f"| {mot} | {score:.3f} |\n")
+                    else:
+                        f.write(f"| {mot} | - |\n")
                 f.write("\n")
-            except KeyError as e:
-                print(e)
-                f.write(f"*{e}*\n\n")
+            else:
+                # Mode comparatif : autant de paires colonnes que de modèles
+                en_tete = " | ".join(
+                    f"Modèle {nom} | Score" for nom, _ in resultats_par_modele
+                )
+                separateur = "|".join(["---|---"] * len(resultats_par_modele))
+                f.write(f"| {en_tete} |\n|{separateur}|\n")
+
+                max_len = max(len(res) for _, res in resultats_par_modele)
+                for i in range(max_len):
+                    ligne = ""
+                    for _, res in resultats_par_modele:
+                        mot, score = res[i] if i < len(res) else ("-", None)
+                        str_score = f"{score:.3f}" if score is not None else "-"
+                        ligne += f"| {mot} | {str_score} "
+                    f.write(ligne + "|\n")
+                f.write("\n")
 
     print(f"\nRésultats sauvegardés dans {fichier_resultats}")
 

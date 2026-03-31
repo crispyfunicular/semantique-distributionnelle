@@ -22,11 +22,9 @@ understand white brown
 law english india
 law white brown
 order english native
-civilisation english india
 empire english india
 rule english native
 rule white brown
-civilised english native
 
 # Espaces / appartenance / sauvagerie
 home english native

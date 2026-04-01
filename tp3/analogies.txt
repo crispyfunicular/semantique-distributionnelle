@@ -1,9 +1,12 @@
-# Analogies pour le corpus Kipling (Anglais - Regard Colonial)
+# Analogies pour le corpus Kipling + Conrad (Anglais - Regard Colonial)
 # Format : mot_base mot_moins mot_plus
 # Équation résolue : ? = mot_base - mot_moins + mot_plus
 
+# ==============================================================
+# KIPLING — Inde coloniale
+# ==============================================================
+
 # Hiérarchie humaine / déshumanisation
-# "Quel est l'équivalent natif de l'homme anglais ?"
 man english native
 man white brown
 child native english
@@ -29,7 +32,7 @@ rule white brown
 # Espaces / appartenance / sauvagerie
 home english native
 city english jungle
-street london india
+sea jungle river
 
 # Force / courage / nature
 brave english native
@@ -37,3 +40,56 @@ soldier english native
 warrior native english
 animal jungle city
 beast jungle city
+
+# ==============================================================
+# CONRAD — Afrique / Congo (Heart of Darkness)
+# ==============================================================
+
+# Lumière vs ténèbres : le regard colonial sur l'Afrique
+# "Ce que la civilisation est à l'Angleterre, les ténèbres le sont à l'Afrique"
+light darkness shadow
+light white black
+heart white black
+truth light darkness
+soul white black
+
+# L'ivoire comme symbole du pillage colonial
+ivory white native
+ivory white black
+kurtz white native
+horror white black
+
+# Humanité niée / accordée selon la race
+human white black
+human white native
+human white savage
+soul white savage
+dream white black
+
+# ==============================================================
+# CONRAD — Mer / monde marin (Narcissus, Typhoon, Lord Jim)
+# ==============================================================
+
+# Hiérarchie à bord : capitaine vs matelot
+captain crew sailor
+captain ship sea
+honour captain crew
+lord captain crew
+
+# Courage / honte / identité (Lord Jim)
+honour jim coward
+brave jim coward
+act honour disgrace
+truth honour lie
+conscience honour disgrace
+fate honour disgrace
+
+# ==============================================================
+# KIPLING + CONRAD — Thèmes partagés
+# ==============================================================
+
+# Silence, ombre, mort — émotions de la domination
+silence death life
+shadow light darkness
+death white black
+death native english

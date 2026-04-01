@@ -259,11 +259,23 @@ def inverser_corpus(corpus_lemmatise: list, dico_cda: dict) -> list:
 
 # Paires définitionnelles : (terme dominant, terme dominé)
 # Elles servent à calculer l'axe colonial dans l'espace vectoriel.
+#
+# Axe Kipling (Inde) :
+#   english/native, white/brown, sahib/servant, england/india
+# Axe Conrad (Afrique / moral) — ajoutés d'après les résultats :
+#   white/black   : biais racial conradien (light-white+black → darkness/shadow, stable ✅)
+#   light/darkness: titre et thème central de Heart of Darkness (très stable ✅)
+#   civilized/savage : soul-white+savage → patronize (fort, deux runs ✅)
 PAIRES_BIAIS = [
-    ("english", "native"),
-    ("white",   "brown"),
-    ("sahib",   "servant"),
-    ("england", "india"),
+    # --- Kipling : hiérarchie coloniale (Inde) ---
+    ("english",   "native"),
+    ("white",     "brown"),
+    ("sahib",     "servant"),
+    ("england",   "india"),
+    # --- Conrad : biais racial et moral (Afrique) ---
+    ("white",     "black"),
+    ("light",     "darkness"),
+    ("civilized", "savage"),
 ]
 
 
@@ -351,11 +363,11 @@ def neutraliser_vecteurs(modele, paires_biais: list):
 def main():
     import argparse
     parser = argparse.ArgumentParser(
-        description="Entraînement GloVe et analyse des biais coloniaux (corpus Kipling)."
+        description="Entraînement GloVe et analyse des biais coloniaux (corpus Kipling + Conrad)."
     )
     parser.add_argument(
-        "corpus", type=str, nargs="?", default="corpus/sand.txt",
-        help="Chemin vers le corpus lemmatisé (ex: corpus/kipling_lemmes.txt)"
+        "corpus", type=str, nargs="?", default="corpus/corpus_lemmes.txt",
+        help="Chemin vers le corpus lemmatisé (ex: corpus/corpus_lemmes.txt)"
     )
     parser.add_argument(
         "--cda", action="store_true",
@@ -383,13 +395,15 @@ def main():
         fichier_resultats = f"resultats/{nom_corpus}_resultats.md"
     os.makedirs("resultats", exist_ok=True)
 
-    # Détection de la langue selon le corpus pour les stopwords
-    if "kipling" in nom_corpus.lower() or "english" in nom_corpus.lower():
-        langue = "english"
-    else:
+    # Détection de la langue selon le corpus pour les stopwords.
+    # Par défaut English (Kipling + Conrad) ; French seulement si explicitement indiqué.
+    if "french" in nom_corpus.lower() or nom_corpus.lower().startswith("fr_"):
         langue = "french"
-        
+    else:
+        langue = "english"
+
     stopwords_set = set(stopwords.words(langue))
+    print(f"Langue détectée : {langue} (stopwords NLTK)")
 
     # Chargement du corpus (déjà lemmatisé) + filtrage stopwords
     corpus_brut = charger_corpus(corpus)
@@ -408,16 +422,31 @@ def main():
     if args.cda:
         print("\n--- Entraînement du modèle AUGMENTÉ (CDA) ---")
         dico_cda = {
-            "english": "native",
-            "native": "english",
-            "white": "brown",
-            "brown": "white",
-            "england": "india",
-            "india": "england",
-            "city": "jungle",
-            "jungle": "city",
-            "sahib": "servant",
-            "servant": "sahib"
+            # --- Kipling : hiérarchie coloniale (Inde) ---
+            # Déjà actifs, stables dans les deux runs
+            "english":   "native",
+            "native":    "english",
+            "white":     "brown",
+            "brown":     "white",
+            "england":   "india",
+            "india":     "england",
+            "city":      "jungle",
+            "jungle":    "city",
+            "sahib":     "servant",
+            "servant":   "sahib",
+            # --- Conrad : axe racial (Afrique) ---
+            # light-white+black → darkness/shadow (✅ stable, deux runs)
+            "black":     "white",
+            # heart-white+black → death, hard ; light-white+black → dark (✅)
+            "darkness":  "light",
+            "light":     "darkness",
+            # --- Conrad : axe moral/humanité ---
+            # soul-white+savage → patronize (✅) ; human-white+black → divine (✅)
+            "savage":    "civilized",
+            "civilized": "savage",
+            # servant-native+english → slave (✅ deux runs)
+            "slave":     "free",
+            "free":      "slave",
         }
         corpus_inverse = inverser_corpus(corpus_propre, dico_cda)
         corpus_augmente = corpus_propre + corpus_inverse

@@ -279,6 +279,38 @@ PAIRES_BIAIS = [
 ]
 
 
+def generer_dico_cda(paires_biais: list = None) -> dict:
+    """Génère le dictionnaire CDA par inversion symétrique des PAIRES_BIAIS.
+
+    Pour chaque paire (dominant, dominé), les deux directions sont ajoutées :
+        dominant  → dominé
+        dominé   → dominant
+
+    En cas de conflit (un mot présent dans plusieurs paires),
+    la première occurrence l'emporte, ce qui évite les écrasements
+    involontaires (ex. 'white' → 'brown' ne sera pas écrasé par 'white' → 'black').
+
+    Args:
+        paires_biais : liste de tuples (dominant, dominé).
+                       Défaut : PAIRES_BIAIS.
+
+    Returns:
+        dict {mot: équivalent_inversé}
+    """
+    if paires_biais is None:
+        paires_biais = PAIRES_BIAIS
+    dico = {}
+    for a, b in paires_biais:
+        if a not in dico:
+            dico[a] = b
+        if b not in dico:
+            dico[b] = a
+    print(f"Dictionnaire CDA : {len(dico)} substitutions "
+          f"issues de {len(paires_biais)} paires de biais.")
+    return dico
+
+
+
 def calculer_direction_biais(modele, paires_biais: list) -> np.ndarray:
     """Calcule le vecteur unitaire représentant l'axe du biais colonial.
 
@@ -360,7 +392,73 @@ def neutraliser_vecteurs(modele, paires_biais: list):
     return modele_debiais
 
 
+
+# ==========================================
+# Génération de la matrice
+# ==========================================
+
+# Concepts à tester dans la matrice coloniale.
+# Pour chaque mot_base, toutes les combinaisons
+#   mot_moins ∈ {english, white} × mot_plus ∈ {native, brown, savage}
+# sont générées automatiquement.
+CONCEPTS_COLONIAUX = [
+    # Humanité
+    "man", "master", "human", "soul",
+    # Raison / intelligence
+    "mind", "wisdom", "think", "understand",
+    # Ordre / civilisation
+    "law", "order", "rule",
+    # Espaces
+    "home", "empire", "city",
+    # Force / courage
+    "brave", "soldier",
+]
+
+MOT_MOINS = ["english", "white"]
+MOT_PLUS  = ["native", "brown"]
+
+ANALOGIES_AUTRES = []
+
+
+def generer_analogies_coloniales(
+    concepts: list = None,
+    mot_moins: list = None,
+    mot_plus: list = None,
+) -> list:
+    """Génère la matrice complète des analogies coloniales.
+
+    Pour chaque concept (mot_base), produit toutes les combinaisons :
+        mot_moins ∈ {english, white} × mot_plus ∈ {native, brown, savage}
+
+    Cela garantit que seul le mot_base distingue les groupes de tests,
+    et non les termes coloniaux eux-mêmes.
+
+    Args:
+        concepts  : liste des mots_base (défaut : CONCEPTS_COLONIAUX)
+        mot_moins : liste des termes dominants (défaut : MOT_MOINS)
+        mot_plus  : liste des termes dominés   (défaut : MOT_PLUS)
+
+    Returns:
+        Liste de tuples (mot_base, mot_moins, mot_plus).
+    """
+    if concepts  is None: concepts  = CONCEPTS_COLONIAUX
+    if mot_moins is None: mot_moins = MOT_MOINS
+    if mot_plus  is None: mot_plus  = MOT_PLUS
+
+    analogies = []
+    for concept in concepts:
+        for moins in mot_moins:
+            for plus in mot_plus:
+                analogies.append((concept, moins, plus))
+
+    n = len(analogies)
+    print(f"Matrice coloniale générée : {len(concepts)} concepts "
+          f"× {len(mot_moins)} mot_moins × {len(mot_plus)} mot_plus = {n} analogies")
+    return analogies
+
+
 def main():
+
     import argparse
     parser = argparse.ArgumentParser(
         description="Entraînement GloVe et analyse des biais coloniaux (corpus Kipling + Conrad)."
@@ -421,33 +519,7 @@ def main():
     modele_cda = None
     if args.cda:
         print("\n--- Entraînement du modèle AUGMENTÉ (CDA) ---")
-        dico_cda = {
-            # --- Kipling : hiérarchie coloniale (Inde) ---
-            # Déjà actifs, stables dans les deux runs
-            "english":   "native",
-            "native":    "english",
-            "white":     "brown",
-            "brown":     "white",
-            "england":   "india",
-            "india":     "england",
-            "city":      "jungle",
-            "jungle":    "city",
-            "sahib":     "servant",
-            "servant":   "sahib",
-            # --- Conrad : axe racial (Afrique) ---
-            # light-white+black → darkness/shadow (✅ stable, deux runs)
-            "black":     "white",
-            # heart-white+black → death, hard ; light-white+black → dark (✅)
-            "darkness":  "light",
-            "light":     "darkness",
-            # --- Conrad : axe moral/humanité ---
-            # soul-white+savage → patronize (✅) ; human-white+black → divine (✅)
-            "savage":    "civilized",
-            "civilized": "savage",
-            # servant-native+english → slave (✅ deux runs)
-            "slave":     "free",
-            "free":      "slave",
-        }
+        dico_cda = generer_dico_cda()
         corpus_inverse = inverser_corpus(corpus_propre, dico_cda)
         corpus_augmente = corpus_propre + corpus_inverse
         print(f"Taille du corpus augmenté : {len(corpus_augmente)} phrases (original: {len(corpus_propre)})")
@@ -459,73 +531,105 @@ def main():
         print("\n--- Hard Debiasing post-hoc ---")
         modele_debiais = neutraliser_vecteurs(modele_standard, PAIRES_BIAIS)
 
-    # Chargement des analogies depuis le fichier externe
-    fichier_analogies = os.path.join(os.path.dirname(__file__) or ".", "analogies.txt")
-    analogies_a_tester = []
-    with open(fichier_analogies, "r", encoding="utf-8") as f:
-        for ligne in f:
-            ligne = ligne.strip()
-            if ligne and not ligne.startswith("#"):
-                mots = ligne.split()
-                if len(mots) == 3:
-                    analogies_a_tester.append(tuple(mots))
-    print(f"\n{len(analogies_a_tester)} analogies chargées depuis {fichier_analogies}")
+    analogies_a_tester = generer_analogies_coloniales() + ANALOGIES_AUTRES
+    print(f"\n{len(analogies_a_tester)} analogies au total "
+          f"(matrice coloniale + {len(ANALOGIES_AUTRES)} analogies complémentaires)")
 
-    # Écriture des résultats dans un fichier markdown
-    # On détermine quels modèles sont actifs pour adapter les colonnes
+    # On détermine quels modèles sont actifs
     modeles_actifs = [("Standard", modele_standard)]
     if args.cda:
         modeles_actifs.append(("CDA", modele_cda))
     if args.debiais:
         modeles_actifs.append(("Débiaisé", modele_debiais))
 
+    # -------------------------------------------------------
+    # Phase 1 : calcul de toutes les analogies
+    # resultats[base][moins][plus][nom_modele] = [(mot, score), ...]
+    # -------------------------------------------------------
+    resultats = {}
+    for base, moins, plus in analogies_a_tester:
+        resultats.setdefault(base, {}).setdefault(moins, {}).setdefault(plus, {})
+        for nom_modele, modele in modeles_actifs:
+            print(f"  {base} − {moins} + {plus}  [{nom_modele}] ...", end="  ")
+            try:
+                res = resoudre_analogie(modele, base, moins, plus)
+                print(res[0][0])
+            except KeyError as e:
+                res = [(f"*{e}*", None)]
+                print("absent du vocabulaire")
+            resultats[base][moins][plus][nom_modele] = res
+
+    # -------------------------------------------------------
+    # Phase 2 : écriture en markdown
+    # -------------------------------------------------------
+
+    def _cellule(res, top_n: int = 3) -> str:
+        """Formate les top_n résultats d'une analogie en une chaîne compacte."""
+        items = []
+        for mot, score in res[:top_n]:
+            items.append(f"{mot} ({score:.3f})" if score is not None else mot)
+        return ", ".join(items) if items else "—"
+
     with open(fichier_resultats, "w", encoding="utf-8") as f:
         f.write(f"# Résultats GloVe — {nom_corpus}\n\n")
+        f.write("> Équation : `concept − mot_moins + mot_plus = ?`  \n")
+        f.write("> Lignes = `mot_plus` (terme colonisé) · "
+                "Colonnes = `mot_moins` (terme dominant)  \n")
+        f.write("> Chaque cellule : 3 réponses les plus proches (score cosinus)\n\n")
 
-        for base, moins, plus in analogies_a_tester:
-            titre = f"{base} - {moins} + {plus} = ?"
-            print(f"\nAnalogie : {titre}")
-            f.write(f"## {titre}\n\n")
+        # ---- Matrice coloniale : un tableau 2D par concept ----
+        for base in CONCEPTS_COLONIAUX:
+            if base not in resultats:
+                continue
+            f.write(f"## {base}\n\n")
 
-            # Récupération des résultats pour chaque modèle actif
-            resultats_par_modele = []
-            for nom_modele, modele in modeles_actifs:
-                try:
-                    res = resoudre_analogie(modele, base, moins, plus)
-                except KeyError as e:
-                    res = [(f"*{e}*", None)]
-                resultats_par_modele.append((nom_modele, res))
+            for nom_modele, _ in modeles_actifs:
+                if len(modeles_actifs) > 1:
+                    f.write(f"**{nom_modele}**\n\n")
 
-            if len(modeles_actifs) == 1:
-                # Mode simple : une colonne
-                _, res = resultats_par_modele[0]
-                f.write("| Mot | Score |\n|---|---|\n")
-                for mot, score in res:
-                    if score is not None:
-                        print(f"  -> {mot} ({score:.3f})")
-                        f.write(f"| {mot} | {score:.3f} |\n")
-                    else:
-                        f.write(f"| {mot} | - |\n")
+                # En-tête
+                f.write("| |")
+                for moins in MOT_MOINS:
+                    f.write(f" **{moins}** |")
+                f.write("\n|---|")
+                for _ in MOT_MOINS:
+                    f.write("---|")
                 f.write("\n")
-            else:
-                # Mode comparatif : autant de paires colonnes que de modèles
-                en_tete = " | ".join(
-                    f"Modèle {nom} | Score" for nom, _ in resultats_par_modele
-                )
-                separateur = "|".join(["---|---"] * len(resultats_par_modele))
-                f.write(f"| {en_tete} |\n|{separateur}|\n")
 
-                max_len = max(len(res) for _, res in resultats_par_modele)
-                for i in range(max_len):
-                    ligne = ""
-                    for _, res in resultats_par_modele:
-                        mot, score = res[i] if i < len(res) else ("-", None)
-                        str_score = f"{score:.3f}" if score is not None else "-"
-                        ligne += f"| {mot} | {str_score} "
-                    f.write(ligne + "|\n")
+                # Lignes (une par mot_plus)
+                for plus in MOT_PLUS:
+                    f.write(f"| **{plus}** |")
+                    for moins in MOT_MOINS:
+                        try:
+                            res = resultats[base][moins][plus][nom_modele]
+                            f.write(f" {_cellule(res)} |")
+                        except KeyError:
+                            f.write(" — |")
+                    f.write("\n")
                 f.write("\n")
+
+        # ---- Analogies complémentaires (hors-matrice) ----
+        extras = [(b, m, p) for b, m, p in ANALOGIES_AUTRES if b in resultats]
+        if extras:
+            f.write("## Analogies complémentaires\n\n")
+            for base, moins, plus in extras:
+                titre = f"{base} − {moins} + {plus} = ?"
+                f.write(f"### {titre}\n\n")
+                for nom_modele, _ in modeles_actifs:
+                    if len(modeles_actifs) > 1:
+                        f.write(f"**{nom_modele}**\n\n")
+                    try:
+                        res = resultats[base][moins][plus][nom_modele]
+                        f.write("| Rang | Mot | Score |\n|---|---|---|\n")
+                        for i, (mot, score) in enumerate(res, 1):
+                            str_score = f"{score:.3f}" if score is not None else "—"
+                            f.write(f"| {i} | {mot} | {str_score} |\n")
+                    except KeyError:
+                        f.write("*Données non disponibles.*\n")
+                    f.write("\n")
 
     print(f"\nRésultats sauvegardés dans {fichier_resultats}")
+
 
 
 if __name__ == "__main__":

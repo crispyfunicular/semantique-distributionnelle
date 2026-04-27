@@ -57,7 +57,7 @@ rendre plus de justice aux grandes vues qui l'animent pour
 mieux diriger les connaissances de l'humanité.
 
 «Je regrette la perte que fait la littérature de ne pouvoir
-jouir des oeuvres complètes de Gresset, cet auteur ayant une
+jouir des œuvres complètes de Gresset, cet auteur ayant une
 réputation si justement méritée. J'ai fait remettre au citoyen
 Caillard, ministre plénipotentiaire de la République française,
 le manuscrit de _Jacques le Fataliste_. J'espère que l'Institut
@@ -79,16 +79,16 @@ Le livre a donc été beaucoup lu; mais l'a-t-il été par tous les
 critiques qui en ont parlé? Nous en doutons un peu, tant est grande la
 divergence des opinions émises à son sujet. La plus répandue, celle qui
 a cours, c'est que c'est un livre ordurier, dans lequel se trouve
-cependant un chef-d'oeuvre: _l'Histoire de Mme de La Pommeraye et du
+cependant un chef-d'œuvre: _l'Histoire de Mme de La Pommeraye et du
 Chevalier des Arcis_. Il serait, à notre avis, beaucoup plus juste de
-dire comme le disait Goethe, que c'est un chef-d'oeuvre, dans lequel se
+dire comme le disait Goethe, que c'est un chef-d'œuvre, dans lequel se
 trouvent malheureusement deux ou trois passages qui tiennent le milieu
 entre la licence de Sterne et celle de Rabelais, en se rapprochant un
 peu plus de ce dernier.
 
 Si, en effet, nous le prenons par le détail, nous y trouvons d'abord
 cette histoire de Mme de La Pommeraye, acceptée par tous comme une
-oeuvre hors ligne, et qui remplit le quart de l'ouvrage. Dans les trois
+œuvre hors ligne, et qui remplit le quart de l'ouvrage. Dans les trois
 autres quarts, l'histoire du Père Hudson, celle de l'emplâtre de
 Desglands ont trouvé une place très-honorable dans les morceaux choisis
 avec un soin si scrupuleux par M. Génin. Celles du chevalier de
@@ -119,7 +119,7 @@ l'impression... Nous observerons à ces hommes si chastes, à ces hommes
 qui prétendent qu'on ne doit écrire que pour des mères et des
 magistrats, que les peuples ne gagnent jamais en licence que ce qu'ils
 perdent réellement en pureté... L'oreille est le dernier asile de la
-chasteté: ce n'est qu'après avoir été chassée du coeur qu'elle s'y
+chasteté: ce n'est qu'après avoir été chassée du cœur qu'elle s'y
 réfugie, etc.»
 
 Ce qui a réellement le plus nui à la réputation de _Jacques le
@@ -190,7 +190,7 @@ Ne nous attachons pas à ces passages, et demandons-nous si réellement
 Diderot n'a fait que copier Sterne. Dans le _Catalogue d'une jolie
 collection de livres rares et curieux_ provenant de la bibliothèque d'un
 homme de lettres bien connu (René Pincebourde, 1871), cet homme de
-lettres, M. Ch. Monselet, dit de _Jacques le Fataliste_: «Chef-d'oeuvre
+lettres, M. Ch. Monselet, dit de _Jacques le Fataliste_: «chef-d'œuvre
 à la diable, écrit sous l'influence directe de Sterne, et où l'on
 retrouve avec stupéfaction des pages entières copiées de _Tristram
 Shandy_.» Qui ne croirait, après cela, qu'il s'agit de quelque chose de
@@ -257,7 +257,7 @@ du 7 avril 1780, où _Jacques le Fataliste_ est présenté comme un repas
 de tous points excellent et servi avec une admirable entente de l'art du
 cuisinier et du maître d'hôtel réunis. En 1840, E. Erdmann, dans son
 _Développement de l'empirisme et du matérialisme, de Locke à Kant_ (p.
-268), présente ce roman comme un chef-d'oeuvre encore insuffisamment
+268), présente ce roman comme un chef-d'œuvre encore insuffisamment
 apprécié. Voici les opinions allemandes. Quant aux opinions françaises,
 elles sont, comme il en est chez nous de toutes les opinions, coulées
 dans le même moule. On parle de _Jacques le Fataliste_ comme en a parlé
@@ -1164,7 +1164,7 @@ envie de rire. Un pauvre malheureux qui se meurt à notre porte!...
 --Femme, tu me diras tout cela après.
 
 --Non, cela ne sera pas. Si vous ne finissez, je me lève. Cela ne me
-fera-t-il pas bien aise, lorsque j'ai le coeur gros?
+fera-t-il pas bien aise, lorsque j'ai le cœur gros?
 
 --Oh! si tu te fais tant prier, tu en seras la dupe.
 
@@ -1928,12 +1928,12 @@ La vôtre est plus avisée; elle n'aurait pas fait la sottise...
 
 L'HÔTESSE.
 
-Mais, compère, il y a les soeurs grises.
+Mais, compère, il y a les sœurs grises.
 
 LE CHIRURGIEN.
 
-Ah! commère! un homme, un homme chez les soeurs! Et puis il y a une
-petite difficulté un peu plus grande que le doigt... Buvons aux soeurs,
+Ah! commère! un homme, un homme chez les sœurs! Et puis il y a une
+petite difficulté un peu plus grande que le doigt... Buvons aux sœurs,
 ce sont de bonnes filles.
 
 L'HÔTESSE.
@@ -1943,7 +1943,7 @@ Et quelle difficulté?
 LE CHIRURGIEN.
 
 Votre homme ne veut pas que vous alliez chez le curé, et ma femme ne
-veut pas que j'aille chez les soeurs... Mais, compère, encore un coup,
+veut pas que j'aille chez les sœurs... Mais, compère, encore un coup,
 cela nous avisera peut-être. Avez-vous questionné cet homme? Il n'est
 peut-être pas sans ressource.
 
@@ -1953,7 +1953,7 @@ Un soldat!
 
 LE CHIRURGIEN.
 
-Un soldat a père, mère, frères, soeurs, des parents, des amis, quelqu'un
+Un soldat a père, mère, frères, sœurs, des parents, des amis, quelqu'un
 sous le ciel... Buvons encore un coup, éloignez-vous, et laissez-moi
 faire.
 
@@ -2145,7 +2145,7 @@ Mon frère était allé chercher le repos à Lisbonne. Jean, mon frère,
 était un garçon d'esprit: c'est ce qui lui a porté malheur; il eût été
 mieux pour lui qu'il eût été un sot comme moi; mais cela était écrit
 là-haut. Il était écrit que le frère quêteur des Carmes qui venait dans
-notre village demander des oeufs, de la laine, du chanvre, des fruits,
+notre village demander des œufs, de la laine, du chanvre, des fruits,
 du vin à chaque saison, logerait chez mon père, qu'il débaucherait Jean,
 mon frère, et que Jean, mon frère, prendrait l'habit de moine.
 
@@ -2161,7 +2161,7 @@ dès sa jeunesse, il s'occupait à déchiffrer et à copier de vieux
 parchemins. Il passa par toutes les fonctions de l'ordre, successivement
 portier, sommelier, jardinier, sacristain, adjoint à procure et
 banquier; du train dont il y allait, il aurait fait notre fortune à
-tous. Il a marié et bien marié deux de nos soeurs et quelques autres
+tous. Il a marié et bien marié deux de nos sœurs et quelques autres
 filles du village. Il ne passait pas dans les rues, que les pères, les
 mères et les enfants n'allassent à lui, et ne lui criassent: «Bonjour,
 frère Jean; comment vous portez-vous, frère Jean?» Il est sûr que quand
@@ -2182,7 +2182,7 @@ autre la clef de ses registres. Les moines sont implacables. Quand on
 eut tiré de frère Jean tous les éclaircissements dont on avait besoin,
 on le fit porteur de charbon dans le laboratoire où l'on distille _l'eau
 des Carmes_. Frère Jean, ci-devant banquier de l'ordre et adjoint à
-procure, maintenant charbonnier! Frère Jean avait du coeur, il ne put
+procure, maintenant charbonnier! Frère Jean avait du cœur, il ne put
 supporter ce déchet d'importance et de splendeur, et n'attendit qu'une
 occasion de se soustraire à cette humiliation.
 
@@ -2330,7 +2330,7 @@ ne l'eût pris en pitié. Que vous dirai-je de plus? Un soir que nous
 levons; nous ouvrons au Père Ange et à mon frère déguisés. Ils passèrent
 le jour suivant dans la maison; le lendemain, dès l'aube du jour, ils
 décampèrent. Ils s'en allaient les mains bien garnies; car Jean, en
-m'embrassant, me dit: «J'ai marié tes soeurs; si j'étais resté dans le
+m'embrassant, me dit: «J'ai marié tes sœurs; si j'étais resté dans le
 couvent, deux ans de plus, ce que j'y étais, tu serais un des gros
 fermiers du canton: mais tout a changé, et voilà ce que je puis faire
 pour toi. Adieu, Jacques, si nous avons du bonheur, le Père et moi, tu
@@ -2845,7 +2845,7 @@ que votre libéralité sauvera peut-être du désordre.
 
 «--Je ne saurais.
 
-«--C'est un manoeuvre qui n'avait que ses bras pour vivre, et qui vient
+«--C'est un manœuvr qui n'avait que ses bras pour vivre, et qui vient
 de se fracasser une jambe en tombant de son échafaud.
 
 «--Je ne saurais, vous dis-je.
@@ -2896,7 +2896,7 @@ n'avez pas les mêmes idées du soufflet.
 
 --Ce n'est pas tout à fait l'avis de l'Évangile.
 
---L'Évangile est dans mon coeur et dans mon fourreau, et je n'en connais
+--L'Évangile est dans mon cœur et dans mon fourreau, et je n'en connais
 pas d'autre...»
 
 Le vôtre, mon maître, est je ne sais où; le mien est écrit là-haut;
@@ -3349,7 +3349,7 @@ plusieurs siècles celui de toute l'Europe; on l'appelait l'esprit de
 chevalerie. Toute cette multitude brillante, armée de pied en cap,
 décorée de diverses livrées d'amour, caracolant sur des palefrois, la
 lance au poing, la visière haute ou baissée, se regardant fièrement, se
-mesurant de l'oeil, se menaçant, se renversant sur la poussière,
+mesurant de l'œil, se menaçant, se renversant sur la poussière,
 jonchant l'espace d'un vaste tournoi des éclats d'armes brisées,
 n'étaient que des amis jaloux du mérite en vogue. Ces amis, au moment où
 ils tenaient leurs lances en arrêt, chacun à l'extrémité de la carrière,
@@ -3357,7 +3357,7 @@ et qu'ils avaient pressé de l'aiguillon les flancs de leurs coursiers,
 devenaient les plus terribles ennemis; ils fondaient les uns sur les
 autres avec la même fureur qu'ils auraient portée sur un champ de
 bataille. Eh bien! nos deux officiers n'étaient que deux paladins, nés
-de nos jours, avec les moeurs des anciens. Chaque vertu et chaque vice
+de nos jours, avec les mœurs des anciens. Chaque vertu et chaque vice
 se montre et passe de mode. La force du corps eut son temps, l'adresse
 aux exercices eut le sien. La bravoure est tantôt plus, tantôt moins
 considérée; plus elle est commune, moins on en est vain, moins on en
@@ -3371,7 +3371,7 @@ entre des prêtres, entre des magistrats, entre des littérateurs, entre
 des philosophes; chaque état a sa lance et ses chevaliers, et nos
 assemblées les plus respectables, les plus amusantes, ne sont que de
 petits tournois où quelquefois on porte des livrées de l'amour dans le
-fond de son coeur, sinon sur l'épaule. Plus il y a d'assistants, plus la
+fond de son cœur, sinon sur l'épaule. Plus il y a d'assistants, plus la
 joute est vive; la présence de femmes y pousse la chaleur et
 l'opiniâtreté à toute outrance, et la honte d'avoir succombé devant
 elles ne s'oublie guère.
@@ -3593,7 +3593,7 @@ peut-être à présent se dit-il en lui-même avec un sentiment de mépris:
 Il faut que la bienfaisance soit fort étrangère à ce voyageur, et que
 l'exercice de la justice lui soit bien pénible, puisqu'il en est si
 touché... Qu'est-ce qu'il y a donc de si absurde dans ce que je vous
-dis, pour vous faire rire de si bon coeur!... Quoi qu'il en soit,
+dis, pour vous faire rire de si bon cœur!... Quoi qu'il en soit,
 dites-moi le nom de cet homme, afin que je le mette sur mes tablettes.
 
 LE MAÎTRE.
@@ -4056,7 +4056,7 @@ JACQUES.
 Mon maître, je ne suis pas de cette force-là. Je m'acheminais
 cahin-caha; et, puisqu'il faut vous l'avouer, regrettant mes deux gros
 écus, qui n'en étaient pas moins donnés, et gâtant par mon regret
-l'oeuvre que j'avais faite. J'étais à une égale distance des deux
+l'œuvre que j'avais faite. J'étais à une égale distance des deux
 villages, et le jour était tout à fait tombé, lorsque trois bandits
 sortent d'entre les broussailles qui bordaient le chemin, se jettent sur
 moi, me renversent à terre, me fouillent, et sont étonnés de me trouver
@@ -4132,7 +4132,7 @@ JACQUES.
 
 Je trouve encore que je suis un sot; cependant, je ne puis m'empêcher de
 pleurer ni de rire: et c'est ce qui me fait enrager. J'ai cent fois
-essayé... Je ne fermai pas l'oeil de la nuit...
+essayé... Je ne fermai pas l'œil de la nuit...
 
 LE MAÎTRE.
 
@@ -4348,7 +4348,7 @@ le reste de sa vie.
 
 --La faire mettre au lit.
 
---Elle y est, et pousse des cris à fendre le coeur. Ma pauvre
+--Elle y est, et pousse des cris à fendre le cœur. Ma pauvre
 Nicole!...»
 
 Au milieu de ces lamentations, on sonnait d'un côté, et l'on criait:
@@ -4414,7 +4414,7 @@ JACQUES.
 
 Oui, monsieur, assommé, assommé sur le grand chemin, la nuit; en
 revenant du village, comme je vous le disais, après avoir fait, selon
-moi, la sottise; selon vous, la belle oeuvre de donner mon argent.
+moi, la sottise; selon vous, la belle œuvre de donner mon argent.
 
 LE MAÎTRE.
 
@@ -4547,7 +4547,7 @@ louis. Ma pauvre Nicole!
 
 LE MAÎTRE.
 
-Madame a le coeur tendre[29].
+Madame a le cœur tendre[29].
 
 [29] VARIANTE: «bon.»
 
@@ -4612,7 +4612,7 @@ devenu amoureux d'une pâtissière de la rue de l'Université. Le pâtissier
 conduite de sa femme. Si ce n'était pas sa jalousie, c'était son
 assiduité qui gênait nos deux amants. Que firent-ils pour se délivrer de
 cette contrainte? L'intendant présenta à son maître un placet où le
-pâtissier était traduit comme un homme de mauvaises moeurs, un ivrogne
+pâtissier était traduit comme un homme de mauvaises mœurs, un ivrogne
 qui ne sortait pas de la taverne, un brutal qui battait sa femme, la
 plus honnête et la plus malheureuse des femmes. Sur ce placet il obtint
 une lettre de cachet, et cette lettre de cachet, qui disposait de la
@@ -4940,7 +4940,7 @@ Non, compère, vous savez bien que je n'en ai point.
 L'HÔTE.
 
 Tu n'en as point? Je saurai bien en faire avec ta charrue, tes chevaux,
-tes boeufs et ton lit. Comment, gredin!...
+tes bœufs et ton lit. Comment, gredin!...
 
 LE COMPÈRE.
 
@@ -5022,7 +5022,7 @@ services. Si j'avais de l'argent, je vous le jetterais au visage; mais
 je n'en ai point. Ma fille deviendra tout ce qu'il plaira à Dieu; mon
 garçon se fera tuer s'il le faut; moi, je mendierai, mais ce ne sera pas
 à votre porte. Plus, plus d'obligations à un vilain homme comme vous.
-Empochez bien l'argent de mes boeufs, de mes chevaux et de mes
+Empochez bien l'argent de mes bœufs, de mes chevaux et de mes
 ustensiles: grand bien vous fasse. Vous êtes né pour faire des ingrats,
 et je ne veux pas l'être. Adieu.
 
@@ -5271,7 +5271,7 @@ cela vaut mieux...
 
 JACQUES.
 
-Que père, mère, frères, soeurs, enfants, valets, époux...
+Que père, mère, frères, sœurs, enfants, valets, époux...
 
 L'HÔTESSE.
 
@@ -5391,7 +5391,7 @@ L'HÔTESSE.
 
 M. le marquis en trouva pourtant une assez bizarre pour lui tenir
 rigueur. Elle s'appelait Mme de La Pommeraye. C'était une veuve qui
-avait des moeurs, de la naissance, de la fortune et de la hauteur. M.
+avait des mœurs, de la naissance, de la fortune et de la hauteur. M.
 des Arcis rompit avec toutes ses connaissances, s'attacha uniquement à
 Mme de La Pommeraye, lui fit sa cour avec la plus grande assiduité,
 tâcha par tous les sacrifices imaginables de lui prouver qu'il l'aimait,
@@ -5517,7 +5517,7 @@ assujettie, puisque moi, moi-même, je n'y ai pas échappé.
 --Marquis, il s'agit... Je suis désolée; je vais vous désoler, et, tout
 bien considéré, il vaut mieux que je me taise.
 
---Non, mon amie, parlez; auriez-vous au fond de votre coeur un secret
+--Non, mon amie, parlez; auriez-vous au fond de votre cœur un secret
 pour moi? La première de nos conventions ne fut-elle pas que nos âmes
 s'ouvriraient l'une à l'autre sans réserve?
 
@@ -5529,7 +5529,7 @@ dormir. Nos sociétés les plus intimes me déplaisent. La nuit, je
 m'interroge et je me dis: Est-ce qu'il est moins aimable? Non.
 Auriez-vous à lui reprocher quelques liaisons suspectes? Non. Est-ce que
 sa tendresse pour vous est diminuée? Non. Pourquoi, votre ami étant le
-même, votre coeur est-il donc changé? car il l'est: vous ne pouvez vous
+même, votre cœur est-il donc changé? car il l'est: vous ne pouvez vous
 le cacher; vous ne l'attendez plus avec la même impatience; vous n'avez
 plus le même plaisir à le voir; cette inquiétude quand il tardait à
 revenir; cette douce émotion au bruit de sa voiture, quand on
@@ -5567,7 +5567,7 @@ supériorité ce moment vous donne sur moi! Que je vous vois grande et que
 je me trouve petit! c'est vous qui avez parlé la première, et c'est moi
 qui fus coupable le premier. Mon amie, votre sincérité m'entraîne; je
 serais un monstre si elle ne m'entraînait pas, et je vous avouerai que
-l'histoire de votre coeur est mot à mot l'histoire du mien. Tout ce que
+l'histoire de votre cœur est mot à mot l'histoire du mien. Tout ce que
 vous vous êtes dit, je me le suis dit; mais je me taisais, je souffrais,
 et je ne sais quand j'aurais eu le courage de parler.
 
@@ -5631,7 +5631,7 @@ je ne m'en prendrais qu'au sort qui nous aurait séparés lorsque nous
 l'être...»
 
 Après cette conversation, ils se mirent à moraliser sur l'inconstance du
-coeur humain, sur la frivolité des serments, sur les liens du mariage...
+cœur humain, sur la frivolité des serments, sur les liens du mariage...
 (Madame?--Qu'est-ce?--Le coche..) Messieurs, dit l'hôtesse, il faut que
 je vous quitte. Ce soir, lorsque toutes mes affaires seront faites, je
 reviendrai, et je vous achèverai cette aventure, si vous en êtes
@@ -5671,7 +5671,7 @@ coucher: il faut remettre le reste à notre passage.»
 «Le premier serment que se firent deux êtres de chair, ce fut au pied
 d'un rocher qui tombait en poussière; ils attestèrent de leur constance
 un ciel qui n'est pas un instant le même; tout passait en eux et autour
-d'eux, et ils croyaient leurs coeurs affranchis de vicissitudes. Ô
+d'eux, et ils croyaient leurs cœurs affranchis de vicissitudes. Ô
 enfants! toujours enfants!...» Je ne sais de qui sont ces réflexions, de
 Jacques, de son maître ou de moi; il est certain qu'elles sont de l'un
 des trois, et qu'elles furent précédées et suivies de beaucoup d'autres
@@ -5751,8 +5751,8 @@ et vous, Coutelet, vous fîtes bien de changer, puisque changement vous
 duisait[38]; mais vous eûtes tort de vous promettre que vous ne
 changeriez pas. Coutelet, ne voyais-tu pas que Dieu te fit pour aller à
 plusieurs Gaînes; et toi, Gaîne, pour recevoir plus d'un Coutelet? Vous
-regardiez comme fous certains Coutelets qui faisaient voeu de se passer
-à forfait de Gaînes, et comme folles certaines Gaînes qui faisaient voeu
+regardiez comme fous certains Coutelets qui faisaient vœu de se passer
+à forfait de Gaînes, et comme folles certaines Gaînes qui faisaient vœu
 de se fermer pour tout Coutelet: et vous ne pensiez pas que vous étiez
 presque aussi fous lorsque vous juriez, toi, Gaîne, de t'en tenir à un
 seul Coutelet; toi, Coutelet, de t'en tenir à une seule Gaîne.»
@@ -6289,7 +6289,7 @@ JACQUES.
 
 Puisqu'il n'y paraîtra pas demain, et que je ne fais pas ce soir grand
 cas de ma raison, mon maître, ma belle hôtesse, encore une santé, une
-santé qui me tient fort à coeur, c'est celle de l'abbé de Mlle d'Aisnon.
+santé qui me tient fort à cœur, c'est celle de l'abbé de Mlle d'Aisnon.
 
 L'HÔTESSE.
 
@@ -6393,7 +6393,7 @@ familière, afin qu'on vous prenne pour des dévotes d'ancienne date.
 Faites-vous jansénistes ou molinistes, comme il vous plaira; mais le
 mieux sera d'avoir l'opinion de votre curé. Ne manquez pas, à tort et à
 travers, dans toute occasion, de vous déchaîner contre les philosophes;
-criez que Voltaire est l'Antechrist, sachez par coeur l'ouvrage de votre
+criez que Voltaire est l'Antechrist, sachez par cœur l'ouvrage de votre
 petit abbé, et colportez-le, s'il le faut...»
 
 Mme de La Pommeraye ajouta: «Je ne vous verrai point chez vous; je ne
@@ -6473,7 +6473,7 @@ Il suffit; prenez que je ne vous aie rien dit.
 L'HÔTESSE.
 
 Tandis que nos deux dévotes édifiaient, et que la bonne odeur de leur
-piété et de la sainteté de leurs moeurs se répandait à la ronde, Mme de
+piété et de la sainteté de leurs mœurs se répandait à la ronde, Mme de
 La Pommeraye observait avec le marquis les démonstrations extérieures de
 l'estime, de l'amitié, de la confiance la plus parfaite. Toujours bien
 venu, jamais ni grondé, ni boudé, même après de longues absences: il lui
@@ -6484,7 +6484,7 @@ mais c'était d'un ton si désintéressé, qu'on ne pouvait la soupçonner de
 parler pour elle. Si le marquis lui adressait quelques-uns de ces
 propos tendres ou galants dont on ne peut guère se dispenser avec une
 femme qu'on a connue, ou elle en souriait, ou elle les laissait tomber.
-À l'en croire, son coeur était paisible; et, ce qu'elle n'aurait jamais
+À l'en croire, son cœur était paisible; et, ce qu'elle n'aurait jamais
 imaginé, elle éprouvait qu'un ami tel que lui suffisait au bonheur de la
 vie; et puis elle n'était plus de la première jeunesse, et ses goûts
 étaient bien émoussés.
@@ -6677,7 +6677,7 @@ ce serait le plus incroyable délire.
 
 --C'est qu'on n'a point de foi, c'est qu'on s'étourdit.
 
---C'est que nos opinions religieuses ont peu d'influence sur nos moeurs.
+--C'est que nos opinions religieuses ont peu d'influence sur nos mœurs.
 Mais, mon amie, je vous jure que vous vous acheminez à toutes jambes au
 confessionnal.
 
@@ -6977,7 +6977,7 @@ la messe une fois depuis quinze jours. Ah! mon amie, quelle figure!
 qu'elle est belle!...»
 
 Mme de La Pommeraye savait tout cela. «C'est-à-dire, répondit-elle au
-marquis, qu'après avoir tout mis en oeuvre pour guérir, vous n'avez rien
+marquis, qu'après avoir tout mis en œuvre pour guérir, vous n'avez rien
 omis pour devenir fou, et que c'est le dernier parti qui vous a réussi?
 
 LE MARQUIS.
@@ -7050,7 +7050,7 @@ je suis?...»
 
 Vous remarquerez, messieurs, dit l'hôtesse, que depuis le commencement
 de cette aventure jusqu'à ce moment, le marquis des Arcis n'avait pas
-dit un mot qui ne fût un coup de poignard dirigé au coeur de Mme de La
+dit un mot qui ne fût un coup de poignard dirigé au cœur de Mme de La
 Pommeraye. Elle étouffait d'indignation et de rage; aussi répondit-elle
 au marquis, d'une voix tremblante et entrecoupée:
 
@@ -7114,7 +7114,7 @@ il est trop tard pour aller chez moi où l'on ne m'attend que ce soir, et
 je me suis flatté que vous ne me refuseriez pas à dîner...» Et tout en
 parlant, il avait pris une chaise, et s'était mis à table. On avait
 disposé le couvert de manière qu'il se trouvât à côté de la mère et en
-face de la fille. Il remercia d'un clin d'oeil Mme de La Pommeraye de
+face de la fille. Il remercia d'un clin d'œil Mme de La Pommeraye de
 cette attention délicate. Après le trouble du premier instant, nos deux
 dévotes se rassurèrent. On causa, on fut même gai. Le marquis fut de la
 plus grande attention pour la mère, et de la politesse la plus réservée
@@ -7161,7 +7161,7 @@ Je serais un monstre d'ingratitude, si j'en rabattais.
 
 MADAME DE LA POMMERAYE.
 
-Changeons de texte. Quel est l'état de votre coeur?
+Changeons de texte. Quel est l'état de votre cœur?
 
 LE MARQUIS.
 
@@ -7333,7 +7333,7 @@ gageure.»
 Les nouvelles propositions sont faites. Autre conciliabule des trois
 femmes. La mère et la fille attendaient en silence la décision de Mme de
 La Pommeraye. Celle-ci se promena un moment sans parler. «Non, non,
-dit-elle, cela ne suffit pas à mon coeur ulcéré.» Et aussitôt elle
+dit-elle, cela ne suffit pas à mon cœur ulcéré.» Et aussitôt elle
 prononça le refus; et aussitôt ces deux femmes fondirent en larmes, se
 jetèrent à ses pieds, et lui représentèrent combien il était affreux
 pour elles de repousser une fortune immense, qu'elles pouvaient accepter
@@ -7370,7 +7370,7 @@ lui dit-elle, vos nouvelles offres?
 LE MARQUIS.
 
 Faites et rejetées. J'en suis désespéré. Je voudrais arracher cette
-malheureuse passion de mon coeur; je voudrais m'arracher le coeur, et je
+malheureuse passion de mon cœur; je voudrais m'arracher le cœur, et je
 ne saurais. Marquise, regardez-moi; ne trouvez-vous pas qu'il y a entre
 cette jeune fille et moi quelques traits de ressemblance?
 
@@ -7437,7 +7437,7 @@ LE MARQUIS.
 
 Voici donc enfin, mon amie, une négociation dont je puis, ce me semble,
 vous charger honnêtement. Voyez la mère et la fille; interrogez la mère,
-sondez le coeur de la fille, et dites-leur mon dessein.
+sondez le cœur de la fille, et dites-leur mon dessein.
 
 MADAME DE LA POMMERAYE.
 
@@ -7664,7 +7664,7 @@ Au lieu de se lever, elle s'avança vers lui sur ses genoux; elle
 tremblait de tous ses membres: elle était échevelée; elle avait le corps
 un peu penché, les bras portés de son côté, la tête relevée, le regard
 attaché sur ses yeux, et le visage inondé de pleurs. «Il me semble,» lui
-dit-elle, un sanglot séparant chacun de ses mots, «que votre coeur
+dit-elle, un sanglot séparant chacun de ses mots, «que votre cœur
 justement irrité s'est radouci, et que peut-être avec le temps
 j'obtiendrai miséricorde. Monsieur, de grâce, ne vous hâtez pas de me
 pardonner. Tant de filles honnêtes sont devenues de malhonnêtes femmes,
@@ -7680,8 +7680,8 @@ par faiblesse, par séduction, par autorité, par menaces, à une action
 infâme; mais ne croyez pas, monsieur, que je sois méchante: je ne le
 suis pas, puisque je n'ai pas balancé à paraître devant vous quand vous
 m'avez appelée, et que j'ose à présent lever les yeux sur vous et vous
-parler. Ah! si vous pouviez lire au fond de mon coeur, et voir combien
-mes fautes passées sont loin de moi; combien les moeurs de mes pareilles
+parler. Ah! si vous pouviez lire au fond de mon cœur, et voir combien
+mes fautes passées sont loin de moi; combien les mœurs de mes pareilles
 me sont étrangères! La corruption s'est posée sur moi; mais elle ne s'y
 est point attachée. Je me connais, et une justice que je me rends, c'est
 que par mes goûts, par mes sentiments, par mon caractère, j'étais née
@@ -7763,7 +7763,7 @@ L'HÔTESSE.
 
 Je ne connais ni bossu ni droit: je vous ai dit la chose comme elle
 s'est passée, sans en rien omettre, sans y rien ajouter. Et qui sait ce
-qui se passait au fond du coeur de cette jeune fille, et si, dans les
+qui se passait au fond du cœur de cette jeune fille, et si, dans les
 moments où elle nous paraissait agir le plus lestement, elle n'était pas
 secrètement dévorée de chagrin?
 
@@ -7876,14 +7876,14 @@ années il n'avait eu d'autre maison, d'autre table que la sienne: cela
 vous ferait hocher de la tête; mais elle s'était assujettie à toutes ses
 fantaisies, à tous ses goûts; pour lui plaire elle avait renversé le
 plan de sa vie. Elle jouissait de la plus haute considération dans le
-monde, par la pureté de ses moeurs: et elle s'était rabaissée sur la
+monde, par la pureté de ses mœurs: et elle s'était rabaissée sur la
 ligne commune. On dit d'elle, lorsqu'elle eut agréé l'hommage du marquis
 des Arcis: Enfin cette merveilleuse Mme de La Pommeraye s'est donc faite
 comme une d'entre nous... Elle avait remarqué autour d'elle les souris
 ironiques; elle avait entendu les plaisanteries, et souvent elle en
 avait rougi et baissé les yeux; elle avait avalé tout le calice de
 l'amertume préparé aux femmes dont la conduite réglée a fait trop
-longtemps la satire des mauvaises moeurs de celles qui les entourent;
+longtemps la satire des mauvaises mœurs de celles qui les entourent;
 elle avait supporté tout l'éclat scandaleux par lequel on se venge des
 imprudentes[43] bégueules qui affichent de l'honnêteté. Elle était
 vaine; et elle serait morte de douleur plutôt que de promener dans le
@@ -7930,7 +7930,7 @@ rencontre et réveille son maître qui lui dit d'entre ses rideaux:
 --Dans cette bouteille un reste qui s'éventerait. J'ai en horreur les
 bouteilles en vidange; cela me reviendrait en tête, quand je serais
 couché; et il n'en faudrait pas davantage pour m'empêcher de fermer
-l'oeil. Notre hôtesse est, par ma foi, une excellente femme, et son vin
+l'œil. Notre hôtesse est, par ma foi, une excellente femme, et son vin
 de Champagne un excellent vin; ce serait dommage de le laisser
 éventer... Le voilà bientôt à couvert... et il ne s'éventera plus...»
 
@@ -8028,7 +8028,7 @@ JACQUES.
 
 Cette femme était la commissionnaire de l'intendant et des domestiques.
 Jeanne avait prôné dans le château l'acte de commisération que j'avais
-exercé envers elle; ma bonne oeuvre était parvenue aux oreilles du
+exercé envers elle; ma bonne œuvre était parvenue aux oreilles du
 maître: on ne lui avait pas laissé ignorer les coups de pied et de poing
 dont elle avait été récompensée la nuit sur le grand chemin. Il avait
 ordonné qu'on me découvrît et qu'on me transportât chez lui. M'y voilà.
@@ -8063,7 +8063,7 @@ LE MAÎTRE.
 
 Tu as raison, c'est une des plus belles et des plus honnêtes créatures
 qu'il y ait à vingt lieues à la ronde. Moi et la plupart de ceux qui
-fréquentaient le château de Desglands avaient tout mis en oeuvre
+fréquentaient le château de Desglands avaient tout mis en œuvre
 inutilement pour la séduire; et il n'y en avait pas un de nous qui n'eût
 fait de grandes sottises pour elle, à condition d'en faire une petite
 pour lui.
@@ -8346,7 +8346,7 @@ s'échappent tous les deux à la fois, et se mettent à crier à tue-tête:
 
 À ce bruit, l'hôtesse monta, et s'informa de ce que c'était; mais ce ne
 fut pas dans le premier instant qu'on lui répondit; on continua à crier:
-«Tu descendras. Je ne descendrai pas.» Ensuite le maître, le coeur gros,
+«Tu descendras. Je ne descendrai pas.» Ensuite le maître, le cœur gros,
 se promenant dans la chambre, disait en grommelant: «A-t-on jamais rien
 vu de pareil?» L'hôtesse ébahie et debout: «Eh bien! messieurs, de quoi
 s'agit-il?»
@@ -8636,7 +8636,7 @@ dont elles ne savent que faire.
 
 LE MARQUIS DES ARCIS.
 
-Aimer les animaux ou jeter son coeur aux chiens, cela est singulièrement
+Aimer les animaux ou jeter son cœur aux chiens, cela est singulièrement
 vu.
 
 LE MAÎTRE.
@@ -8741,7 +8741,7 @@ qu'un effet à produire; ma durée n'est donc qu'une suite d'effets
 nécessaires. C'est ainsi que Jacques raisonnait d'après son capitaine.
 La distinction d'un monde physique et d'un monde moral lui semblait vide
 de sens. Son capitaine lui avait fourré dans la tête toutes ces opinions
-qu'il avait puisées, lui, dans son Spinosa qu'il savait par coeur.
+qu'il avait puisées, lui, dans son Spinosa qu'il savait par cœur.
 D'après ce système, on pourrait imaginer que Jacques ne se réjouissait,
 ne s'affligeait de rien; cela n'était pourtant pas vrai. Il se
 conduisait à peu près comme vous et moi. Il remerciait son bienfaiteur,
@@ -8794,7 +8794,7 @@ l'image de la paix qui semble régner dans les maisons religieuses les
 séduit. Ils prennent pour la voix de Dieu qui les appelle à lui les
 premiers efforts d'un tempérament qui se développe: et c'est précisément
 lorsque la nature les sollicite, qu'ils embrassent un genre de vie
-contraire au voeu de la nature. L'erreur ne dure pas; l'expression de la
+contraire au vœu de la nature. L'erreur ne dure pas; l'expression de la
 nature devient plus claire: on la reconnaît; et l'être séquestré tombe
 dans les regrets, la langueur, les vapeurs, la folie ou le désespoir...
 Tel fut le préambule du marquis des Arcis. Dégoûté du monde à l'âge de
@@ -8829,13 +8829,13 @@ linge. (BR.)
 
 LE MARQUIS DES ARCIS.
 
-C'est ce que Richard m'avait dit. Richard aurait fait ses voeux après
+C'est ce que Richard m'avait dit. Richard aurait fait ses vœux après
 deux ans de noviciat, si ses parents ne s'y étaient opposés. Son père
 exigea qu'il rentrerait dans la maison, et que là il lui serait permis
 d'éprouver sa vocation, en observant toutes les règles de la vie
 monastique pendant une année: traité qui fut fidèlement rempli de part
 et d'autre. L'année d'épreuve, sous les yeux de sa famille, écoulée,
-Richard demanda à faire ses voeux. Son père lui répondit: «Je vous ai
+Richard demanda à faire ses vœux. Son père lui répondit: «Je vous ai
 accordé une année pour prendre une dernière résolution, j'espère que
 vous ne m'en refuserez pas une pour la même chose; je consens seulement
 que vous alliez la passer où il vous plaira[48]. En attendant la fin de
@@ -8851,7 +8851,7 @@ ajoutaient la dignité à l'intérêt de sa figure; de l'esprit, des
 connaissances, de la gaieté, le maintien et le propos le plus honnête,
 l'amour de l'ordre, celui du travail; mais les passions les plus
 fougueuses, mais le goût le plus effréné des plaisirs et des femmes,
-mais le génie de l'intrigue porté au dernier point, mais les moeurs les
+mais le génie de l'intrigue porté au dernier point, mais les mœurs les
 plus dissolues, mais le despotisme le plus absolu dans sa maison.
 Lorsqu'on lui en donna l'administration, elle était infectée d'un
 jansénisme ignorant; les études s'y faisaient mal, les affaires
@@ -8904,7 +8904,7 @@ cet accident lui concilia la bienveillance et la protection du magistrat
 de police. Conduit en sa présence, voici comme il lui parla: «Je
 m'appelle Hudson, je suis le supérieur de ma maison. Quand j'y suis
 entré tout était en désordre; il n'y avait ni science, ni discipline, ni
-moeurs; le spirituel y était négligé jusqu'au scandale; le dégât du
+mœurs; le spirituel y était négligé jusqu'au scandale; le dégât du
 temporel menaçait la maison d'une ruine prochaine. J'ai tout rétabli;
 mais je suis homme, et j'ai mieux aimé m'adresser à une femme corrompue,
 que de m'adresser à une honnête femme. Vous pouvez à présent disposer de
@@ -8918,7 +8918,7 @@ de la mauvaise conduite d'Hudson était exposé. La confrontation de ces
 mémoires en augmentait la force. Le général était janséniste, et par
 conséquent disposé à tirer vengeance de l'espèce de persécution
 qu'Hudson avait exercée contre les adhérents à ses opinions. Il aurait
-été enchanté d'étendre le reproche des moeurs corrompues d'un seul
+été enchanté d'étendre le reproche des mœurs corrompues d'un seul
 défenseur de la bulle et de la morale relâchée sur la secte entière. En
 conséquence il remit les différents mémoires des faits et gestes
 d'Hudson entre les mains de deux commissaires qu'il dépêcha secrètement,
@@ -9198,7 +9198,7 @@ votre visite au petit Châtelet, et n'y pensons plus.
 pas moi, c'est vous qui l'auriez faite.
 
 --Cela se peut... C'est, je crois, au péril que je courus alors, que je
-dois mes nouvelles moeurs. Ah! mon cher Richard, combien cela m'a fait
+dois mes nouvelles mœurs. Ah! mon cher Richard, combien cela m'a fait
 réfléchir, et que je suis changé!
 
 --Cette femme avec laquelle vous êtes venu est charmante.
@@ -9898,7 +9898,7 @@ je lui fais signe de se coucher. Elle joint ses deux mains, elle se
 jette à mes pieds, elle serre mes genoux. Je n'aurais peut-être pas
 résisté à cette scène muette, si le jour l'eût éclairée; mais lorsque
 les ténèbres ne rendent pas timide, elles rendent entreprenant.
-D'ailleurs j'avais ses anciens mépris sur le coeur. Pour toute réponse
+D'ailleurs j'avais ses anciens mépris sur le cœur. Pour toute réponse
 je la poussai vers l'escalier qui conduisait à la boutique. Elle en
 poussa un cri de frayeur. Bigre qui l'entendit, dit: «Il rêve...»
 Justine s'évanouit; ses genoux se dérobent sous elle; dans son délire
@@ -9999,7 +9999,7 @@ bras.
 
 LE MAÎTRE.
 
-Jacques, vous êtes un barbare; vous avez un coeur de bronze.
+Jacques, vous êtes un barbare; vous avez un cœur de bronze.
 
 JACQUES.
 
@@ -10533,7 +10533,7 @@ chez elle, et qu'elle avait placé sa main où cela n'était pas tout à
 fait de même chez moi. Le fait est que je me trouvai sous elle et par
 conséquent elle sur moi. Le fait est que, ne la soulageant d'aucune
 fatigue, il fallait bien qu'elle la prît tout entière. Le fait est
-qu'elle se livrait à mon instruction de si bon coeur, qu'il vint un
+qu'elle se livrait à mon instruction de si bon cœur, qu'il vint un
 instant où je crus qu'elle en mourrait. Le fait est qu'aussi troublé
 qu'elle, et ne sachant ce que je disais, je m'écriai: «Ah! dame Suzanne,
 que vous me faites aise!»
@@ -10808,7 +10808,7 @@ disent les uns, ou après avoir encore ri, disent les autres, le maître
 s'adressant à Jacques, lui dit: «Et l'histoire de tes amours?»--Jacques
 hocha de la tête et ne répondit pas.
 
-Comment un homme de sens, qui a des moeurs, qui se pique de philosophie,
+Comment un homme de sens, qui a des mœurs, qui se pique de philosophie,
 peut-il s'amuser à débiter des contes de cette obscénité?--Premièrement,
 lecteur, ce ne sont pas des contes, c'est une histoire, et je ne me sens
 pas plus coupable, et peut-être moins, quand j'écris les sottises de
@@ -10826,7 +10826,7 @@ satisfait pas, ouvrez la préface de Jean-Baptiste Rousseau, et vous y
 trouverez mon apologie. Quel est celui d'entre vous qui osât blâmer
 Voltaire d'avoir composé _la Pucelle_? Aucun. Vous avez donc deux
 balances pour les actions des hommes? Mais, dites-vous, _la Pucelle_ de
-Voltaire est un chef-d'oeuvre!--Tant pis, puisqu'on ne l'en lira que
+Voltaire est un chef-d'œuvre!--Tant pis, puisqu'on ne l'en lira que
 davantage.--Et votre _Jacques_ n'est qu'une insipide rapsodie de faits,
 les uns réels, les autres imaginés, écrits sans grâce et distribués sans
 ordre.--Tant mieux, mon _Jacques_ en sera moins lu. De quelque côté que
@@ -10856,7 +10856,7 @@ le plus. Je vous entends encore, vous vous écriez: «Fi, le cynique! Fi,
 l'impudent! Fi, le sophiste!...» Courage, insultez bien un auteur
 estimable que vous avez sans cesse entre les mains, et dont je ne suis
 ici que le traducteur. La licence de son style m'est presque un garant
-de la pureté de ses moeurs; c'est Montaigne[57]. _Lasciva est nobis
+de la pureté de ses mœurs; c'est Montaigne[57]. _Lasciva est nobis
 pagina, vita proba._
 
 [56] Hostius.
@@ -10870,7 +10870,7 @@ sa tabatière sans s'en douter, et prenait sa prise de tabac sans le
 sentir; ce qui me le prouve, c'est qu'il faisait ces choses trois ou
 quatre fois de suite et dans le même ordre. Un moment après, Jacques
 toussait encore, et son maître disait: «Quelle diable de toux! Aussi tu
-t'en es donné du vin de l'hôtesse jusqu'au noeud de la gorge. Hier au
+t'en es donné du vin de l'hôtesse jusqu'au nœud de la gorge. Hier au
 soir, avec le secrétaire, tu ne t'es pas ménagé davantage; quand tu
 remontas tu chancelais, tu ne savais ce que tu disais; et aujourd'hui tu
 as fait dix haltes, et je gage qu'il ne te reste pas une goutte de vin
@@ -10999,7 +10999,7 @@ propriétaires du manuscrit, en riront beaucoup.
 [66] Qui a ajouté des suppléments à Quinte-Curce.
 
 [67] Traducteur de Tacite et auteur de _Mémoires_ sur plusieurs points
-peu connus de l'histoire des moeurs romaines.
+peu connus de l'histoire des mœurs romaines.
 
 Il paraît que Jacques, réduit au silence par son mal de gorge, suspendit
 l'histoire de ses amours; et que son maître commença l'histoire des
@@ -11134,9 +11134,9 @@ ami!...» Je m'approche, je joins mes instances à celles du chevalier:
 
 Le Brun se laisse persuader.
 
-La servante qui souriait de cette momerie, part, et dans un clin d'oeil
+La servante qui souriait de cette momerie, part, et dans un clin d'œil
 reparaît avec un petit homme boiteux, vêtu de noir, canne à la main,
-bègue, le visage sec et ridé, l'oeil vif. Le chevalier se tourne de son
+bègue, le visage sec et ridé, l'œil vif. Le chevalier se tourne de son
 côté et lui dit: «Allons, monsieur Mathieu de Fourgeot, nous n'avons pas
 un moment à perdre, conduisez-nous vite...»
 
@@ -11389,7 +11389,7 @@ laquelle tu ne perdras rien.» Mathieu de Fourgeot prit une montre et
 deux boîtes d'or, dont il allait sur-le-champ m'apporter la valeur; Le
 Brun prit en dépôt le reste chez lui. Je mis dans ma poche une superbe
 garniture avec les manchettes; c'était une des fleurs du bouquet que
-j'avais à donner. Mathieu de Fourgeot revint en un clin d'oeil avec
+j'avais à donner. Mathieu de Fourgeot revint en un clin d'œil avec
 soixante louis: il en retint dix pour lui, et je reçus les cinquante
 autres. Il me dit qu'il n'avait vendu ni la montre ni les deux boîtes,
 mais qu'il les avait mises en gage.
@@ -11736,7 +11736,7 @@ une fois dans votre vie?
 
 LE MAÎTRE.
 
-Il y a des jours comme cela. J'avais sur le coeur l'aventure des
+Il y a des jours comme cela. J'avais sur le cœur l'aventure des
 usuriers, ma retraite à Saint-Jean-de-Latran, devant la demoiselle
 Bridoie, et plus que tout, les rigueurs de Mlle Agathe. J'étais un peu
 las d'être lanterné.
@@ -12053,7 +12053,7 @@ vous et moi. Il y avait une jeune fille comme Mlle Agathe; il en était
 amoureux, et moi j'en étais aimé; il se ruinait en dépenses pour elle,
 et c'est moi qui jouissais de ses faveurs. Je n'ai jamais eu le courage
 de lui en faire l'aveu; mais si nous nous retrouvons ensemble, je lui
-dirai tout. Cet effroyable secret que je porte au fond de mon coeur,
+dirai tout. Cet effroyable secret que je porte au fond de mon cœur,
 l'accable, c'est un fardeau dont il faut absolument que je me délivre.
 
 --Chevalier, vous ferez bien.
@@ -12088,7 +12088,7 @@ d'en agir avec moi comme il vous plaira. Si vous pensez, comme moi, que
 mon offense soit sans excuse, ne m'excusez point; levez-vous,
 quittez-moi, ne me revoyez jamais qu'avec mépris, et abandonnez-moi à ma
 douleur et à ma honte. Ah! mon ami, si vous saviez tout l'empire que la
-petite scélérate avait pris sur mon coeur! Je suis né honnête; jugez
+petite scélérate avait pris sur mon cœur! Je suis né honnête; jugez
 combien j'ai dû souffrir du rôle indigne auquel je me suis abaissé.
 Combien de fois j'ai détourné mes yeux de dessus elle, pour les attacher
 sur vous, en gémissant de sa trahison et de la mienne. Il est inouï que
@@ -12112,7 +12112,7 @@ grossièreté, j'en suis fâché, et je vous en demande pardon.
 
 [72] _La Vérité dans le vin_, ou _les Désagréments de la galanterie_,
 charmante comédie de Collé, qui offre, comme ses autres productions en
-ce genre, une peinture aussi agréable que vraie des moeurs de son temps.
+ce genre, une peinture aussi agréable que vraie des mœurs de son temps.
 (BR.)
 
 LE MAÎTRE.
@@ -12300,7 +12300,7 @@ j'embrasse comme si je ne faisais que d'arriver.
 
 --Et vous me céderiez votre place?
 
---De tout mon coeur. Que vous préfériez la nuit au récit, je n'en suis
+--De tout mon cœur. Que vous préfériez la nuit au récit, je n'en suis
 pas en peine; mais ce que je désirerais, c'est que...
 
 --Achevez; il y a peu de chose que je ne me sente le courage
@@ -12466,7 +12466,7 @@ mérite. Comme elle connaissait sa légèreté, elle ne s'engageait point à
 c'est le premier.» Soit qu'on perdît le sentiment qu'on avait pris pour
 elle, soit qu'elle perdît celui qu'on lui avait inspiré, on restait son
 ami. Jamais il n'y eut d'exemple plus frappant de la différence de la
-probité et des moeurs. On ne pouvait pas dire qu'elle eût des moeurs; et
+probité et des mœurs. On ne pouvait pas dire qu'elle eût des mœurs; et
 l'on avouait qu'il était difficile de trouver une plus honnête créature.
 Son curé la voyait rarement au pied des autels; mais en tout temps il
 trouvait sa bourse ouverte pour les pauvres. Elle disait plaisamment, de
@@ -12605,7 +12605,7 @@ Tant pis pour vous.
 
 LE MAÎTRE.
 
-Vous avez sur le coeur le long et ennuyeux portrait de la veuve; mais
+Vous avez sur le cœur le long et ennuyeux portrait de la veuve; mais
 vous m'avez, je crois, bien rendu cet ennui par la longue et ennuyeuse
 histoire de la fantaisie de son enfant.
 
@@ -12670,8 +12670,8 @@ placés l'un à côté de l'autre et en face de la belle veuve. Desglands
 employait tout ce qu'il avait d'esprit pour animer la conversation; il
 adressait à la veuve les propos les plus galants; mais elle, distraite,
 n'entendait rien, et tenait les yeux attachés sur son rival. Desglands
-avait un oeuf frais à la main; un mouvement convulsif, occasionné par la
-jalousie, le saisit, il serre les poings, et voilà l'oeuf chassé de sa
+avait un œuf frais à la main; un mouvement convulsif, occasionné par la
+jalousie, le saisit, il serre les poings, et voilà l'œuf chassé de sa
 coque et répandu sur le visage de son voisin. Celui-ci fit un geste de
 la main. Desglands lui prend le poignet, l'arrête, et lui dit à
 l'oreille: «Monsieur, je le tiens pour reçu...» Il se fait un profond
@@ -13315,7 +13315,7 @@ et on les trouve apparemment plus utiles par le mal qu'ils préviennent
 ou qu'ils révèlent, que nuisibles par celui qu'ils font...»
 
 Je racontai au commissaire ma triste aventure, telle qu'elle s'était
-passée. Il ne la vit pas d'un oeil beaucoup plus favorable; car tout ce
+passée. Il ne la vit pas d'un œil beaucoup plus favorable; car tout ce
 qui pouvait m'absoudre ne pouvait ni s'alléguer ni se démontrer au
 tribunal des lois. Cependant il se chargea d'appeler le père et la mère,
 de serrer les pouces à la fille, d'éclairer le magistrat, et de ne rien
@@ -13596,7 +13596,7 @@ jarretières!
 
 --Et vous l'aimez bien?
 
---De tout mon coeur.
+--De tout mon cœur.
 
 --Et elle vous aime de même?
 
@@ -13888,7 +13888,7 @@ Un jour de fête que le seigneur du château était à la chasse, et que le
 reste de ses commensaux étaient allés à la messe de la paroisse, qui en
 était éloignée d'un bon quart de lieue, Jacques était levé, Denise était
 assise à côté de lui. Ils gardaient le silence, ils avaient l'air de se
-bouder, et ils se boudaient en effet. Jacques avait tout mis en oeuvre
+bouder, et ils se boudaient en effet. Jacques avait tout mis en œuvre
 pour résoudre Denise à le rendre heureux, et Denise avait tenu ferme.
 Après ce long silence, Jacques, pleurant à chaudes larmes, lui dit d'un
 ton dur et amer: «C'est que vous ne m'aimez pas...» Denise, dépitée, se
@@ -13932,7 +13932,7 @@ entrerait ou non. Elle entra en tremblant; elle demeura assez longtemps
 à côté du lit de Jacques sans oser ouvrir les rideaux. Elle les
 entr'ouvrit doucement; elle dit bonjour à Jacques en tremblant; elle
 s'informa de sa nuit et de sa santé en tremblant; Jacques lui dit qu'il
-n'avait pas fermé l'oeil, qu'il avait souffert, et qu'il souffrait
+n'avait pas fermé l'œil, qu'il avait souffert, et qu'il souffrait
 encore d'une démangeaison cruelle à son genou. Denise s'offrit à le
 soulager; elle prit une petite pièce de flanelle; Jacques mit sa jambe
 hors du lit, et Denise se mit à frotter avec sa flanelle au-dessous de
@@ -13964,7 +13964,7 @@ l'esprit corrompu, et qui entendez ce qu'on ne vous dit pas.--Eh bien!
 il ne baisa donc que sa main?--Certainement: Jacques avait trop de sens
 pour abuser de celle dont il voulait faire sa femme, et se préparer une
 méfiance qui aurait pu empoisonner le reste de sa vie.--Mais il est dit,
-dans le paragraphe qui précède, que Jacques avait mis tout en oeuvre
+dans le paragraphe qui précède, que Jacques avait mis tout en œuvre
 pour déterminer Denise à le rendre heureux.--C'est qu'apparemment il
 n'en voulait pas encore faire sa femme.
 

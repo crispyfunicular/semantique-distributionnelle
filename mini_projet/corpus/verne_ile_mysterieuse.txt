@@ -175,7 +175,7 @@ Mais l'inévitable catastrophe ne pouvait qu'être retardée, et, si
 quelque terre ne se montrait pas avant la nuit, passagers, nacelle
 et ballon auraient définitivement disparu dans les flots.
 
-La seule manoeuvre qu'il y eût à faire encore fut faite à ce
+La seule manœuvr qu'il y eût à faire encore fut faite à ce
 moment. Les passagers de l'aérostat étaient évidemment des gens
 énergiques, et qui savaient regarder la mort en face. On n'eût pas
 entendu un seul murmure s'échapper de leurs lèvres.
@@ -188,7 +188,7 @@ tombait.
 
 À deux heures, l'aérostat était à peine à quatre cents pieds au-
 dessus des flots. En ce moment, une voix mâle -- la voix d'un
-homme dont le coeur était inaccessible à la crainte -- se fit
+homme dont le cœur était inaccessible à la crainte -- se fit
 entendre. À cette voix répondirent des voix non moins énergiques.
 
 «Tout est-il jeté?
@@ -419,8 +419,8 @@ Herald fut le premier informé.
 
 Gédéon Spilett était de haute taille. Il avait quarante ans au
 plus. Des favoris blonds tirant sur le rouge encadraient sa
-figure. Son oeil était calme, vif, rapide dans ses déplacements.
-C'était l'oeil d'un homme qui a l'habitude de percevoir vite tous
+figure. Son œil était calme, vif, rapide dans ses déplacements.
+C'était l'œil d'un homme qui a l'habitude de percevoir vite tous
 les détails d'un horizon. Solidement bâti, il s'était trempé dans
 tous les climats comme une barre d'acier dans l'eau froide. Depuis
 dix ans, Gédéon Spilett était le reporter attitré du New-York
@@ -452,7 +452,7 @@ mort.
 
 Cet intrépide était un nègre, né sur le domaine de l'ingénieur,
 d'un père et d'une mère esclaves, mais que, depuis longtemps,
-Cyrus Smith, abolitionniste de raison et de coeur, avait
+Cyrus Smith, abolitionniste de raison et de cœur, avait
 affranchi. L'esclave, devenu libre, n'avait pas voulu quitter son
 maître.
 
@@ -566,7 +566,7 @@ ajouta à voix basse:
 affirmer que cette réponse lui échappa, car il n'avait pas encore
 examiné l'inconnu qui lui adressait la parole.
 
-Mais après avoir, d'un oeil pénétrant, observé la loyale figure du
+Mais après avoir, d'un œil pénétrant, observé la loyale figure du
 marin, il ne put douter qu'il n'eût devant lui un honnête homme.
 
 «Qui êtes-vous?» demanda-t-il d'une voix brève.
@@ -591,7 +591,7 @@ L'ouragan était dans toute sa violence, il est vrai, mais un
 ingénieur adroit et audacieux, tel que Cyrus Smith, saurait bien
 conduire un aérostat.
 
-S'il eût connu la manoeuvre, lui, Pencroff, il n'aurait pas hésité
+S'il eût connu la manœuvr, lui, Pencroff, il n'aurait pas hésité
 à partir, -- avec Harbert, s'entend. Il en avait vu bien d'autres,
 et n'en était plus à compter avec une tempête!
 
@@ -940,7 +940,7 @@ moins. Entre l'îlot et la côte, séparés par un canal large d'un
 demi-mille, un courant extrêmement rapide se propageait avec
 bruit.
 
-Cependant, un des naufragés, ne consultant que son coeur, se
+Cependant, un des naufragés, ne consultant que son cœur, se
 précipita aussitôt dans le courant, sans prendre l'avis de ses
 compagnons, sans même dire un seul mot. C'était Nab. Il avait hâte
 d'être sur cette côte et de la remonter au nord. Personne n'eût pu
@@ -1016,7 +1016,7 @@ moins, elle apparaissait telle, vue de l'îlot. Toutefois, la
 verdure ne manquait pas à droite, en arrière du pan coupé. On
 distinguait facilement la masse confuse de grands arbres, dont
 l'agglomération se prolongeait au delà des limites du regard.
-Cette verdure réjouissait l'oeil, vivement attristé par les âpres
+Cette verdure réjouissait l'œil, vivement attristé par les âpres
 lignes du parement de granit. Enfin, tout en arrière-plan et au-
 dessus du plateau, dans la direction du nord-ouest et à une
 distance de sept milles au moins, resplendissait un sommet blanc,
@@ -1078,7 +1078,7 @@ amis auront besoin de se refaire à leur retour. À chacun sa tâche.
 -- Bon! reprit le marin, cela ira. Procédons avec méthode. Nous
 sommes fatigués, nous avons froid, nous avons faim. Il s'agit donc
 de trouver abri, feu et nourriture. La forêt a du bois, les nids
-ont des oeufs: il reste à chercher la maison.
+ont des œufs: il reste à chercher la maison.
 
 -- Eh bien, répondit Harbert, je chercherai une grotte dans ces
 roches, et je finirai bien par découvrir quelque trou dans lequel
@@ -1117,7 +1117,7 @@ tirer un coup de fusil, il faut un fusil, et ni Pencroff, ni
 Harbert n'en avaient.
 
 D'ailleurs, ces mouettes et ces labbes sont à peine mangeables, et
-leurs oeufs même ont un détestable goût.
+leurs œufs même ont un détestable goût.
 
 Cependant, Harbert, qui s'était porté un peu plus sur la gauche,
 signala bientôt quelques rochers tapissés d'algues, que la haute
@@ -1127,7 +1127,7 @@ valve, que ne pouvaient dédaigner des gens affamés. Harbert appela
 donc Pencroff, qui se hâta d'accourir.
 
 «Eh! ce sont des moules! s'écria le marin. Voilà de quoi remplacer
-les oeufs qui nous manquent!
+les œufs qui nous manquent!
 
 -- Ce ne sont point des moules, répondit le jeune Harbert, qui
 examinait avec attention les mollusques attachés aux roches, ce
@@ -1387,7 +1387,7 @@ agréable dans ses aspects, variée dans ses productions.
 «Cela est heureux, fit observer Pencroff, et, dans notre malheur,
 il faut en remercier la Providence.
 
--- Dieu soit donc loué!» répondit Harbert, dont le coeur pieux
+-- Dieu soit donc loué!» répondit Harbert, dont le cœur pieux
 était plein de reconnaissance pour l'Auteur de toutes choses.
 
 Pendant longtemps, Pencroff et Harbert examinèrent cette contrée
@@ -1412,7 +1412,7 @@ On dirait, ma foi, des pigeons!
 -- En effet, mais ce sont des pigeons sauvages, ou pigeons de
 roche, répondit Harbert. Je les reconnais à la double bande noire
 de leur aile, à leur croupion blanc, à leur plumage bleu-cendré.
-Or, si le pigeon de roche est bon à manger, ses oeufs doivent être
+Or, si le pigeon de roche est bon à manger, ses œufs doivent être
 excellents, et, pour peu que ceux-ci en aient laissé dans leurs
 nids!...
 
@@ -1423,11 +1423,11 @@ forme d'omelette! répondit gaîment Pencroff.
 chapeau?
 
 -- Bon! répondit le marin, je ne suis pas assez sorcier pour cela.
-Nous nous rabattrons donc sur les oeufs à la coque, mon garçon, et
+Nous nous rabattrons donc sur les œufs à la coque, mon garçon, et
 je me charge d'expédier les plus durs!»
 
 Pencroff et le jeune garçon examinèrent avec attention les
-anfractuosités du granit, et ils trouvèrent, en effet, des oeufs
+anfractuosités du granit, et ils trouvèrent, en effet, des œufs
 dans certaines cavités! Quelques douzaines furent recueillies,
 puis placées dans le mouchoir du marin, et, le moment approchant
 où la mer devait être pleine, Harbert et Pencroff commencèrent à
@@ -1602,7 +1602,7 @@ l'on se procurerait du feu d'une manière ou d'une autre. Pencroff,
 plus expérimenté, et bien qu'il ne fût point homme à s'embarrasser
 de peu, ni de beaucoup, n'en jugeait pas ainsi. En tout cas, il
 n'y avait qu'un parti à prendre: attendre le retour de Nab et du
-reporter. Mais il fallait renoncer au repas d'oeufs durcis qu'il
+reporter. Mais il fallait renoncer au repas d'œufs durcis qu'il
 voulait leur préparer, et le régime de chair crue ne lui semblait,
 ni pour eux, ni pour lui-même, une perspective agréable.
 
@@ -1630,7 +1630,7 @@ hautes terres de l'ouest, Harbert, qui allait et venait sur la
 grève, signala le retour de Nab et de Gédéon Spilett.
 
 Ils revenaient seuls!... Le jeune garçon éprouva un inexprimable
-serrement de coeur. Le marin ne s'était point trompé dans ses
+serrement de cœur. Le marin ne s'était point trompé dans ses
 pressentiments.
 
 L'ingénieur Cyrus Smith n'avait pu être retrouvé!
@@ -1763,7 +1763,7 @@ ainsi que font les fumeurs de pipe par les grands vents, puis, il
 l'introduisit entre les mousses.
 
 Prenant ensuite un galet légèrement raboteux, il l'essuya avec
-soin, et, non sans que le coeur lui battît, il frotta doucement
+soin, et, non sans que le cœur lui battît, il frotta doucement
 l'allumette, en retenant sa respiration.
 
 Le premier frottement ne produisit aucun effet.
@@ -1777,7 +1777,7 @@ raterait... Je ne peux pas... je ne veux pas!...»
 Et se relevant, il chargea Harbert de le remplacer.
 
 Certes, le jeune garçon n'avait de sa vie été aussi impressionné.
-Le coeur lui battait fort. Prométhée allant dérober le feu du ciel
+Le cœur lui battait fort. Prométhée allant dérober le feu du ciel
 ne devait pas être plus ému! Il n'hésita pas, cependant, et frotta
 rapidement le galet. Un petit grésillement se fit entendre et une
 légère flamme bleuâtre jaillit en produisant une fumée âcre.
@@ -1805,7 +1805,7 @@ renouvelée en temps utile.
 
 Pencroff songea tout d'abord à utiliser le foyer, en préparant un
 souper plus nourrissant qu'un plat de lithodomes. Deux douzaines
-d'oeufs furent apportées par Harbert. Le reporter, accoté dans un
+d'œufs furent apportées par Harbert. Le reporter, accoté dans un
 coin, regardait ces apprêts sans rien dire. Une triple pensée
 tendait son esprit. Cyrus vit-il encore?
 
@@ -1815,13 +1815,13 @@ existence? Quant à Nab, il rôdait sur la grève. Ce n'était plus
 qu'un corps sans âme.
 
 Pencroff, qui connaissait cinquante-deux manières d'accommoder les
-oeufs, n'avait pas le choix en ce moment. Il dut se contenter de
+œufs, n'avait pas le choix en ce moment. Il dut se contenter de
 les introduire dans les cendres chaudes, et de les laisser durcir
 à petit feu. En quelques minutes, la cuisson fut opérée, et le
 marin invita le reporter à prendre sa part du souper.
 
 Tel fut le premier repas des naufragés sur cette côte inconnue.
-Ces oeufs durcis étaient excellents, et, comme l'oeuf contient
+Ces œufs durcis étaient excellents, et, comme l'œuf contient
 tous les éléments indispensables à la nourriture de l'homme, ces
 pauvres gens s'en trouvèrent fort bien et se sentirent
 réconfortés.
@@ -1847,7 +1847,7 @@ fatigue aidant, il parvint à trouver quelque repos dans le
 sommeil.
 
 Harbert, lui, s'endormit bientôt. Quant au marin, veillant d'un
-oeil, il passa la nuit près du foyer, auquel il n'épargna pas le
+œil, il passa la nuit près du foyer, auquel il n'épargna pas le
 combustible. Un seul des naufragés ne reposa pas dans les
 Cheminées. Ce fut l'inconsolable, le désespéré Nab, qui, cette
 nuit tout entière, et malgré ce que lui dirent ses compagnons pour
@@ -1899,14 +1899,14 @@ délai. De sa solution sortiraient les mesures à prendre.
 Toutefois, suivant l'avis de Pencroff, il parut convenable
 d'attendre quelques jours avant d'entreprendre une exploration. Il
 fallait, en effet, préparer des vivres et se procurer une
-alimentation plus fortifiante que celle uniquement due à des oeufs
+alimentation plus fortifiante que celle uniquement due à des œufs
 ou des mollusques. Les explorateurs, exposés à supporter de
 longues fatigues, sans un abri pour y reposer leur tête, devaient,
 avant tout, refaire leurs forces.
 
 Les Cheminées offraient une retraite suffisante provisoirement. Le
 feu était allumé, et il serait facile de conserver des braises.
-Pour le moment, les coquillages et les oeufs ne manquaient pas
+Pour le moment, les coquillages et les œufs ne manquaient pas
 dans les rochers et sur la grève. On trouverait bien le moyen de
 tuer quelques-uns de ces pigeons qui volaient par centaines à la
 crête du plateau, fût-ce à coups de bâton ou à coups de pierre.
@@ -1928,7 +1928,7 @@ n'auraient pas rejeté le corps de l'ingénieur, tant que lui, Nab,
 n'aurait pas vu de ses yeux, touché de ses mains, le cadavre de
 son maître, il ne croirait pas à sa mort!
 
-Et cette idée s'enracina plus que jamais dans son coeur obstiné.
+Et cette idée s'enracina plus que jamais dans son cœur obstiné.
 Illusion peut-être, illusion respectable toutefois, que le marin
 ne voulut pas détruire! Pour lui, il n'était plus d'espoir, et
 l'ingénieur avait bien réellement péri dans les flots, mais avec
@@ -1942,7 +1942,7 @@ Ce matin-là, 26 mars, dès l'aube, Nab avait repris sur la côte la
 direction du nord, et il était retourné là où la mer, sans doute,
 s'était refermée sur l'infortuné Smith.
 
-Le déjeuner de ce jour fut uniquement composé d'oeufs de pigeon et
+Le déjeuner de ce jour fut uniquement composé d'œufs de pigeon et
 de lithodomes. Harbert avait trouvé du sel déposé dans le creux
 des roches par évaporation, et cette substance minérale vint fort
 à propos.
@@ -2090,7 +2090,7 @@ pattes emplumées serrer fortement les pousses moyennes qui leur
 servaient d'appui.
 
 Les chasseurs se redressèrent alors, et, avec leurs bâtons
-manoeuvrés comme une faux, ils rasèrent des files entières de ces
+manœuvrs comme une faux, ils rasèrent des files entières de ces
 couroucous, qui ne songeaient point à s'envoler et se laissèrent
 stupidement abattre. Une centaine jonchait déjà le sol, quand les
 autres se décidèrent à fuir.
@@ -2143,7 +2143,7 @@ proposition.
 -- Comme une carpe», répondit sérieusement le marin.
 
 Pencroff avait trouvé dans les herbes une demi-douzaine de nids de
-tétras, ayant chacun de deux à trois oeufs. Il eut grand soin de
+tétras, ayant chacun de deux à trois œufs. Il eut grand soin de
 ne pas toucher à ces nids, auxquels leurs propriétaires ne
 pouvaient manquer de revenir. Ce fut autour d'eux qu'il imagina de
 tendre ses lignes, -- non des lignes à collets, mais de véritables
@@ -2654,7 +2654,7 @@ vu ses compagnons ni entendu les paroles du marin.
 Le reporter s'agenouilla près de ce corps sans mouvement, et posa
 son oreille sur la poitrine de l'ingénieur, dont il entr'ouvrit
 les vêtements. Une minute -- un siècle! -- s'écoula, pendant qu'il
-cherchait à surprendre quelque battement du coeur.
+cherchait à surprendre quelque battement du cœur.
 
 Nab s'était redressé un peu et regardait sans voir.
 
@@ -3273,7 +3273,7 @@ pas. Tous sortirent. Le temps était redevenu beau. Un vif soleil
 se levait sur l'horizon de la mer, et piquait de paillettes d'or
 les rugosités prismatiques de l'énorme muraille.
 
-Après avoir jeté un rapide coup d'oeil autour de lui, l'ingénieur
+Après avoir jeté un rapide coup d'œil autour de lui, l'ingénieur
 s'assit sur un quartier de roche. Harbert lui offrit quelques
 poignées de moules et de sargasses, en disant:
 
@@ -3416,7 +3416,7 @@ bâtons au tronc d'un jeune sapin, suivirent Top, qui bondissait
 dans les grandes herbes.
 
 Cette fois, les chasseurs, au lieu de longer le cours de la
-rivière, s'enfoncèrent plus directement au coeur même de la forêt.
+rivière, s'enfoncèrent plus directement au cœur même de la forêt.
 C'étaient toujours les mêmes arbres, appartenant pour la plupart à
 la famille des pins. En de certains endroits, moins pressés,
 isolés par bouquets, ces pins présentaient des dimensions
@@ -3617,7 +3617,7 @@ que les cloisons de pierres et de sable avaient été rétablies.
 On le voit, l'ingénieur et son compagnon avaient bien employé la
 journée. Cyrus Smith avait presque entièrement recouvré ses
 forces, et s'était essayé en montant sur le plateau supérieur. De
-ce point, son oeil, accoutumé à évaluer les hauteurs et les
+ce point, son œil, accoutumé à évaluer les hauteurs et les
 distances, s'était longtemps fixé sur ce cône dont il voulait le
 lendemain atteindre la cime. Le mont, situé à six milles environ
 dans le nord-ouest, lui parut mesurer trois mille cinq cents pieds
@@ -3792,7 +3792,7 @@ tempérées, à laquelle Harbert donna le nom de mouflons.
 -- Eh bien, ce sont des moutons!» dit Pencroff.
 
 Ces animaux, immobiles entre les débris de basalte, regardaient
-d'un oeil étonné, comme s'ils voyaient pour la première fois des
+d'un œil étonné, comme s'ils voyaient pour la première fois des
 bipèdes humains. Puis, leur crainte subitement éveillée, ils
 disparurent en bondissant sur les roches.
 
@@ -3904,7 +3904,7 @@ veut, par lequel s'échappaient les matières éruptives liquides, à
 l'époque où le volcan était encore en activité. Les laves durcies,
 les scories encroûtées formaient une sorte d'escalier naturel, aux
 marches largement dessinées, qui devaient faciliter l'accès du
-sommet de la montagne. Un coup d'oeil suffit à Cyrus Smith pour
+sommet de la montagne. Un coup d'œil suffit à Cyrus Smith pour
 reconnaître cette disposition, et, sans hésiter, suivi du jeune
 garçon, il s'engagea dans l'énorme crevasse, au milieu d'une
 obscurité croissante.
@@ -3950,7 +3950,7 @@ de s'étendre sur un rayon de deux milles. La mer entourait-elle
 cette terre inconnue, ou cette terre se rattachait-elle, dans
 l'ouest, à quelque continent du Pacifique? On ne pouvait encore le
 reconnaître. Vers l'ouest, une bande nuageuse, nettement dessinée
-à l'horizon, accroissait les ténèbres, et l'oeil ne savait
+à l'horizon, accroissait les ténèbres, et l'œil ne savait
 découvrir si le ciel et l'eau s'y confondaient sur une même ligne
 circulaire.
 
@@ -4195,7 +4195,7 @@ Ce fut le reporter qui posa cette question, à laquelle il semblait
 que l'on pût déjà répondre négativement, après le minutieux examen
 qui venait d'être fait des diverses régions de l'île.
 
-Nulle part on n'apercevait l'oeuvre de la main humaine. Pas une
+Nulle part on n'apercevait l'œuvre de la main humaine. Pas une
 agglomération de cases, pas une cabane isolée, pas une pêcherie
 sur le littoral. Aucune fumée ne s'élevait dans l'air et ne
 trahissait la présence de l'homme. Il est vrai, une distance de
@@ -5002,7 +5002,7 @@ Les colons étaient arrivés sur le terrain reconnu la veille. Il se
 composait de cette argile figuline qui sert à confectionner les
 briques et les tuiles, argile, par conséquent, très convenable
 pour l'opération qu'il s'agissait de mener à bien. La main-
-d'oeuvre ne présentait aucune difficulté. Il suffisait de
+d'œuvre ne présentait aucune difficulté. Il suffisait de
 dégraisser cette figuline avec du sable, de mouler les briques et
 de les cuire à la chaleur d'un feu de bois.
 
@@ -5388,7 +5388,7 @@ fil à plomb, à la dresser perpendiculairement au plan de
 l'horizon.
 
 Cela fait, il se recula de la distance nécessaire pour que, étant
-couché sur le sable, le rayon visuel, parti de son oeil, effleurât
+couché sur le sable, le rayon visuel, parti de son œil, effleurât
 à la fois et l'extrémité de la perche et la crête de la muraille.
 
 Puis il marqua soigneusement ce point avec un piquet.
@@ -5512,7 +5512,7 @@ le banc d'ostracées qui s'étendait au large.
 
 -- C'est une heureuse découverte, en effet, dit le reporter, et
 pour peu, comme on le prétend, que chaque huître produise par
-année de cinquante à soixante mille oeufs, nous aurons là une
+année de cinquante à soixante mille œufs, nous aurons là une
 réserve inépuisable.
 
 -- Seulement, je crois que l'huître n'est pas très nourrissante,
@@ -5633,7 +5633,7 @@ du Chili?...
 
 -- Eh bien, répondit l'ingénieur, au lieu de faire une maison,
 nous ferons un bateau, et maître Pencroff se chargera de le
-manoeuvrer...
+manœuvrr...
 
 -- Comment donc, monsieur Cyrus, s'écria le marin, je suis tout
 prêt à passer capitaine... dès que vous aurez trouvé le moyen de
@@ -5855,7 +5855,7 @@ et ses compagnons pour la seconde fois, puisque c'était là que le
 ballon les avait jetés tout d'abord.
 
 À leur débarquement, quelques centaines de pingouins les
-regardèrent d'un oeil candide. Les colons, armés de bâtons,
+regardèrent d'un œil candide. Les colons, armés de bâtons,
 auraient pu facilement les tuer, mais ils ne songèrent pas à se
 livrer à ce massacre deux fois inutile, car il importait de ne
 point effrayer les amphibies, qui étaient couchés sur le sable, à
@@ -5884,7 +5884,7 @@ conseilla d'attendre qu'ils fussent étendus sur le sable, aux
 rayons de ce soleil qui ne tarderait pas à les plonger dans un
 profond sommeil.
 
-On manoeuvrerait alors de manière à leur couper la retraite et à
+On manœuvrrait alors de manière à leur couper la retraite et à
 les frapper aux naseaux.
 
 Les chasseurs se dissimulèrent donc derrière les roches du
@@ -5988,7 +5988,7 @@ servaient à retenir les insectes.
 «Et quand il sera dans le pot-au-feu, fit naturellement observer
 Pencroff, à quoi ressemblera-t-il?
 
--- À un excellent morceau de boeuf, répondit Harbert.
+-- À un excellent morceau de bœuf, répondit Harbert.
 
 -- Nous ne lui en demanderons pas davantage», répondit le marin.
 

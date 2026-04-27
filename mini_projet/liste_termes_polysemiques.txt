@@ -1,0 +1,82 @@
+esprit :
+
+- La pensée :
+"je m'écriai, perdant l'esprit"
+
+- L'intelligence, l'humour, la répartie :
+"une de ces dames sans âge, sans caractère, sans élégance, sans esprit"
+
+- Le fait de mourir :
+"au moment où il rendait l'esprit"
+
+- L'être surnaturel :
+"les légendes des esprits rôdeurs, des fées, des gnomes, des revenants"
+"toutes les formes monstrueuses ou gracieuses des gnomes, des esprits, des génies, des fées,
+des farfadets"
+
+
+or (! lemmatisation)
+- Le métal :
+"l'éclat, la fraîcheur de l'or"
+"lettres formées de l'or des astres"
+
+- La conjonction de coordination :
+"Or, l'ouragan durait depuis cinq jours déjà"
+"Or, à quatre heures, il était visible que le ballon ne pouvait plus se soutenir."
+
+
+courir
+- déplacement rapide à pied :
+"on les voit courir et se croiser à travers les champs combles"
+"je courais allègrement vers la salle à manger
+
+- courir un danger / risque :
+"Ma foi, je cours le plus grand danger avec vous, j'en suis sûr."
+"ne court aucun risque; du moment que je les ai pour moi"
+"le danger que lui-même pouvait courir"
+"l'étendue du danger qu'il venait de courir"
+"des dangers qu'ils couraient au-dessus des flots"
+
+
+pied
+- membre inférieur :
+"elle se précipita aux pieds de son amie"
+"je sortis à pied du couvent"
+"marchant sur la pointe des pieds"
+
+- unité de mesure :
+"Elle ne doit pas être à cinq cents pieds de nous!"
+"à une hauteur de quatre mille cinq cents pieds"
+
+
+grève
+- place de Paris :
+"il devait y avoir feu de joie à la Grève"
+"qui n'a de crainte que d'être mis par vous en deuil sur la Grève"
+"l'horrible supplice infligé à Damiens en place de Grève."
+"Il va chercher en Grève une scène qu'il puisse raconter à son retour dans le faubourg"
+
+- étendue de sable :
+"Devant l'îlot, le littoral se composait, en premier plan, d'une grève de sable"
+"cette grève que le flot descendant avait largement découverte"
+"allait et venait sur la grève"
+
+- arrêt du travail :
+"elle choisit _la Grève des Forgerons_"
+
+
+porte
+- nom :
+"la raie de jour qui était sous sa porte a disparu"
+"Georges se lassa bientôt des visites de porte à porte"
+"j'avais fermé ma porte à clef"
+
+- verbe transitif :
+"le héron les guette.... les saisit.... les porte à son nid...."
+"On porte ces restes dans le bassin des pauvres"
+"la porte à sa bouche comme pour la dévorer"
+
+- porter à faire qqch :
+"aucun besoin d'expansion qui me porte à parler de mon présent ou de mon passé"
+"un mouvement naturel nous porte à ces sortes d'expansions"
+"ce sentiment la porte à préférer les caractères égoïstes et durs"

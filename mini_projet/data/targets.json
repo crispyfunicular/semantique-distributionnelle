@@ -1,0 +1,30 @@
+{
+  "corpus": "mini_projet/corpus_complet.txt",
+  "doc_id": "corpus_complet",
+  "k": 10,
+  "n_per_target": 5,
+  "seed": 42,
+  "targets_raw": [
+    "esprit",
+    "porte"
+  ],
+  "targets_normalized": [
+    "esprit",
+    "porte"
+  ],
+  "summary": {
+    "esprit": {
+      "requested": 5,
+      "extracted": 5
+    },
+    "porte": {
+      "requested": 5,
+      "extracted": 5
+    }
+  },
+  "notes": [
+    "Tokenisation simple (mots) + minuscules + normalisation Unicode.",
+    "Fenêtre : k mots à gauche et k mots à droite.",
+    "Sortie : occurrences.jsonl (1 occurrence par ligne)."
+  ]
+}

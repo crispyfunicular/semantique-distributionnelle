@@ -1,0 +1,13 @@
+numpy>=1.23
+torch>=2.0
+transformers>=4.35
+
+# Tokenisation (souvent nécessaire pour CamemBERT / FlauBERT)
+sentencepiece>=0.1.99
+sacremoses>=0.1.1
+
+# Visualisation (script 5)
+matplotlib>=3.7
+
+# Optionnel (script 5, si vous choisissez --method umap)
+# umap-learn>=0.5

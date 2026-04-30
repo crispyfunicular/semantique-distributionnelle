@@ -103,33 +103,84 @@ Le dossier `data/` contient **tous les artefacts intermédiaires et finals** du 
 Pour installer les dépendances du mini-projet :
 `pip install -r mini_projet/requirements.txt`
 
-Le script 5 (visualisation) utilise `matplotlib` (déjà dans `requirements.txt`).
+Le script 5 (visualisation, `5.visualiser_2d.py`) utilise `matplotlib` (déjà dans `requirements.txt`).
 Pour utiliser UMAP (`--method umap`), installez en plus :
 `pip install umap-learn`
 
-## Analyse des derniers résultats
+## Analyse des résultats
 
-Ces remarques portent sur les fichiers produits dans `data/` (en particulier `polysemy_scores.json` et `polysemy_ranking.json`) pour la configuration suivante : 4 cibles (`esprit`, `or`, `courir`, `porte`), \(n=30\) occurrences par cible, fenêtre \(k=10\) mots.
+Les scores/classements proviennent de `polysemy_scores.json` et `polysemy_ranking.json` (score = `cosine_std`).
 
-### Classement par modèle (score = écart-type des cosinus)
+### Vue d'ensemble des runs
 
-- **CamemBERT** : `courir` > `porte` > `or` > `esprit`
-- **FlauBERT** : `courir` > `or` > `porte` > `esprit`
+| Run | Cibles | \(k\) | \(n\) | Remarques |
+|---|---|---|---|---|
+| `resultats_1` | esprit, or, courir, porte | 10 | 30 | exploration initiale ; `or` ambigu (conjonction/nom) |
+| `resultats_2` | esprit, courir, porte | 10 | 100 (58 pour courir) | `courir` plafonné dans le corpus |
+| `resultats_3` | porte, feu, passer | 5 | 100 | test fenêtre réduite ; `grève` absent du corpus (pb avec l'accent) |
+| `resultats_baron` | porte, feu, passer, baron | 10 | 100 | run le plus abouti ; `baron` sert de pôle monosémique |
 
-Ici, **`courir` est le mot le plus dispersé** (donc le plus “polysémique” selon cette mesure) et **`esprit` le moins dispersé** pour les deux modèles.
+### Classements comparés
+
+**CamemBERT** (score = `cosine_std`)
+
+| Run | 1er | 2e | 3e | 4e |
+|---|---|---|---|---|
+| `resultats_1` | courir (0.101) | porte (0.094) | or (0.091) | esprit (0.065) |
+| `resultats_2` | porte (0.113) | courir (0.102) | esprit (0.069) | — |
+| `resultats_3` | porte (0.108) | feu (0.096) | passer (0.094) | — |
+| `resultats_baron` | **porte (0.116)** | feu (0.114) | passer (0.092) | **baron (0.040)** |
+
+**FlauBERT** (score = `cosine_std`)
+
+| Run | 1er | 2e | 3e | 4e |
+|---|---|---|---|---|
+| `resultats_1` | courir (0.265) | or (0.239) | porte (0.227) | esprit (0.220) |
+| `resultats_2` | courir (0.253) | esprit (0.225) | porte (0.218) | — |
+| `resultats_3` | porte (0.183) | passer (0.167) | feu (0.162) | — |
+| `resultats_baron` | porte (0.250) | passer (0.239) | baron (0.239) | feu (0.223) |
+
+### Observations principales
+
+- **CamemBERT discrimine mieux** : dans `resultats_baron`, `baron` sort nettement en bas (0.040), loin derrière les autres (0.092–0.116), ce qui valide que la mesure capte quelque chose de linguistiquement réel. Le classement `porte` ≈ `feu` > `passer` > `baron` est stable.
+- **FlauBERT est peu discriminant** : les scores sont très resserrés et `baron` n'est pas distingué des mots polysémiques. L'espace d'embedding de FlauBERT semble intrinsèquement plus dispersé, ce qui atténue les différences entre cibles.
+- **`porte` est la cible la plus robuste** : toujours en tête, pour les deux modèles, sur tous les runs.
+- **Cibles à écarter** : `or` (mélange conjonction/nom), `courir` (plafonné à 58 occurrences dans le corpus).
 
 ### Lecture des scores
 
-- **Interprétation** : le score reporté (`cosine_std`) mesure la **dispersion des similarités cosinus** entre toutes les paires d’occurrences d’un même mot.  
-  - score élevé → occurrences plus hétérogènes en embedding → hypothèse de plus grande polysémie / variation sémantique
-  - score faible → occurrences plus homogènes → hypothèse de moindre polysémie / usages plus stables
-- **Comparaison modèles** : dans ces résultats, **FlauBERT donne des dispersions plus fortes** (scores plus élevés) que CamemBERT pour les mêmes cibles. Cela peut refléter une séparation plus marquée des contextes (ou une variabilité plus forte) dans l’espace d’embedding du modèle.
+- Score **élevé** → usages hétérogènes en embedding → hypothèse de polysémie / variation sémantique forte
+- Score **faible** → usages homogènes → hypothèse de monosémie / sens stable
 
-### Points d’attention pour l’interprétation linguistique
+### Présentation des résultats
+#### Validation qualitative : paires d’occurrences "extrêmes"
+Pour chaque cible, examiner les contextes des paires d'occurrences les plus proches et les plus éloignées (en cosinus), afin de vérifier que la dispersion reflète bien une variation de sens et non du bruit.
 
-- **`or`** : dans un corpus littéraire/général, `or` est souvent la conjonction/discours (“or, …”) plutôt que le nom (métal). Si l’objectif est d’étudier la polysémie d’un **nom**, il peut être utile de filtrer ou d’annoter les occurrences (POS) pour éviter de mélanger catégories/emplois.
-- **Taille de l’échantillon** : avec \(n=30\) occurrences par cible, on obtient un signal exploitable mais encore bruité. Augmenter \(n\) et/ou diversifier les sources peut stabiliser le score et le classement.
-- **Validation** : pour relier ce score à une notion linguistique de polysémie, il est recommandé de :
-  - regarder quelques exemples de contextes aux extrêmes (occurrences très proches vs très éloignées),
-  - compléter par une ressource/mesure externe (lexiques, inventaire de sens, statistiques, etc.),
-  - utiliser la visualisation 2D (script 5) comme outil de confirmation qualitative.
+    **Exemple sur `porte` (CamemBERT, `resultats_1`, n=30, std=0.094) :**
+
+    Paires les plus *éloignées* (cos ≈ 0.43–0.49) — sens distincts :
+    - `il vit une porte ouverte et prit vivement la main d'emilie` (sens concret : battant physique)
+    - `celui de mont franklin à ce lac nous porte en ce moment` (emploi verbal : porter vers)
+    - `galerie philosophique… porte contre le duc d'epernon` (emploi figé/juridique : porter plainte)
+
+    Paires les plus *proches* (cos ≈ 0.96–0.97) — même sens concret :
+    - `il y avait près de la porte et le long des murs quelques personnes debout`
+    - `la porte s'ouvrit presque aussitôt et un grand valet entra`
+
+    **Exemple sur `esprit` (CamemBERT, `resultats_1`, n=30, std=0.065) :**
+
+    Paires les plus *éloignées* (cos ≈ 0.65–0.67) — variation faible, même champ sémantique :
+    - `répondre avec esprit aux sages représentations` (vivacité d'esprit)
+    - `son esprit critique aurait pu s'exercer à miracle` (capacité intellectuelle)
+    - `dans son esprit la triste prudence l'emportait` (= dans sa pensée)
+
+    → Le cosinus minimal de `esprit` (0.65) reste bien au-dessus de celui de `porte` (0.43), ce qui
+    est cohérent avec la différence de scores (std 0.065 vs 0.094) et valide la mesure.
+
+#### Confrontation à des ressources externes
+Corréler avec une ressource externe (Wiktionnaire, CNRTL, etc.), en gardant en tête que ces ressources comptent des **sens lexicographiques** qui ne se retrouvent pas forcément dans le corpus :
+    - **Wiktionnaire** (indicatif) : `esprit` ≈ 13 acceptions ; `porte` ≈ 11 (attention : `porte` inclut aussi une *forme verbale* de `porter`, ce qui peut augmenter artificiellement la dispersion si l’on ne filtre pas par POS).
+    - **CNRTL** (structure hiérarchique) : `esprit` (2 macro-sens → 5 acceptions principales → ~13 variations) ; `porte` (2 sens fondamentaux → 5 acceptions → ~8 nuances).
+
+## Visualisation des résultats
+Utiliser la visualisation 2D (`5.visualiser_2d.py`) comme confirmation qualitative.

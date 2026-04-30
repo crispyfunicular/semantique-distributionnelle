@@ -219,11 +219,50 @@ def add_special_tokens(
     pour pouvoir décaler les positions des sous-tokens du mot cible.
     """
     # Dans la pratique, CamemBERT/FlauBERT ajoutent un token au début et un à la fin.
-    # On garde ce choix simple, suffisant pour une fenêtre de contexte courte.
-    built: List[int] = tokenizer.build_inputs_with_special_tokens(input_ids)
-    shift: int = 1 if len(built) >= len(input_ids) + 2 else max(0, len(built) - len(input_ids))
+    # Certaines versions de transformers/tokenizers n'exposent pas la même API, donc
+    # on prévoit plusieurs chemins de compatibilité.
+    built: List[int]
+    shift: int
 
-    built_mask: List[int] = [1] * len(built)
+    # 1) API "classique"
+    fn = getattr(tokenizer, "build_inputs_with_special_tokens", None)
+    if callable(fn):
+        try:
+            built = fn(input_ids)  # type: ignore[misc]
+        except TypeError:
+            # Certaines implémentations attendent (token_ids_0, token_ids_1=None)
+            built = fn(input_ids, None)  # type: ignore[misc]
+        shift = max(0, len(built) - len(input_ids))
+        # On suppose 1 token en début si on a au moins +1 token
+        shift = 1 if shift >= 1 else 0
+        return built, [1] * len(built), shift
+
+    # 2) API alternative : prepare_for_model
+    fn2 = getattr(tokenizer, "prepare_for_model", None)
+    if callable(fn2):
+        prepared = fn2(
+            input_ids,
+            add_special_tokens=True,
+            return_attention_mask=True,
+            truncation=False,
+        )
+        built = list(prepared["input_ids"])
+        built_mask = list(prepared.get("attention_mask", [1] * len(built)))
+        shift = max(0, len(built) - len(input_ids))
+        shift = 1 if shift >= 1 else 0
+        return built, built_mask, shift
+
+    # 3) Fallback manuel (suffisant pour CamemBERT/FlauBERT / RoBERTa-like)
+    bos = getattr(tokenizer, "bos_token_id", None) or getattr(tokenizer, "cls_token_id", None)
+    eos = getattr(tokenizer, "eos_token_id", None) or getattr(tokenizer, "sep_token_id", None)
+    if bos is None or eos is None:
+        raise AttributeError(
+            "Impossible d'ajouter les tokens spéciaux: tokenizer sans "
+            "build_inputs_with_special_tokens/prepare_for_model et sans bos/eos_token_id."
+        )
+    built = [int(bos)] + list(input_ids) + [int(eos)]
+    built_mask = [1] * len(built)
+    shift = 1
     return built, built_mask, shift
 
 

@@ -1,0 +1,33 @@
+{
+  "data_dir": "data",
+  "models": {
+    "camembert": [
+      {
+        "target": "porte",
+        "score": 0.10777677738834615
+      },
+      {
+        "target": "feu",
+        "score": 0.09614159598540258
+      },
+      {
+        "target": "passer",
+        "score": 0.09359588564982294
+      }
+    ],
+    "flaubert": [
+      {
+        "target": "porte",
+        "score": 0.18257595266310048
+      },
+      {
+        "target": "passer",
+        "score": 0.16734726622339993
+      },
+      {
+        "target": "feu",
+        "score": 0.16238809341129357
+      }
+    ]
+  }
+}

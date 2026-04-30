@@ -1,0 +1,42 @@
+python3 scripts/2.extraire_occurrences.py --corpus corpus_complet.txt --targets esprit courir porte --k 10 --n 100 --seed 42 --out_dir data
+Corpus : corpus_complet.txt -> 983589 mots (tokenisation simple)
+Sorties :
+- data/occurrences.jsonl (258 occurrences)
+- data/targets.json
+Récap :
+- esprit : 100 / 100
+- courir : 58 / 100
+- porte : 100 / 100
+
+
+python3 scripts/3.encoder_embeddings.py --occurrences data/occurrences.jsonl --out_dir data --models camembert flaubert --batch_size 16 --device auto
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 10726.71it/s]
+[transformers] CamembertModel LOAD REPORT from: camembert-base
+Key                       | Status     |  |
+--------------------------+------------+--+-
+lm_head.bias              | UNEXPECTED |  |
+lm_head.layer_norm.weight | UNEXPECTED |  |
+lm_head.dense.bias        | UNEXPECTED |  |
+lm_head.dense.weight      | UNEXPECTED |  |
+lm_head.layer_norm.bias   | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[camembert] écrit : data/embeddings_camembert.npy  shape=(258, 768)
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 196/196 [00:00<00:00, 10791.33it/s]
+[transformers] FlaubertModel LOAD REPORT from: flaubert/flaubert_base_cased
+Key                  | Status     |  |
+---------------------+------------+--+-
+pred_layer.proj.bias | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[flaubert] écrit : data/embeddings_flaubert.npy  shape=(258, 768)
+meta écrit : data/embeddings_meta.jsonl  lignes=516
+
+
+python3 scripts/4.score_polysemie.py --data_dir data
+[camembert] targets=3  classés=3
+[flaubert] targets=3  classés=3
+OK

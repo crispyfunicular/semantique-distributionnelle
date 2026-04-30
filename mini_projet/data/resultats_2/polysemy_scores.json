@@ -1,0 +1,51 @@
+{
+  "data_dir": "data",
+  "models": {
+    "camembert": {
+      "courir": {
+        "n_occurrences": 58,
+        "cosine_mean": 0.8061923116126184,
+        "cosine_std": 0.10225248316860916,
+        "cosine_min": 0.2786731523260696,
+        "cosine_max": 0.9683694874940403
+      },
+      "esprit": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.8467526751323337,
+        "cosine_std": 0.06933398186374023,
+        "cosine_min": 0.5205844647959939,
+        "cosine_max": 0.9748861282676127
+      },
+      "porte": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.80468977947211,
+        "cosine_std": 0.11337788222793369,
+        "cosine_min": 0.20713191580065754,
+        "cosine_max": 0.9818162345567676
+      }
+    },
+    "flaubert": {
+      "courir": {
+        "n_occurrences": 58,
+        "cosine_mean": 0.5859294215583198,
+        "cosine_std": 0.25344260772136123,
+        "cosine_min": -0.002041114001869987,
+        "cosine_max": 0.9567594424301815
+      },
+      "esprit": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.5265403952492472,
+        "cosine_std": 0.2251269469103683,
+        "cosine_min": -0.021544519505601323,
+        "cosine_max": 0.9714370427523841
+      },
+      "porte": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.5381476299691089,
+        "cosine_std": 0.21836883971464507,
+        "cosine_min": 0.00700517568699828,
+        "cosine_max": 0.9500064000574244
+      }
+    }
+  }
+}

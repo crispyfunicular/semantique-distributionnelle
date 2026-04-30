@@ -1,0 +1,13 @@
+python3 scripts/2.extraire_occurrences.py --corpus corpus_complet.txt --targets esprit or courir porte --k 10 --n 30 --seed 42 --out_dir data
+.txt --targets esprit or courir porte --k 10 --n 30 --seed 42 --out_dir mini_projet/data
+Corpus : corpus_complet.txt -> 983589 mots (tokenisation simple)
+Sorties :
+- mini_projet/data/occurrences.jsonl (120 occurrences)
+- mini_projet/data/targets.json
+Récap :
+- esprit : 30 / 30
+- or : 30 / 30
+- courir : 30 / 30
+- porte : 30 / 30
+
+python3 scripts/3.encoder_embeddings.py --occurrences data/occurrences.jsonl --out_dir data --models camembert flaubert --batch_size 16 --device auto

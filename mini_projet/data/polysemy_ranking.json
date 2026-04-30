@@ -1,0 +1,41 @@
+{
+  "data_dir": "data",
+  "models": {
+    "camembert": [
+      {
+        "target": "courir",
+        "score": 0.10074471616108714
+      },
+      {
+        "target": "porte",
+        "score": 0.09387844905458176
+      },
+      {
+        "target": "or",
+        "score": 0.09050887402296628
+      },
+      {
+        "target": "esprit",
+        "score": 0.06460473688824138
+      }
+    ],
+    "flaubert": [
+      {
+        "target": "courir",
+        "score": 0.2646206887377931
+      },
+      {
+        "target": "or",
+        "score": 0.23892222178475067
+      },
+      {
+        "target": "porte",
+        "score": 0.2273535118402807
+      },
+      {
+        "target": "esprit",
+        "score": 0.22006313000636982
+      }
+    ]
+  }
+}

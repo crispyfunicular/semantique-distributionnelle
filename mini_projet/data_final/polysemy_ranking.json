@@ -1,0 +1,105 @@
+{
+  "data_dir": "data_final",
+  "models": {
+    "camembert": [
+      {
+        "target": "voix",
+        "score": 0.14094434451955423
+      },
+      {
+        "target": "pied",
+        "score": 0.12547618319520784
+      },
+      {
+        "target": "cour",
+        "score": 0.12384860991163131
+      },
+      {
+        "target": "porte",
+        "score": 0.11597195633056695
+      },
+      {
+        "target": "feu",
+        "score": 0.11448421125661981
+      },
+      {
+        "target": "entendre",
+        "score": 0.1108803404971584
+      },
+      {
+        "target": "plume",
+        "score": 0.09600564387761057
+      },
+      {
+        "target": "passer",
+        "score": 0.09183288119631186
+      },
+      {
+        "target": "campagne",
+        "score": 0.08819372806612548
+      },
+      {
+        "target": "glace",
+        "score": 0.07384151432989404
+      },
+      {
+        "target": "ombre",
+        "score": 0.05590715969919889
+      },
+      {
+        "target": "baron",
+        "score": 0.04025028814501923
+      }
+    ],
+    "flaubert": [
+      {
+        "target": "porte",
+        "score": 0.2498506037650382
+      },
+      {
+        "target": "ombre",
+        "score": 0.2461922108806969
+      },
+      {
+        "target": "plume",
+        "score": 0.24475565366700267
+      },
+      {
+        "target": "passer",
+        "score": 0.2393470888483444
+      },
+      {
+        "target": "baron",
+        "score": 0.23873722732381678
+      },
+      {
+        "target": "campagne",
+        "score": 0.23644678681876505
+      },
+      {
+        "target": "glace",
+        "score": 0.23257810425966874
+      },
+      {
+        "target": "cour",
+        "score": 0.22878888141286016
+      },
+      {
+        "target": "feu",
+        "score": 0.22316269989935597
+      },
+      {
+        "target": "entendre",
+        "score": 0.21971279702304375
+      },
+      {
+        "target": "pied",
+        "score": 0.21581287652777356
+      },
+      {
+        "target": "voix",
+        "score": 0.21497215550018456
+      }
+    ]
+  }
+}

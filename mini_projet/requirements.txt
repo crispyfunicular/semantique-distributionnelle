@@ -9,5 +9,5 @@ sacremoses>=0.1.1
 # Visualisation (script 5)
 matplotlib>=3.7
 
-# Optionnel (script 5, si vous choisissez --method umap)
+# Optionnel (script 5 pour la --method umap)
 # umap-learn>=0.5

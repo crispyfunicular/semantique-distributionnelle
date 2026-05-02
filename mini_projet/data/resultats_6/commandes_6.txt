@@ -1,0 +1,61 @@
+python3 scripts/2.extraire_occurrences.py \
+  --corpus corpus_complet.txt \
+  --targets porte feu passer baron pied cour voix campagne entendre \
+  --k 10 --n 100 --seed 42 \
+  --out_dir data_final
+Corpus : corpus_complet.txt -> 983589 mots (tokenisation simple)
+Sorties :
+- data_final/occurrences.jsonl (900 occurrences)
+- data_final/targets.json
+Récap :
+- porte : 100 / 100
+- feu : 100 / 100
+- passer : 100 / 100
+- baron : 100 / 100
+- pied : 100 / 100
+- cour : 100 / 100
+- voix : 100 / 100
+- campagne : 100 / 100
+- entendre : 100 / 100
+
+
+python3 scripts/3.encoder_embeddings.py   --occurrences data_final/occurrences.jsonl   --out_dir data_final   --models camembert flaubert   --batch_size 16   --device auto
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 11315.36it/s]
+[transformers] CamembertModel LOAD REPORT from: camembert-base
+Key                       | Status     |  |
+--------------------------+------------+--+-
+lm_head.bias              | UNEXPECTED |  |
+lm_head.dense.weight      | UNEXPECTED |  |
+lm_head.dense.bias        | UNEXPECTED |  |
+lm_head.layer_norm.weight | UNEXPECTED |  |
+lm_head.layer_norm.bias   | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[camembert] écrit : data_final/embeddings_camembert.npy  shape=(900, 768)
+Loading weights: 100%|██████████████████████████████████████████████████████████████| 196/196 [00:00<00:00, 9348.45it/s]
+[transformers] FlaubertModel LOAD REPORT from: flaubert/flaubert_base_cased
+Key                  | Status     |  |
+---------------------+------------+--+-
+pred_layer.proj.bias | UNEXPECTED |  |
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[flaubert] écrit : data_final/embeddings_flaubert.npy  shape=(900, 768)
+meta écrit : data_final/embeddings_meta.jsonl  lignes=1800
+
+python3 scripts/4.score_polysemie.py --data_dir data_final
+[camembert] targets=9  classés=9
+[flaubert] targets=9  classés=9
+OK
+
+python3 scripts/5.visualiser_2d.py \
+  --data_dir data_final \
+  --model camembert \
+  --target porte \
+  --method pca \
+  --out_dir data_final/viz \
+  --write_examples
+écrit : data_final/viz/camembert_porte_pca.png
+écrit : data_final/viz/camembert_porte_pca_examples.txt

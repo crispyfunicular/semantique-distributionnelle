@@ -1,11 +1,14 @@
-venv/.DS_Store
-
 # Environnements locaux
+venv/
+.venv/
 .venv311/
 .MP/
 
 # macOS
 .DS_Store
 
-# Embeddings lourds
+# WSL
+*Zone.Identifier
+
+# Embeddings
 *.npy

@@ -1,0 +1,135 @@
+{
+  "data_dir": "data/resultats_final_9",
+  "models": {
+    "camembert": {
+      "baron": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.9195379685604561,
+        "cosine_std": 0.04025028814501923,
+        "cosine_min": 0.6631790105170006,
+        "cosine_max": 0.9846975393961321
+      },
+      "campagne": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.8207930202539959,
+        "cosine_std": 0.08819372759306349,
+        "cosine_min": 0.3977987283124132,
+        "cosine_max": 0.9721448187882642
+      },
+      "cour": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.7860821783344595,
+        "cosine_std": 0.12384861419266543,
+        "cosine_min": 0.20126256796130274,
+        "cosine_max": 0.9805748032036582
+      },
+      "entendre": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.7652363499232088,
+        "cosine_std": 0.11088034207430034,
+        "cosine_min": 0.2902505784001726,
+        "cosine_max": 0.9680456051779042
+      },
+      "feu": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.8044600817024087,
+        "cosine_std": 0.11448421125661981,
+        "cosine_min": 0.19348153754147351,
+        "cosine_max": 0.9734628156129183
+      },
+      "passer": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.7497656287864378,
+        "cosine_std": 0.09183288119631186,
+        "cosine_min": 0.33369700592641527,
+        "cosine_max": 0.9600390997306463
+      },
+      "pied": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.6880263881196137,
+        "cosine_std": 0.12547618319520784,
+        "cosine_min": 0.13781043114226194,
+        "cosine_max": 0.9599730417566569
+      },
+      "porte": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.7986697708849291,
+        "cosine_std": 0.11597195633056695,
+        "cosine_min": 0.2702263168809904,
+        "cosine_max": 0.9740971068855232
+      },
+      "voix": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.7583422413795525,
+        "cosine_std": 0.1409443427846863,
+        "cosine_min": 0.10754562967588192,
+        "cosine_max": 0.968884805901351
+      }
+    },
+    "flaubert": {
+      "baron": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.5365952616747168,
+        "cosine_std": 0.23873722732381678,
+        "cosine_min": -0.09505931122311459,
+        "cosine_max": 0.9703141186780311
+      },
+      "campagne": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.6267642537297172,
+        "cosine_std": 0.23644678681876505,
+        "cosine_min": -0.11419805635629336,
+        "cosine_max": 0.9616191480244052
+      },
+      "cour": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.6249396301235167,
+        "cosine_std": 0.2287889862989801,
+        "cosine_min": 0.050018459423415026,
+        "cosine_max": 0.9723456419103778
+      },
+      "entendre": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.537806350632332,
+        "cosine_std": 0.21971249971819976,
+        "cosine_min": -0.07379277582900931,
+        "cosine_max": 0.951517221109412
+      },
+      "feu": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.54949099225115,
+        "cosine_std": 0.22316269989935597,
+        "cosine_min": -0.07873644581077707,
+        "cosine_max": 0.9365898106263377
+      },
+      "passer": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.5404970702664896,
+        "cosine_std": 0.2393470888483444,
+        "cosine_min": 0.005251402293842376,
+        "cosine_max": 0.9698942121093295
+      },
+      "pied": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.5995558210594515,
+        "cosine_std": 0.21581287652777356,
+        "cosine_min": -0.0019048177714688225,
+        "cosine_max": 0.9708341748113607
+      },
+      "porte": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.48441672222303317,
+        "cosine_std": 0.2498506037650382,
+        "cosine_min": -0.11437712414114208,
+        "cosine_max": 0.9592404589185743
+      },
+      "voix": {
+        "n_occurrences": 100,
+        "cosine_mean": 0.48686464545730473,
+        "cosine_std": 0.21497213252635997,
+        "cosine_min": -0.03488159552506931,
+        "cosine_max": 0.947042725418799
+      }
+    }
+  }
+}

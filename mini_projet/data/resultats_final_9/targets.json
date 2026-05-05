@@ -1,0 +1,72 @@
+{
+  "corpus": "corpus_complet.txt",
+  "doc_id": "corpus_complet",
+  "k": 10,
+  "n_per_target": 100,
+  "seed": 42,
+  "targets_raw": [
+    "porte",
+    "feu",
+    "passer",
+    "baron",
+    "pied",
+    "cour",
+    "voix",
+    "campagne",
+    "entendre"
+  ],
+  "targets_normalized": [
+    "porte",
+    "feu",
+    "passer",
+    "baron",
+    "pied",
+    "cour",
+    "voix",
+    "campagne",
+    "entendre"
+  ],
+  "summary": {
+    "porte": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "feu": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "passer": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "baron": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "pied": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "cour": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "voix": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "campagne": {
+      "requested": 100,
+      "extracted": 100
+    },
+    "entendre": {
+      "requested": 100,
+      "extracted": 100
+    }
+  },
+  "notes": [
+    "Tokenisation simple (mots) + minuscules + normalisation Unicode.",
+    "Fenêtre : k mots à gauche et k mots à droite.",
+    "Sortie : occurrences.jsonl (1 occurrence par ligne)."
+  ]
+}

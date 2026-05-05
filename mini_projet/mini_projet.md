@@ -77,11 +77,12 @@ Sorties (dans `mini_projet/data/viz/`) :
 - `<model>_<target>_<method>.png`
 - (optionnel) `<model>_<target>_<method>_examples.txt` (quelques contextes)
 
-## Choix effectués
-- Choix du corpus
-- Nombre maximal d'occurrences extraites par mot cible (`n`)
-- Taille de la fenêtre de contexte autour du mot cible (`k`) : k mots à gauche et k mots à droite -> *citer TP2*
-- FlauBERT vs CamemBERT
+## Choix méthodologiques effectués
+Comment dit précédemment nous avons choisi in corpus composé de 29 œuvres littéraires et argumentaires français, qui abordent de sujet comment l’amour, la mort, la politique, la religion etc. Si bien que notre choix peut mobiliser une grande diversité lexicale, il faut remarquer que notre mesure porte uniquement sur les sens présents dans ce corpus. Un mot peut donc être très polysémique dans un dictionnaire, mais apparaître dans le corpus avec un nombre plus restreint d’usages. De même, nous avons choisi de travailler sur des formes lexicales exactes plutôt que sur des lemmes. Ce choix permet de conserver un protocole simple et reproductible, sans dépendre d’un outil externe de lemmatisation ou d’étiquetage morphosyntaxique. 
+En outre, le paramètre `k` correspond au nombre de mots conservés à gauche et à droite du mot cible. Dans notre run final, nous avons retenu `k = 10`, soit dix mots à gauche et dix mots à droite de chaque occurrence. Ce choix s’appuie sur les réflexions du TP2, consacré à l’influence de la taille du contexte dans les représentations distributionnelles. Ce TP montrait que la taille de la fenêtre pouvait modifier les voisins obtenus par similarité cosinus et donc les propriétés linguistiques capturées. Même si notre projet utilise des embeddings contextuels BERT plutôt que des embeddings statiques par cooccurrences, la taille du contexte reste importante : une fenêtre trop courte peut manquer d’indices sémantiques, tandis qu’une fenêtre trop large peut introduire du bruit. La fenêtre de dix mots constitue donc un compromis.
+
+### Choix des modèles : CamemBERT et FlauBERT
+Nous avons utilisé deux modèles BERT adaptés au français : CamemBERT et FlauBERT. Ces modèles sont tous deux des encodeurs contextuels : ils produisent, pour un même mot, des représentations vectorielles différentes selon le contexte d’occurrence. C’est précisément cette propriété que nous exploitons pour mesurer la variation sémantique.
 
 | | **CamemBERT** | **FlauBERT** |
 |---|---|---|
@@ -92,31 +93,68 @@ Sorties (dans `mini_projet/data/viz/`) :
 | Dimension des embeddings | 768 | 768 |
 | Couches / têtes d'attention | 12 / 12 | 12 / 12 |
 
-Les deux modèles sont des **encodeurs contextuels** : ils produisent, pour un même mot, des représentations vectorielles différentes selon le contexte d'occurrence. C'est précisément cette propriété que nous exploitons pour mesurer la variation sémantique. Nous les utilisons ici sans fine-tuning (extraction directe des représentations de la dernière couche cachée).
+Nous utilisons ces modèles sans fine-tuning : les embeddings sont extraits directement à partir de la dernière couche cachée. Pour chaque occurrence, nous récupérons la représentation du mot cible. Lorsque le mot est segmenté en plusieurs sous-tokens, les vecteurs correspondants sont moyennés afin d’obtenir un seul embedding par occurrence.
+
+Même si les deux modèles sont utilisés dans le pipeline, nous retenons CamemBERT comme modèle principal pour l’analyse finale. Dans nos expérimentations, CamemBERT produit des scores plus différenciés entre les mots cibles, tandis que FlauBERT donne des scores plus resserrés, ce qui rend l’interprétation moins nette.
+
+Le classement final obtenu avec CamemBERT est le suivant :
+
+| Rang | Mot | Score `cosine_std` |
+|---:|---|---:|
+| 1 | `voix` | 0.141 |
+| 2 | `pied` | 0.125 |
+| 3 | `cour` | 0.124 |
+| 4 | `porte` | 0.116 |
+| 5 | `feu` | 0.114 |
+| 6 | `entendre` | 0.111 |
+| 7 | `passer` | 0.092 |
+| 8 | `campagne` | 0.088 |
+| 9 | `baron` | 0.040 |
+
+Ce classement est globalement cohérent avec notre hypothèse : les mots `voix`, `pied`, `cour`, `porte` et `feu`, qui présentent des emplois variés, obtiennent les scores les plus élevés. À l’inverse, `baron`, utilisé comme contrôle à faible polysémie, obtient le score le plus faible.
 
 
 ### Comportement comparé des deux modèles
-**CamemBERT** produit des embeddings plus « concentrés » (cosinus moyens ~0.80–0.92) dont la dispersion relative reflète bien les différences sémantiques inter-mots. **FlauBERT** produit des embeddings intrinsèquement plus dispersés dans toutes les directions de l'espace, ce qui atténue les différences entre cibles et rend le score `cosine_std` moins discriminant sans normalisation préalable.
+
+CamemBERT produit des embeddings relativement plus « concentrés » : les cosinus moyens restent globalement élevés, entre environ 0.69 et 0.92 selon les mots. Cette concentration permet de mieux interpréter les différences de dispersion entre les cibles. Par exemple, baron présente une moyenne très élevée (0.920) et un écart-type très faible (cosine_std = 0.040), ce qui correspond bien à son rôle de contrôle à faible polysémie. À l’inverse, des mots comme voix, pied, cour, porte ou feu obtiennent des écarts-types plus élevés, entre 0.114 et 0.141, ce qui suggère une plus forte variation contextuelle.
+
+FlauBERT, en revanche, produit des embeddings globalement plus dispersés : les cosinus moyens sont plus bas, entre environ 0.48 et 0.63, et les écarts-types sont beaucoup plus resserrés, autour de 0.215 à 0.250. Cette dispersion générale rend le score cosine_std moins discriminant entre les cibles. Par exemple, avec FlauBERT, baron obtient un score de 0.239, proche de celui de mots plus variables comme passer (0.239) ou porte (0.250). Cela rend l’interprétation linguistique moins nette que pour CamemBERT.
+
+Ainsi, dans notre protocole, CamemBERT est retenu comme modèle principal d’analyse, non parce qu’il serait nécessairement supérieur à FlauBERT de manière générale, mais parce qu’il produit ici une hiérarchie plus interprétable pour notre score de dispersion. FlauBERT est conservé comme point de comparaison, mais ses scores semblent davantage refléter une dispersion globale de l’espace vectoriel qu’une distinction claire entre les degrés de polysémie des mots cibles.
 
 ## Discussion des résultats
-*A reformuler*
 
 ### Score de polysémie : rappel de la mesure
 
-Le score utilisé est l'**écart-type des similarités cosinus 2-à-2** entre les embeddings contextuels des occurrences d'un même mot. Un score élevé signale une dispersion forte → les occurrences sont représentées dans des régions variées de l'espace d'embedding → hypothèse de polysémie ou de variation sémantique importante. Un score faible signale des usages homogènes → hypothèse de monosémie ou de sens stable dans le corpus.
+Le classement obtenu avec CamemBERT montre que certains mots, comme `voix` (0.141), `pied` (0.125), `cour` (0.124), ou encore `feu` (0.114), présentent des scores, l'**écart-type des similarités cosinus 2-à-2**, de dispersion relativement élevés. Ces valeurs indiquent une plus grande variation contextuelle des embeddings, que l’on peut rapprocher d’une plus grande diversité sémantique.
 
-### Run retenu : `resultats_baron` (CamemBERT, n=100, k=10)
+D’un point de vue linguistique, cette variation peut être mise en relation avec l’idée que le sens d’un mot ne dépend pas uniquement de son contenu lexical isolé, mais aussi de son environnement linguistique. Dans sa thèse, Évelyne Saunier montre notamment que l’interprétation d’un mot se construit en interaction avec le contexte dans lequel il apparaît : le mot joue un rôle précis dans l’interprétation de l’énoncé où il figure. Cette perspective permet de mieux comprendre pourquoi un même terme peut recevoir des valeurs différentes selon ses emplois.
 
-| Mot | n occ. | cosine_mean | **cosine_std** | cosine_min | cosine_max |
-|---|---|---|---|---|---|
-| `porte` | 100 | 0.799 | **0.116** | 0.270 | 0.974 |
-| `feu` | 100 | 0.804 | **0.114** | 0.193 | 0.973 |
-| `passer` | 100 | 0.750 | **0.092** | 0.334 | 0.960 |
-| `baron` | 100 | 0.920 | **0.040** | 0.663 | 0.985 |
+Par exemple, `voix` peut renvoyer, selon le contexte, au son produit par la parole, à une opinion ou à une forme d’influence. De même, `pied` peut désigner une partie du corps, une base ou apparaître dans des expressions figées. `Cour` peut renvoyer à un espace extérieur, à une cour royale ou à l’expression « faire la cour ». Ces variations d’usage expliquent pourquoi ces mots obtiennent des scores de dispersion plus élevés avec CamemBERT.
 
-**Classement CamemBERT :** `porte` > `feu` > `passer` > `baron`
+Cependant, certains cas intéressants, comme `passer`, `entendre`, `porte` et `campagne`, montrent aussi les limites du score. Ces mots ne se laissent pas interpréter uniquement à partir de leur rang dans le classement, car leur dispersion dépend à la fois de leur polysémie, de leurs constructions syntaxiques et des usages effectivement présents dans le corpus.
 
-**Classement FlauBERT :** `porte` > `passer` ≈ `baron` ≈ `feu` (scores très resserrés, ~0.22–0.25)
+Le cas de `passer` est révélateur. D’un point de vue linguistique, l’invariant de `passer` peut être compris comme l’idée d’un passage ou d’une transition, c’est-à-dire le fait de minimiser une rupture en l’inscrivant dans un mouvement continu. Cette valeur générale explique que le verbe puisse s’appliquer à des déplacements physiques, à des successions temporelles ou encore à des transmissions d’objets. Pourtant, dans nos résultats, `passer` n’obtient pas un score aussi élevé que certains noms comme `voix`, `pied` ou `cour`. Cela peut s’expliquer par le fait que notre extraction porte sur la forme exacte `passer`, et non sur l’ensemble des formes conjuguées du verbe. Le score mesure donc la dispersion des occurrences réellement extraites, et non toute la richesse sémantique du lemme.
+
+`Entendre` présente une autre limite. Le mot est principalement associé à deux grands emplois, percevoir par l’ouïe et comprendre, mais il obtient malgré tout un score relativement élevé. Cela montre que le score peut aussi être sensible à la diversité des contextes syntaxiques ou discursifs, et pas seulement au nombre de sens distingués linguistiquement.
+
+`Porte` est également un cas problématique, car la forme peut correspondre au nom `porte`, mais aussi à une forme conjuguée du verbe `porter`. Son score élevé peut donc refléter une véritable variation sémantique, mais aussi une ambiguïté morphosyntaxique. Sans lemmatisation ni étiquetage grammatical, le score mélange ces différents emplois.
+
+Enfin, `campagne` obtient un score plus faible, alors que le mot possède au moins deux grands sens : l’espace rural et la campagne militaire ou politique. Cela suggère que certains sens sont peut-être moins représentés dans le corpus, ou que les occurrences extraites restent proches dans leurs contextes d’emploi. Ce cas rappelle que notre score ne mesure pas directement le nombre de sens disponibles dans une ressource lexicale, mais la variation des usages observés dans le corpus.
+
+### Corrélation avec la mesure externe
+
+Afin d’évaluer si le score `cosine_std` correspond à une mesure linguistique de la polysémie, nous l’avons comparé à une mesure externe fondée sur des macro-sens. Chaque mot cible a reçu un score externe correspondant au nombre de grands emplois distingués manuellement : par exemple, `baron` reçoit un score faible, tandis que `feu` ou `passer` reçoivent un score plus élevé.
+
+La corrélation obtenue est positive mais modérée : Spearman ρ = 0.422 et Pearson r = 0.603. Ces résultats indiquent que les mots associés à davantage de macro-sens tendent globalement à avoir des embeddings plus dispersés. Cependant, les p-values obtenues ne permettent pas de conclure à une corrélation statistiquement significative. Cette absence de significativité peut s’expliquer par la taille réduite de notre échantillon, limité à neuf mots.
+
+Ces résultats suggèrent donc que le score fondé sur les embeddings contextuels correspond partiellement à la polysémie linguistique, sans s’y réduire complètement. Il mesure plutôt la dispersion des usages attestés dans le corpus, qui dépend à la fois du nombre de sens possibles, de leur fréquence dans les textes et de la diversité des contextes dans lesquels les mots apparaissent.
+
+### Mesure externe par macro-sens
+
+Nous avons choisi de comparer notre score à une mesure externe fondée sur des macro-sens plutôt qu’à un décompte exhaustif des acceptions dictionnairiques. Ce choix permet de regrouper des nuances proches dans de grands emplois sémantiques plus facilement comparables aux représentations distributionnelles. Les dictionnaires distinguent souvent des sous-sens très fins, qui ne correspondent pas nécessairement à des groupes séparables dans l’espace des embeddings.
+
+Cette mesure reste donc volontairement simplifiée. Elle ne prétend pas épuiser la polysémie des mots étudiés, mais elle fournit un point de comparaison linguistique permettant de tester si les mots considérés comme plus polysémiques présentent aussi une plus grande dispersion contextuelle.
 
 ### Observations
 *à reformuler*

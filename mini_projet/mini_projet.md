@@ -41,7 +41,7 @@ Nous avons utilisé deux modèles BERT adaptés au français : CamemBERT et Flau
 
 Nous utilisons ces modèles sans fine-tuning : les embeddings sont extraits directement à partir de la dernière couche cachée. Pour chaque occurrence, nous récupérons la représentation du mot cible. Lorsque le mot est segmenté en plusieurs sous-tokens, les vecteurs correspondants sont moyennés afin d’obtenir un seul embedding par occurrence.
 
-Même si les deux modèles sont utilisés dans le pipeline, nous retenons CamemBERT comme modèle principal pour l’analyse finale. Dans nos expérimentations, CamemBERT produit des scores plus différenciés entre les mots cible, tandis que FlauBERT donne des scores plus resserrés, ce qui rend l’interprétation moins nette.
+Nous avons testé CamemBERT et FlauBERT sans fine-tuning. Pour l’analyse finale, nous retenons CamemBERT comme modèle principal ; la comparaison chiffrée des deux modèles est présentée ci-dessous.
 
 Le classement final obtenu avec CamemBERT est le suivant :
 
@@ -62,11 +62,9 @@ Ce classement est globalement cohérent avec notre hypothèse : les mots `voix`,
 
 ### Comportement comparé des deux modèles
 
-CamemBERT produit des embeddings relativement plus « concentrés » : les cosinus moyens restent globalement élevés, entre environ 0.69 et 0.92 selon les mots. Cette concentration permet de mieux interpréter les différences de dispersion entre les cibles. Par exemple, baron présente une moyenne très élevée (0.920) et un écart-type très faible (cosine_std = 0.040), ce qui correspond bien à son rôle de contrôle à faible polysémie. À l’inverse, des mots comme voix, pied, cour, porte ou feu obtiennent des écarts-types plus élevés, entre 0.114 et 0.141, ce qui suggère une plus forte variation contextuelle.
+Sur notre run final, CamemBERT produit des embeddings relativement plus « concentrés » : les cosinus moyens sont élevés (≈ 0.69–0.92) et les dispersions `cosine_std` s’étendent de 0.040 à 0.141. Il discrimine donc nettement les cibles : `baron` apparaît comme le plus homogène (cosine_mean ≈ 0.920 ; `cosine_std` = 0.040), tandis que des mots comme `voix` (`cosine_std` = 0.141), `pied` (0.125) ou `cour` (0.124) présentent une plus forte variation contextuelle.
 
-FlauBERT, en revanche, produit des embeddings globalement plus dispersés : les cosinus moyens sont plus bas, entre environ 0.48 et 0.63, et les écarts-types sont beaucoup plus resserrés, autour de 0.215 à 0.250. Cette dispersion générale rend le score cosine_std moins discriminant entre les cibles. Par exemple, avec FlauBERT, baron obtient un score de 0.239, proche de celui de mots plus variables comme passer (0.239) ou porte (0.250). Cela rend l’interprétation linguistique moins nette que pour CamemBERT.
-
-Ainsi, dans notre protocole, CamemBERT est retenu comme modèle principal d’analyse, non parce qu’il serait nécessairement supérieur à FlauBERT de manière générale, mais parce qu’il produit ici une hiérarchie plus interprétable pour notre score de dispersion. FlauBERT est conservé comme point de comparaison, mais ses scores semblent davantage refléter une dispersion globale de l’espace vectoriel qu’une distinction claire entre les degrés de polysémie des mots cible.
+FlauBERT, à l’inverse, donne des cosinus moyens plus faibles (≈ 0.48–0.63) et des dispersions beaucoup plus resserrées (≈ 0.216–0.250), ce qui rend le score moins discriminant : `baron` (`cosine_std` = 0.239) est proche de `passer` (0.239) et `porte` (0.250). Dans notre protocole, nous retenons donc CamemBERT comme modèle principal, car il fournit une hiérarchie plus interprétable pour `cosine_std`. Enfin, il faut rappeler que cette dispersion ne se confond pas avec un décompte de sens lexicographiques : elle dépend des usages attestés dans le corpus et peut être influencée par des ambiguïtés morphosyntaxiques (par ex. `porte`, nom vs forme verbale).
 
 ## Discussion des résultats
 
@@ -99,31 +97,6 @@ Ces résultats suggèrent donc que le score fondé sur les embeddings contextuel
 Nous avons choisi de comparer notre score à une mesure externe fondée sur des macro-sens plutôt qu’à un décompte exhaustif des acceptions dictionnairiques. Ce choix permet de regrouper des nuances proches dans de grands emplois sémantiques plus facilement comparables aux représentations distributionnelles. Les dictionnaires distinguent souvent des sous-sens très fins, qui ne correspondent pas nécessairement à des groupes séparables dans l’espace des embeddings.
 
 Cette mesure reste donc volontairement simplifiée. Elle ne prétend pas épuiser la polysémie des mots étudiés, mais elle fournit un point de comparaison linguistique permettant de tester si les mots considérés comme plus polysémiques présentent aussi une plus grande dispersion contextuelle.
-
-### Observations
-
-Cette étude met en évidence que la dispersion des embeddings contextuels permet d’approcher partiellement la variation sémantique des mots en contexte, mais qu’elle ne correspond pas directement à une mesure exhaustive de la polysémie. On peut constater diverses observations qui vont ensuite nous permettre de relever les limites de notre étude :
-
-**1. CamemBERT : une hiérarchie interprétable.**  
-`Baron`, utilisé comme contrôle à faible polysémie dans le corpus littéraire, obtient le score le plus faible (`cosine_std` = 0.040). À l’inverse, `voix` (0.141), `pied` (0.125), `cour` (0.124), `porte` (0.116) et `feu` (0.114) obtiennent les scores les plus élevés. Le score de `voix` est ainsi environ 3,5 fois supérieur à celui de `baron`, et ceux de `pied` et `cour` environ trois fois supérieurs.
-
-Cet écart est clair et linguistiquement motivé : `baron` renvoie majoritairement à un noble ou à une personne appelée ainsi, tandis que les autres mots présentent des emplois plus variés. CamemBERT permet donc de distinguer un mot relativement homogène de mots à plus forte variation contextuelle.
-
-
-**2. FlauBERT : une dispersion moins discriminante.**  
-Avec FlauBERT, les scores `cosine_std` sont plus resserrés entre les mots. `Baron` obtient par exemple un score de 0.239, très proche de `passer` (0.239) et de `porte` (0.250). Cette proximité est problématique, car `baron` devait fonctionner comme contrôle à faible polysémie. Contrairement à CamemBERT, FlauBERT ne distingue donc pas nettement les mots attendus comme homogènes des mots plus variables. Dans notre protocole, ses embeddings semblent présenter une dispersion générale plus forte, ce qui rend le score moins discriminant pour l’analyse de la polysémie.
-
-**3. La mesure ne se corrèle pas directement avec le nombre de sens lexicographiques.**  
-D'après le Wiktionnaire, `esprit` possède **13 acceptions** et `porte` **11** — soit légèrement plus pour `esprit`. Pourtant, CamemBERT classe `porte` *devant* `esprit` (run `resultats_1` : 0.094 vs 0.065). Deux facteurs l'expliquent :
-- `porte` est aussi une **forme verbale** de *porter* (présent 1re/3e sg.) : sans filtrage POS, le modèle mélange les contextes nominaux et verbaux, ce qui gonfle artificiellement la dispersion.
-- Les acceptions d'`esprit` dans un corpus littéraire restent dans un champ thématique étroit (intellect, pensée, caractère) ; les sens plus marginaux (Esprit-Saint, esprits chimiques…) sont peu représentés.
-
-**4. Validation qualitative par les paires extrêmes (`porte`, CamemBERT).**  
-Les paires d'occurrences les plus *éloignées* (cos ≈ 0.43) opposent bien des usages distincts :
-- *sens nominal concret* : « il vit une **porte** ouverte et prit vivement la main d'emilie »
-- *emploi verbal* : « celui de mont franklin à ce lac nous **porte** en ce moment »
-
-Les paires les plus *proches* (cos ≈ 0.97) sont toutes au sens nominal physique (battant de porte). Ce contraste confirme que la dispersion reflète une vraie variation sémantique — même si une partie est imputable à l'ambiguïté POS.
 
 ### Limites de l’étude (à completer ou réformuler)
 

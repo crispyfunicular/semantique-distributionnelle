@@ -26,7 +26,7 @@ Ce script :
 - écrit les résultats dans un fichier `occurrences.jsonl` (une occurrence par ligne).
 
 Utilisation depuis la racine :
-`python3 mini_projet/scripts/2.extraire_occurrences.py --corpus mini_projet/corpus_complet.txt --targets esprit or courir porte --k 10 --n 30 --seed 42 --out_dir mini_projet/data`
+`python3 mini_projet/scripts/2.extraire_occurrences.py --corpus mini_projet/corpus_complet.txt --targets porte feu passer baron pied cour voix campagne entendre --k 10 --n 100 --seed 42 --out_dir mini_projet/data/resultats_final_9`
 
 Sorties (dans `mini_projet/data/`) :
 - `occurrences.jsonl` : une occurrence par ligne
@@ -36,12 +36,12 @@ Sorties (dans `mini_projet/data/`) :
 Encodage des occurrences avec CamemBERT et/ou FlauBERT.
 
 Ce script :
-- lit `mini_projet/data/occurrences.jsonl`,
+- lit un fichier `occurrences.jsonl` (par ex. `mini_projet/data/resultats_final_9/occurrences.jsonl`),
 - calcule un vecteur par occurrence (moyenne des sous-tokens du mot cible),
 - écrit les embeddings et un fichier de correspondance (métadonnées).
 
 Utilisation depuis la racine :
-`python3 mini_projet/scripts/3.encoder_embeddings.py --occurrences mini_projet/data/occurrences.jsonl --out_dir mini_projet/data --models camembert flaubert --batch_size 16 --device auto`
+`python3 mini_projet/scripts/3.encoder_embeddings.py --occurrences mini_projet/data/resultats_final_9/occurrences.jsonl --out_dir mini_projet/data/resultats_final_9 --models camembert flaubert --batch_size 16 --device auto`
 
 Sorties (dans `mini_projet/data/`) :
 - `embeddings_camembert.npy` : matrice (N_occurrences, dim)
@@ -57,7 +57,7 @@ Ce script :
 - écrit un fichier JSON de scores et un fichier JSON de classement (ranking).
 
 Utilisation depuis la racine :
-`python3 mini_projet/scripts/4.score_polysemie.py --data_dir mini_projet/data`
+`python3 mini_projet/scripts/4.score_polysemie.py --data_dir mini_projet/data/resultats_final_9`
 
 Sorties (dans `mini_projet/data/`) :
 - `polysemy_scores.json` : scores par modèle et par mot
@@ -69,9 +69,9 @@ Visualisation 2D des occurrences d'un mot cible (export PNG).
 Par défaut : PCA 2D (rapide). Option : UMAP 2D (si installé).
 
 Utilisation depuis la racine (exemple) :
-`python3 mini_projet/scripts/5.visualiser_2d.py --data_dir mini_projet/data --model camembert --target esprit --method pca --out_dir mini_projet/data/viz --write_examples`
+`python3 mini_projet/scripts/5.visualiser_2d.py --data_dir mini_projet/data/resultats_final_9 --model camembert --target voix --method pca --out_dir mini_projet/data/resultats_final_9/viz --write_examples`
 
-Sorties (dans `mini_projet/data/viz/`) :
+Sorties (dans `.../viz/`, par ex. `mini_projet/data/resultats_final_9/viz/`) :
 - `<model>_<target>_<method>.png`
 - (optionnel) `<model>_<target>_<method>_examples.txt` (quelques contextes)
 
@@ -118,7 +118,8 @@ Les scores/classements proviennent de `polysemy_scores.json` et `polysemy_rankin
 | `resultats_1` | esprit, or, courir, porte | 10 | 30 | exploration initiale ; `or` ambigu (conjonction/nom) |
 | `resultats_2` | esprit, courir, porte | 10 | 100 (58 pour courir) | `courir` plafonné dans le corpus |
 | `resultats_3` | porte, feu, passer | 5 | 100 | test fenêtre réduite ; `grève` absent du corpus (pb avec l'accent) |
-| `resultats_baron` | porte, feu, passer, baron | 10 | 100 | run le plus abouti ; `baron` sert de pôle monosémique |
+| `resultats_4_baron` | porte, feu, passer, baron | 10 | 100 | ajout d’un contrôle : `baron` (faible polysémie) |
+| `resultats_final_9` | porte, feu, passer, baron, pied, cour, voix, campagne, entendre | 10 | 100 | run final (9 cibles) |
 
 ### Classements comparés
 
@@ -129,7 +130,8 @@ Les scores/classements proviennent de `polysemy_scores.json` et `polysemy_rankin
 | `resultats_1` | courir (0.101) | porte (0.094) | or (0.091) | esprit (0.065) |
 | `resultats_2` | porte (0.113) | courir (0.102) | esprit (0.069) | — |
 | `resultats_3` | porte (0.108) | feu (0.096) | passer (0.094) | — |
-| `resultats_baron` | **porte (0.116)** | feu (0.114) | passer (0.092) | **baron (0.040)** |
+| `resultats_4_baron` | **porte (0.116)** | feu (0.114) | passer (0.092) | **baron (0.040)** |
+| `resultats_final_9` | voix (0.141) | pied (0.125) | cour (0.124) | porte (0.116) |
 
 **FlauBERT** (score = `cosine_std`)
 
@@ -138,13 +140,14 @@ Les scores/classements proviennent de `polysemy_scores.json` et `polysemy_rankin
 | `resultats_1` | courir (0.265) | or (0.239) | porte (0.227) | esprit (0.220) |
 | `resultats_2` | courir (0.253) | esprit (0.225) | porte (0.218) | — |
 | `resultats_3` | porte (0.183) | passer (0.167) | feu (0.162) | — |
-| `resultats_baron` | porte (0.250) | passer (0.239) | baron (0.239) | feu (0.223) |
+| `resultats_4_baron` | porte (0.250) | passer (0.239) | baron (0.239) | feu (0.223) |
+| `resultats_final_9` | porte (0.250) | passer (0.239) | baron (0.239) | campagne (0.236) |
 
 ### Observations principales
 
-- **CamemBERT discrimine mieux** : dans `resultats_baron`, `baron` sort nettement en bas (0.040), loin derrière les autres (0.092–0.116), ce qui valide que la mesure capte quelque chose de linguistiquement réel. Le classement `porte` ≈ `feu` > `passer` > `baron` est stable.
+- **CamemBERT discrimine mieux** : `baron` sort nettement en bas (≈0.040), loin derrière les autres (≈0.088–0.141), ce qui valide que la mesure capte quelque chose de linguistiquement réel.
 - **FlauBERT est peu discriminant** : les scores sont très resserrés et `baron` n'est pas distingué des mots polysémiques. L'espace d'embedding de FlauBERT semble intrinsèquement plus dispersé, ce qui atténue les différences entre cibles.
-- **`porte` est la cible la plus robuste** : toujours en tête, pour les deux modèles, sur tous les runs.
+- **Stabilité partielle des cibles** : `porte` et `feu` restent parmi les mots les plus dispersés avec CamemBERT sur plusieurs runs, mais le run final (9 cibles) fait apparaître `voix`, `pied` et `cour` en tête.
 - **Cibles à écarter** : `or` (mélange conjonction/nom), `courir` (plafonné à 58 occurrences dans le corpus).
 
 ### Lecture des scores
@@ -168,7 +171,6 @@ Pour chaque cible, examiner les contextes des paires d'occurrences les plus proc
     - `la porte s'ouvrit presque aussitôt et un grand valet entra`
 
     **Exemple sur `esprit` (CamemBERT, `resultats_1`, n=30, std=0.065) :**
-
     Paires les plus *éloignées* (cos ≈ 0.65–0.67) — variation faible, même champ sémantique :
     - `répondre avec esprit aux sages représentations` (vivacité d'esprit)
     - `son esprit critique aurait pu s'exercer à miracle` (capacité intellectuelle)

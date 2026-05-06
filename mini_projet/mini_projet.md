@@ -136,9 +136,7 @@ Cependant, certains cas intéressants, comme `passer`, `entendre`, `porte` et `c
 
 Le cas de `passer` est révélateur. D’un point de vue linguistique, l’invariant de `passer` peut être compris comme l’idée d’un passage ou d’une transition, c’est-à-dire le fait de minimiser une rupture en l’inscrivant dans un mouvement continu. Cette valeur générale explique que le verbe puisse s’appliquer à des déplacements physiques, à des successions temporelles ou encore à des transmissions d’objets. Pourtant, dans nos résultats, `passer` n’obtient pas un score aussi élevé que certains noms comme `voix`, `pied` ou `cour`. Cela peut s’expliquer par le fait que notre extraction porte sur la forme exacte `passer`, et non sur l’ensemble des formes conjuguées du verbe. Le score mesure donc la dispersion des occurrences réellement extraites, et non toute la richesse sémantique du lemme.
 
-`Entendre` présente une autre limite. Le mot est principalement associé à deux grands emplois, percevoir par l’ouïe et comprendre, mais il obtient malgré tout un score relativement élevé. Cela montre que le score peut aussi être sensible à la diversité des contextes syntaxiques ou discursifs, et pas seulement au nombre de sens distingués linguistiquement.
-
-`Porte` est également un cas problématique, car la forme peut correspondre au nom `porte`, mais aussi à une forme conjuguée du verbe `porter`. Son score élevé peut donc refléter une véritable variation sémantique, mais aussi une ambiguïté morphosyntaxique. Sans lemmatisation ni étiquetage grammatical, le score mélange ces différents emplois.
+`Entendre` présente une autre limite. Le mot est principalement associé à deux grands emplois, percevoir par l’ouïe et comprendre, mais il obtient malgré tout un score relativement élevé. Cela montre que le score peut aussi être sensible à la diversité des contextes syntaxiques ou discursifs, et pas seulement au nombre de sens distingués linguistiquement. `Porte` est également un cas problématique, car la forme peut correspondre au nom `porte`, mais aussi à une forme conjuguée du verbe `porter`. Son score élevé peut donc refléter une véritable variation sémantique, mais aussi une ambiguïté morphosyntaxique. Sans lemmatisation ni étiquetage grammatical, le score mélange ces différents emplois.
 
 Enfin, `campagne` obtient un score plus faible, alors que le mot possède au moins deux grands sens : l’espace rural et la campagne militaire ou politique. Cela suggère que certains sens sont peut-être moins représentés dans le corpus, ou que les occurrences extraites restent proches dans leurs contextes d’emploi. Ce cas rappelle que notre score ne mesure pas directement le nombre de sens disponibles dans une ressource lexicale, mais la variation des usages observés dans le corpus.
 
@@ -146,7 +144,7 @@ Enfin, `campagne` obtient un score plus faible, alors que le mot possède au moi
 
 Afin d’évaluer si le score `cosine_std` correspond à une mesure linguistique de la polysémie, nous l’avons comparé à une mesure externe fondée sur des macro-sens. Chaque mot cible a reçu un score externe correspondant au nombre de grands emplois distingués manuellement : par exemple, `baron` reçoit un score faible, tandis que `feu` ou `passer` reçoivent un score plus élevé.
 
-La corrélation obtenue est positive mais modérée : Spearman ρ = 0.422 et Pearson r = 0.603. Ces résultats indiquent que les mots associés à davantage de macro-sens tendent globalement à avoir des embeddings plus dispersés. Cependant, les p-values obtenues ne permettent pas de conclure à une corrélation statistiquement significative. Cette absence de significativité peut s’expliquer par la taille réduite de notre échantillon, limité à neuf mots.
+La corrélation obtenue est positive mais modérée : Spearman ρ = 0.422 qui compare les rangs, notamment l'ordre des mots dans les deux classements; et Pearson r = 0.603 qui compare les valeur numériques,  indiquent que les mots associés à davantage de macro-sens tendent globalement à avoir des embeddings plus dispersés. Cependant, les p-values obtenues ne permettent pas de conclure à une corrélation statistiquement significative. Cette absence de significativité peut s’expliquer par la taille réduite de notre échantillon, limité à neuf mots.
 
 Ces résultats suggèrent donc que le score fondé sur les embeddings contextuels correspond partiellement à la polysémie linguistique, sans s’y réduire complètement. Il mesure plutôt la dispersion des usages attestés dans le corpus, qui dépend à la fois du nombre de sens possibles, de leur fréquence dans les textes et de la diversité des contextes dans lesquels les mots apparaissent.
 
@@ -157,14 +155,17 @@ Nous avons choisi de comparer notre score à une mesure externe fondée sur des 
 Cette mesure reste donc volontairement simplifiée. Elle ne prétend pas épuiser la polysémie des mots étudiés, mais elle fournit un point de comparaison linguistique permettant de tester si les mots considérés comme plus polysémiques présentent aussi une plus grande dispersion contextuelle.
 
 ### Observations
-*à reformuler*
+
+Cette étude met en évidence que la dispersion des embeddings contextuels permet d’approcher partiellement la variation sémantique des mots en contexte, mais qu’elle ne correspond pas directement à une mesure exhaustive de la polysémie. On peut constater diverses observations qui vont ensuite nous permettre de relever les limites de notre étude :
+
+**1. CamemBERT : une hiérarchie interprétable.**  
+`Baron`, utilisé comme contrôle à faible polysémie dans le corpus littéraire, obtient le score le plus faible (`cosine_std` = 0.040). À l’inverse, `voix` (0.141), `pied` (0.125), `cour` (0.124), `porte` (0.116) et `feu` (0.114) obtiennent les scores les plus élevés. Le score de `voix` est ainsi environ 3,5 fois supérieur à celui de `baron`, et ceux de `pied` et `cour` environ trois fois supérieurs.
+
+Cet écart est clair et linguistiquement motivé : `baron` renvoie majoritairement à un noble ou à une personne appelée ainsi, tandis que les autres mots présentent des emplois plus variés. CamemBERT permet donc de distinguer un mot relativement homogène de mots à plus forte variation contextuelle.
 
 
-**1. CamemBERT discrimine efficacement les mots.**  
-`baron`, quasi-monosémique dans un corpus littéraire (toujours le titre nobiliaire), obtient un score près de **3× inférieur** à `porte`. L'écart est clair et linguistiquement motivé.
-
-**2. FlauBERT est peu discriminant.**  
-Les scores FlauBERT sont très proches pour toutes les cibles : `baron` (0.239) n'est pas distingué de `porte` (0.250). L'espace d'embedding de FlauBERT semble intrinsèquement plus dispersé, ce qui atténue les différences inter-mots. Ce modèle n'est pas adapté à cette mesure sans normalisation préalable.
+**2. FlauBERT : une dispersion moins discriminante.**  
+Avec FlauBERT, les scores `cosine_std` sont plus resserrés entre les mots. `Baron` obtient par exemple un score de 0.239, très proche de `passer` (0.239) et de `porte` (0.250). Cette proximité est problématique, car `baron` devait fonctionner comme contrôle à faible polysémie. Contrairement à CamemBERT, FlauBERT ne distingue donc pas nettement les mots attendus comme homogènes des mots plus variables. Dans notre protocole, ses embeddings semblent présenter une dispersion générale plus forte, ce qui rend le score moins discriminant pour l’analyse de la polysémie.
 
 **3. La mesure ne se corrèle pas directement avec le nombre de sens lexicographiques.**  
 D'après le Wiktionnaire, `esprit` possède **13 acceptions** et `porte` **11** — soit légèrement plus pour `esprit`. Pourtant, CamemBERT classe `porte` *devant* `esprit` (run `resultats_1` : 0.094 vs 0.065). Deux facteurs l'expliquent :
@@ -177,4 +178,14 @@ Les paires d'occurrences les plus *éloignées* (cos ≈ 0.43) opposent bien des
 - *emploi verbal* : « celui de mont franklin à ce lac nous **porte** en ce moment »
 
 Les paires les plus *proches* (cos ≈ 0.97) sont toutes au sens nominal physique (battant de porte). Ce contraste confirme que la dispersion reflète une vraie variation sémantique — même si une partie est imputable à l'ambiguïté POS.
+
+### Limites de l’étude (à completer ou réformuler)
+
+- Cette étude présente plusieurs limites. La première concerne la taille de l’échantillon : l’analyse finale porte sur neuf mots cibles, ce qui permet d’observer des tendances, mais limite la portée statistique des résultats. Cela explique notamment que les corrélations obtenues avec la mesure externe soient positives, mais non significatives.
+
+- Une deuxième limite tient au choix d’une extraction par formes lexicales exactes, sans lemmatisation ni étiquetage morphosyntaxique. Les différentes formes fléchies d’un même verbe ne sont donc pas regroupées, et certaines formes ambiguës peuvent mélanger plusieurs catégories grammaticales. C’est notamment le cas de `porte`, qui peut correspondre au nom ou à une forme du verbe `porter`.
+
+- Les résultats dépendent également du corpus utilisé. Notre corpus littéraire et argumentatif offre une diversité d’emplois, mais il ne couvre pas nécessairement tous les sens possibles des mots. Le score mesure donc les usages attestés dans ce corpus, et non la polysémie complète d’un mot dans la langue.
+
+- Enfin, le score `cosine_std` doit être interprété avec prudence. Il mesure une dispersion des embeddings contextuels, qui peut refléter la polysémie, mais aussi des différences syntaxiques, stylistiques ou thématiques. Les différences observées entre CamemBERT et FlauBERT montrent également que cette mesure dépend de la géométrie propre au modèle utilisé.
 

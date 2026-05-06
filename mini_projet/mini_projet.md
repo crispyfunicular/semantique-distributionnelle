@@ -1,85 +1,31 @@
 # Sémantique distributionnelle - mini-projet
 > Catalina Alvarez Ortega & Morgane Bona-Pellissier (Master 1 pluriTAL)
 
-## INTRODUCTION 
+## Introduction 
 
-Dans le cadre du cours de Sémantique distributionnelle du Master 1 en Traitement Automatique des Langues, nous avons été amenés à réaliser un mini-projet sur l’étude de la polysémie avec des embeddings contextuels. Si bien qu’existe différent notions sur le polysémie, c’est-à-dire quand la polysémie est dite régulière ou irrégulière, d’emblée celle-ci désigne la capacité d’un mot à recevoir plusieurs sens selon ses contextes d’emploi. Par exemple, un mot comme « voix » peut désigner le son produit par la parole, mais aussi une opinion ou une forme d’influence. Les modèles de langage basé sur le transformer, comme BERT, sont particulièrement adaptés à l’étude de ce phénomène, car ils ne produisent pas une représentation unique et fixe pour un mot donné. Au contraire, la représentation vectorielle d’une occurrence dépend du contexte dans lequel le mot apparaît. Ainsi, deux occurrences d’un même mot peuvent recevoir des embeddings différents si elles sont employées dans des sens ou des environnements sémantiques distincts.
+Dans le cadre du cours de Sémantique distributionnelle, nous avons été amenées à étudier la polysémie à l’aide d’embeddings contextuels (ou « dynamiques »). Il existe différentes notions liées à la polysémie, notamment la distinction entre polysémie régulière et polysémie irrégulière [CITATION ?]. De manière générale, elle désigne la capacité d’un mot à prendre plusieurs sens selon ses contextes d’emploi [CITATION]. Par exemple, un mot comme « voix » peut désigner le son produit par la parole, mais aussi une opinion ou une forme d’influence. Les modèles de langage basés sur l'architecture Transformers, comme BERT (*Bidirectional Encoder Representations from Transformers*), sont particulièrement adaptés à l’étude de ce phénomène, car, comme nous le verrons, ils ne produisent pas une représentation unique et fixe pour un mot donné. Au contraire, la représentation vectorielle d’un mot dépend du contexte dans lequel chaque occurrence apparaît. Ainsi, deux occurrences d’un même mot peuvent recevoir des embeddings différents si elles sont employées dans des sens ou des environnements sémantiques distincts.
 
-L’objectif de ce projet est d’évaluer dans quelle mesure cette variation vectorielle peut être interprétée comme un indice de polysémie. Pour cela, nous travaillons à partir d’un corpus de 29 romans au format `.txt` et d’une liste de mots cibles, comprenant des noms et des verbes. Pour chaque mot, nous extrayons plusieurs occurrences en contexte, puis nous les encodons avec des modèles BERT pour le français. Nous définissons ensuite un score de polysémie fondé sur l’écart-type des similarités cosinus deux à deux entre les embeddings des occurrences d’un même mot. Un score élevé indique une forte dispersion des représentations, tandis qu’un score faible indique des usages plus homogènes. Afin de déterminer si ce score correspond effectivement à la notion linguistique de polysémie, nous le confrontons à une mesure externe fondée sur des macro-sens. Nous utilisons également des visualisations 2D par réduction de dimensionnalité afin d’observer qualitativement la distribution des occurrences dans l’espace vectoriel.
+L’objectif de ce projet a été d’évaluer dans quelle mesure cette variation vectorielle pouvait être interprétée comme un indice de polysémie. Pour cela, nous avons travaillé à partir d’un corpus de 29 romans français au format `.txt` et d’une liste de mots cible, comprenant des noms et des formes verbales dont les différents sens respectifs étaient suffisamment attestés au sein du corpus. Pour chaque mot, nous avons extrait plusieurs occurrences en contexte, puis nous les avons encodées avec des modèles BERT pour le français. Nous avons ensuite défini un score de polysémie fondé sur l’écart-type des similarités cosinus deux à deux entre les embeddings des occurrences d’un même mot. Un score élevé indique une forte dispersion des représentations, tandis qu’un score faible indique des usages plus homogènes. Afin de déterminer si ce score correspondait effectivement à la notion linguistique de polysémie, nous l’avons confronté à une mesure externe fondée sur des macro-sens. Nous avons également utilisé des visualisations 2D par réduction de dimensionnalité afin d’observer qualitativement la distribution des occurrences dans l’espace vectoriel.
 
 
 ## Hypothèses
 
-Le corpus utilisé est composé de 29 œuvres littéraires et argumentatives françaises, couvrant différents genres : roman réaliste, récit sentimental, conte, texte philosophique, texte politique, poésie et récit d’aventure. Cette diversité des differents thèmes et époques peut être intéressant pour l’étude de la variation lexicale, car les mots peuvent y apparaître dans des contextes concrets, abstraits, figurés ou spécialisés.
+Nous faisons l’hypothèse que les mots fortement polysémiques ou employés dans des contextes sémantiquement variés auront des embeddings contextuels plus dispersés. Cette dispersion devrait se traduire par un score de polysémie plus élevé, calculé à partir de l’écart-type des similarités cosinus entre occurrences d’un même mot. À l’inverse, les mots dont les emplois sont plus homogènes devraient obtenir un score plus faible. Notre sélection de mots vise à tester cette hypothèse sur plusieurs types de cibles. Les noms `porte`, `feu`, `pied`, `cour`, `voix` et `campagne` présentent des emplois concrets, abstraits, institutionnels ou figurés. Les verbes `passer` et `entendre` sont également susceptibles de varier selon leur construction et leur contexte. Enfin, `baron` est utilisé comme contrôle à faible polysémie, car il devrait renvoyer majoritairement, dans ce corpus littéraire, à une personne portant ce titre nobiliaire.
 
-Nous faisons l’hypothèse que les mots fortement polysémiques ou employés dans des contextes sémantiquement variés auront des embeddings contextuels plus dispersés. Cette dispersion devrait se traduire par un score de polysémie plus élevé, calculé à partir de l’écart-type des similarités cosinus entre occurrences d’un même mot. À l’inverse, les mots dont les emplois sont plus homogènes devraient obtenir un score plus faible. Notre sélection de mots vise à tester cette hypothèse sur plusieurs types de cibles. Les noms `porte`, `feu`, `pied`, `cour`, `voix` et `campagne` présentent des emplois concrets, abstraits, institutionnels ou figurés. Les verbes `passer` et `entendre` sont également susceptibles de varier selon leur construction et leur contexte. Enfin, `baron` est utilisé comme contrôle à faible polysémie, car il devrait renvoyer majoritairement, dans ce corpus littéraire,à un noble ou à une personne appelée ainsi.
-
-## Structure de la pipeline
+## Structure du pipeline
 > L'intégralité du pipeline est consultable à l'adresse : https://github.com/crispyfunicular/semantique-distributionnelle/tree/main/mini_projet
 
-### 1. Normaliser le corpus 
+- `1.normalisation_corpus.py` : homogénéise le corpus (apostrophes, ligature `œ`, etc.) pour réduire le bruit typographique et éviter les doublons de tokens avant l’extraction.
+- `2.extraire_occurrences.py` : extrait des occurrences exactes des mots cibles avec une fenêtre de contexte \(`k=10` mots à gauche/droite\) et en conserve au plus `n=100` par cible (échantillonnage reproductible via `seed=42`).
+- `3.encoder_embeddings.py` : encode chaque occurrence avec CamemBERT et/ou FlauBERT (dernière couche, sans fine-tuning) et associe chaque occurrence à sa ligne dans les matrices d’embeddings via `embeddings_meta.jsonl`.
+- `4.score_polysemie.py` : calcule, pour chaque mot et modèle, la dispersion des similarités cosinus 2-à-2 (score principal : `cosine_std`) et produit `polysemy_scores.json` (stats) et `polysemy_ranking.json` (classement).
+- `5.visualiser_2d.py` (optionnel, pour l’oral) : visualise en 2D les occurrences d’un mot cible (PCA par défaut, UMAP si installé) et exporte un PNG.
 
- Le script `1.normalisation_corpus.py` parcourt les fichiers `.txt` du dossier `corpus/` et corrige certaines variations graphiques. Il remplace notamment les apostrophes typographiques par une apostrophe simple et harmonise certaines graphies en `oe` vers la ligature `œ`. En normalisant ces formes, on limite donc le bruit lié à l’encodage et à la typographie. Elle rend donc le corpus plus homogène avant l’extraction des occurrences des mots cibles.
-
-### 2. Extraction des occurrences
-
-Le script `2.extraire_occurrences.py` prend en entrée un corpus texte et une liste de mots cibles. Il normalise et tokenise le corpus, puis repère toutes les occurrences exactes des mots cibles. Pour chaque occurrence, Nous avons finalement retenu une fenêtre de contexte de dix mots à gauche et dix mots à droite du mot cible. Ce choix permet de donner au modèle suffisamment d’informations pour interpréter l’occurrence, sans élargir excessivement le contexte. Lorsque le nombre d’occurrences disponibles dépasse le seuil fixé, le script en tire un échantillon aléatoire reproductible grâce à une seed. Les occurrences sont ensuite sauvegardées dans un fichier `occurrences.jsonl`, tandis que les paramètres du run et le nombre d’occurrences extraites par mot sont enregistrés dans `targets.json`.
-
-Utilisation depuis la racine :
-`python3 mini_projet/scripts/2.extraire_occurrences.py --corpus mini_projet/corpus_complet.txt --targets esprit or courir porte --k 10 --n 30 --seed 42 --out_dir mini_projet/data`
-
-Sorties (dans `mini_projet/data/`) :
-- `occurrences.jsonl` : une occurrence par ligne
-- `targets.json` : récap (corpus, k, n, seed, etc.)
-
-### l'encodage des occurrences avec CamamBERT et FlauBERT
-
-La troisième étape du pipeline consiste à encoder les occurrences extraites avec des modèles BERT pour le français. Le script `3.encoder_embeddings.py` lit le fichier `occurrences.jsonl` produit à l’étape précédente, puis calcule un embedding contextuel pour chaque occurrence du mot cible.
-
-Nous utilisons deux modèles : CamemBERT et FlauBERT. Ces modèles produisent des représentations contextuelles, c’est-à-dire qu’une même forme lexicale peut recevoir des vecteurs différents selon son contexte d’apparition. Le script extrait spécifiquement le vecteur du mot cible dans son contexte. Comme les tokenizers de type BERT peuvent découper un mot en plusieurs sous-tokens, le script reconstruit l’alignement entre les mots du contexte et leurs sous-tokens. Lorsque le mot cible est segmenté en plusieurs sous-tokens, son embedding est obtenu en calculant la moyenne des vecteurs correspondants.
-
-Les embeddings sont calculés à partir de la dernière couche cachée du modèle, sans fine-tuning. Le script produit une matrice d’embeddings pour chaque modèle (`embeddings_camembert.npy` et `embeddings_flaubert.npy`) ainsi qu’un fichier de métadonnées (`embeddings_meta.jsonl`) permettant de relier chaque occurrence à sa ligne dans la matrice.
-
-Utilisation depuis la racine :
-`python3 mini_projet/scripts/3.encoder_embeddings.py --occurrences mini_projet/data/occurrences.jsonl --out_dir mini_projet/data --models camembert flaubert --batch_size 16 --device auto`
-
-Sorties (dans `mini_projet/data/`) :
-- `embeddings_camembert.npy` : matrice (N_occurrences, dim)
-- `embeddings_flaubert.npy` : matrice (N_occurrences, dim)
-- `embeddings_meta.jsonl` : lien entre `occurrence_id`, modèle et ligne dans la matrice
-
-### 4. Calcul d'un score de polysémie à partir des embeddings.
-
-La quatrième étape du pipeline consiste à calculer un score de polysémie à partir des embeddings contextuels. Le script `4.score_polysemie.py` lit les matrices d’embeddings produites à l’étape précédente ainsi que le fichier `embeddings_meta.jsonl`, qui permet d’associer chaque ligne de la matrice à une occurrence et à un mot cible.
-
-Pour chaque mot cible, le script regroupe les embeddings de ses occurrences et calcule les similarités cosinus entre toutes les paires d’occurrences. Il produit plusieurs statistiques, notamment la moyenne, le minimum, le maximum et surtout l’écart-type des similarités. Le score principal retenu est cosine_std. Un score faible indique que les occurrences sont représentées de manière homogène dans l’espace vectoriel, tandis qu’un score élevé signale une plus forte dispersion des embeddings. Ce score est donc interprété comme un indicateur de variation contextuelle, et non comme un nombre direct de sens.
-
-Le script produit deux fichiers : polysemy_scores.json, qui contient les statistiques détaillées, et polysemy_ranking.json, qui classe les mots selon leur score de dispersion
-
-Utilisation depuis la racine :
-`python3 mini_projet/scripts/4.score_polysemie.py --data_dir mini_projet/data`
-
-Sorties (dans `mini_projet/data/`) :
-- `polysemy_scores.json` : scores par modèle et par mot
-- `polysemy_ranking.json` : mots triés par score (par modèle)
-
-
-
-### `5.visualiser_2d.py` (optionnel, pour l'oral)
-Visualisation 2D des occurrences d'un mot cible (export PNG).
-
-Par défaut : PCA 2D (rapide). Option : UMAP 2D (si installé).
-
-Utilisation depuis la racine (exemple) :
-`python3 mini_projet/scripts/5.visualiser_2d.py --data_dir mini_projet/data --model camembert --target esprit --method pca --out_dir mini_projet/data/viz --write_examples`
-
-Sorties (dans `mini_projet/data/viz/`) :
-- `<model>_<target>_<method>.png`
-- (optionnel) `<model>_<target>_<method>_examples.txt` (quelques contextes)
 
 ## Choix méthodologiques effectués
-Comment dit précédemment nous avons choisi in corpus composé de 29 œuvres littéraires et argumentaires français, qui abordent de sujet comment l’amour, la mort, la politique, la religion etc. Si bien que notre choix peut mobiliser une grande diversité lexicale, il faut remarquer que notre mesure porte uniquement sur les sens présents dans ce corpus. Un mot peut donc être très polysémique dans un dictionnaire, mais apparaître dans le corpus avec un nombre plus restreint d’usages. De même, nous avons choisi de travailler sur des formes lexicales exactes plutôt que sur des lemmes. Ce choix permet de conserver un protocole simple et reproductible, sans dépendre d’un outil externe de lemmatisation ou d’étiquetage morphosyntaxique. 
-En outre, le paramètre `k` correspond au nombre de mots conservés à gauche et à droite du mot cible. Dans notre run final, nous avons retenu `k = 10`, soit dix mots à gauche et dix mots à droite de chaque occurrence. Ce choix s’appuie sur les réflexions du TP2, consacré à l’influence de la taille du contexte dans les représentations distributionnelles. Ce TP montrait que la taille de la fenêtre pouvait modifier les voisins obtenus par similarité cosinus et donc les propriétés linguistiques capturées. Même si notre projet utilise des embeddings contextuels BERT plutôt que des embeddings statiques par cooccurrences, la taille du contexte reste importante : une fenêtre trop courte peut manquer d’indices sémantiques, tandis qu’une fenêtre trop large peut introduire du bruit. La fenêtre de dix mots constitue donc un compromis.
+
+Notre corpus rassemble 29 œuvres littéraires françaises, couvrant des thèmes et des époques variés, ce qui devrait favoriser des contextes d’emploi divers pour les mots cibles (concrets, abstraits, figurés, etc.). Toutefois, notre mesure ne porte que sur les sens effectivement attestés dans ce corpus : un mot peut être très polysémique en dictionnaire mais apparaître ici dans des usages plus restreints. Enfin, nous avons travaillé sur des formes graphiques exactes afin de conserver les formes fléchies telles qu’elles apparaissent dans le corpus (par ex. `porte`), plutôt que de les ramener au lemme (`porter`) et de préserver l’ambiguïté nom/verbe susceptible d’influencer la dispersion des embeddings.
+En outre, le paramètre `k` correspond au nombre de mots conservés autour du mot cible. Dans notre run final, nous avons retenu `k = 10`, soit dix mots à gauche et à droite de chaque occurrence. Ce choix s’appuie sur les réflexions du TP2, consacré à l’influence de la taille du contexte dans les représentations distributionnelles. Ce TP montrait que la taille de la fenêtre pouvait modifier les voisins obtenus par similarité cosinus et donc les propriétés linguistiques capturées. Même si notre projet utilise des embeddings contextuels BERT plutôt que des embeddings statiques par cooccurrences, la taille du contexte reste importante : une fenêtre trop courte peut manquer d’indices sémantiques, tandis qu’une fenêtre trop large peut introduire du bruit. La fenêtre de dix mots constitue donc un compromis.
 
 ### Choix des modèles : CamemBERT et FlauBERT
 Nous avons utilisé deux modèles BERT adaptés au français : CamemBERT et FlauBERT. Ces modèles sont tous deux des encodeurs contextuels : ils produisent, pour un même mot, des représentations vectorielles différentes selon le contexte d’occurrence. C’est précisément cette propriété que nous exploitons pour mesurer la variation sémantique.
@@ -95,7 +41,7 @@ Nous avons utilisé deux modèles BERT adaptés au français : CamemBERT et Flau
 
 Nous utilisons ces modèles sans fine-tuning : les embeddings sont extraits directement à partir de la dernière couche cachée. Pour chaque occurrence, nous récupérons la représentation du mot cible. Lorsque le mot est segmenté en plusieurs sous-tokens, les vecteurs correspondants sont moyennés afin d’obtenir un seul embedding par occurrence.
 
-Même si les deux modèles sont utilisés dans le pipeline, nous retenons CamemBERT comme modèle principal pour l’analyse finale. Dans nos expérimentations, CamemBERT produit des scores plus différenciés entre les mots cibles, tandis que FlauBERT donne des scores plus resserrés, ce qui rend l’interprétation moins nette.
+Même si les deux modèles sont utilisés dans le pipeline, nous retenons CamemBERT comme modèle principal pour l’analyse finale. Dans nos expérimentations, CamemBERT produit des scores plus différenciés entre les mots cible, tandis que FlauBERT donne des scores plus resserrés, ce qui rend l’interprétation moins nette.
 
 Le classement final obtenu avec CamemBERT est le suivant :
 
@@ -120,7 +66,7 @@ CamemBERT produit des embeddings relativement plus « concentrés » : les cosin
 
 FlauBERT, en revanche, produit des embeddings globalement plus dispersés : les cosinus moyens sont plus bas, entre environ 0.48 et 0.63, et les écarts-types sont beaucoup plus resserrés, autour de 0.215 à 0.250. Cette dispersion générale rend le score cosine_std moins discriminant entre les cibles. Par exemple, avec FlauBERT, baron obtient un score de 0.239, proche de celui de mots plus variables comme passer (0.239) ou porte (0.250). Cela rend l’interprétation linguistique moins nette que pour CamemBERT.
 
-Ainsi, dans notre protocole, CamemBERT est retenu comme modèle principal d’analyse, non parce qu’il serait nécessairement supérieur à FlauBERT de manière générale, mais parce qu’il produit ici une hiérarchie plus interprétable pour notre score de dispersion. FlauBERT est conservé comme point de comparaison, mais ses scores semblent davantage refléter une dispersion globale de l’espace vectoriel qu’une distinction claire entre les degrés de polysémie des mots cibles.
+Ainsi, dans notre protocole, CamemBERT est retenu comme modèle principal d’analyse, non parce qu’il serait nécessairement supérieur à FlauBERT de manière générale, mais parce qu’il produit ici une hiérarchie plus interprétable pour notre score de dispersion. FlauBERT est conservé comme point de comparaison, mais ses scores semblent davantage refléter une dispersion globale de l’espace vectoriel qu’une distinction claire entre les degrés de polysémie des mots cible.
 
 ## Discussion des résultats
 
@@ -181,7 +127,7 @@ Les paires les plus *proches* (cos ≈ 0.97) sont toutes au sens nominal physiqu
 
 ### Limites de l’étude (à completer ou réformuler)
 
-- Cette étude présente plusieurs limites. La première concerne la taille de l’échantillon : l’analyse finale porte sur neuf mots cibles, ce qui permet d’observer des tendances, mais limite la portée statistique des résultats. Cela explique notamment que les corrélations obtenues avec la mesure externe soient positives, mais non significatives.
+- Cette étude présente plusieurs limites. La première concerne la taille de l’échantillon : l’analyse finale porte sur neuf mots cible, ce qui permet d’observer des tendances, mais limite la portée statistique des résultats. Cela explique notamment que les corrélations obtenues avec la mesure externe soient positives, mais non significatives.
 
 - Une deuxième limite tient au choix d’une extraction par formes lexicales exactes, sans lemmatisation ni étiquetage morphosyntaxique. Les différentes formes fléchies d’un même verbe ne sont donc pas regroupées, et certaines formes ambiguës peuvent mélanger plusieurs catégories grammaticales. C’est notamment le cas de `porte`, qui peut correspondre au nom ou à une forme du verbe `porter`.
 

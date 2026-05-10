@@ -99,16 +99,15 @@ La corrélation obtenue est positive mais modérée. Le coefficient de Spearman 
 Ces résultats suggèrent donc que **le score fondé sur les embeddings contextuels est lié à la polysémie**, mais qu’il reflète plus largement la dispersion des usages attestés dans le corpus (fréquence des emplois, diversité des contextes, etc.).
 
 
-### Limites de l’étude
+### Conclusion et limites de l’étude
 
-- Cette étude présente plusieurs limites. La première concerne la taille de l’échantillon : l’analyse finale porte sur neuf mots cible, ce qui permet d’observer des tendances, mais limite la portée statistique des résultats.
+Cette étude met en évidence que les embeddings contextuels permettent d’approcher une partie de la variation sémantique des mots en contexte. Le score `cosine_std`, fondé sur l’écart-type des similarités cosinus entre les occurrences d’un même mot, permet de distinguer certains mots aux usages variés, comme `voix`, `pied`, `cour` ou `feu`, d’un mot plus homogène comme `baron`. Le rôle de `baron` comme contrôle est donc confirmé par les résultats obtenus avec CamemBERT.
 
-- Une deuxième limite tient au choix d’une extraction par formes lexicales exactes, sans lemmatisation ni étiquetage morphosyntaxique. Les différentes formes fléchies d’un même verbe ne sont donc pas regroupées, et certaines formes ambiguës peuvent mélanger plusieurs catégories grammaticales. C’est notamment le cas de `porte`, qui peut correspondre au nom ou à une forme du verbe `porter`.
+La comparaison avec une mesure externe fondée sur des macro-sens montre une corrélation positive mais modérée. Cela suggère que notre score est bien lié à la polysémie, mais qu’il ne mesure pas directement le nombre de sens d’un mot. Il reflète plutôt la dispersion des usages réellement observés dans le corpus.
 
-- Les résultats dépendent également du corpus utilisé. Notre corpus littéraire et argumentatif offre une diversité d’emplois, mais il ne couvre pas nécessairement tous les sens possibles des mots. Le score mesure donc les usages attestés dans ce corpus, et non la polysémie complète d’un mot dans la langue.
+Cette interprétation doit cependant rester prudente. L’analyse finale porte seulement sur neuf mots cibles, ce qui limite la portée statistique des résultats. De plus, nous avons travaillé sur des formes lexicales exactes, sans lemmatisation ni étiquetage morphosyntaxique. Cela signifie que les formes fléchies d’un même verbe ne sont pas regroupées, et que certaines formes ambiguës, comme `porte`, peuvent mélanger plusieurs catégories grammaticales. Les résultats dépendent aussi du corpus utilisé. Notre corpus littéraire et argumentatif offre une diversité d’emplois, mais il ne couvre pas tous les sens possibles des mots. Le score mesure donc les usages attestés dans ce corpus, et non la polysémie complète d’un mot dans la langue. Enfin, les différences observées entre CamemBERT et FlauBERT montrent que cette mesure dépend également du modèle utilisé et de la structure de son espace vectoriel.
 
-- Enfin, le score `cosine_std` doit être interprété avec prudence. Il mesure une dispersion des embeddings contextuels, qui peut refléter la polysémie, mais aussi des différences syntaxiques, stylistiques ou thématiques. Les différences observées entre CamemBERT et FlauBERT montrent également que cette mesure dépend de la géométrie propre au modèle utilisé.
-
+En somme, le score `cosine_std` constitue un indicateur intéressant de variation contextuelle, mais il ne doit pas être interprété comme une mesure exhaustive de la polysémie. Il permet de formuler des hypothèses linguistiques sur les usages des mots en corpus, à condition d’être complété par une analyse qualitative et par une comparaison avec des ressources linguistiques externes
 
 ## Bibliographie
 - Saunier, Évelyne. Identité lexicale et régulation de la variation sémantique : contribution à l’étude des emplois de « mettre », « prendre », « passer » et « tenir ». Thèse de doctorat, Université Paris Nanterre, 1996. Disponible sur HAL : https://hal.parisnanterre.fr/tel-01635677/file/TheseEvelyneSaunier.pdf

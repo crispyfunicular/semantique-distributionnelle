@@ -160,3 +160,20 @@ Les citations ci-dessous sont reprises de `liste_termes_polysemiques.md` et illu
 #### `baron`
 - **titre nobiliaire (personne)** : « M. le baron Haussmann nous aère—mais on ne s'y retrouve plus, dans son Paris. »
 - **nom propre (titre dans un nom figé)** : « comme avait coutume de dire le Baron Louis. »
+
+### Visualisations 2D (run `resultats_final_9`, CamemBERT, PCA)
+
+Projections PCA des occurrences en contexte (fichiers dans `data/resultats_final_9/viz/`, produits par `5.visualiser_2d.py`).
+
+#### `voix`
+
+![Projection PCA des occurrences de « voix »](data/resultats_final_9/viz/camembert_voix_pca.png)
+
+#### `porte`
+
+![Projection PCA des occurrences de « porte »](data/resultats_final_9/viz/camembert_porte_pca.png)
+
+#### `baron`
+
+![Projection PCA des occurrences de « baron »](data/resultats_final_9/viz/camembert_baron_pca.png)
+
